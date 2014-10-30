@@ -1,0 +1,619 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>800</width>
+    <height>716</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>SDF Viewer</string>
+  </property>
+  <property name="windowIcon">
+   <iconset>
+    <normaloff>test-tube-icon.png</normaloff>test-tube-icon.png</iconset>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QWidget" name="layoutWidget">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>53</y>
+      <width>781</width>
+      <height>51</height>
+     </rect>
+    </property>
+    <layout class="QGridLayout" name="gridLayout_2">
+     <item row="2" column="2">
+      <widget class="QLineEdit" name="le_query">
+       <property name="minimumSize">
+        <size>
+         <width>200</width>
+         <height>0</height>
+        </size>
+       </property>
+      </widget>
+     </item>
+     <item row="2" column="4">
+      <widget class="QPushButton" name="btn_start">
+       <property name="text">
+        <string>start</string>
+       </property>
+       <property name="icon">
+        <iconset theme="arrow-right">
+         <normaloff>../../../../.designer/backup</normaloff>../../../../.designer/backup</iconset>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="0">
+      <widget class="QLabel" name="label_2">
+       <property name="text">
+        <string> current sdf</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignBottom|Qt::AlignLeading|Qt::AlignLeft</set>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="2">
+      <widget class="QLabel" name="label_4">
+       <property name="text">
+        <string> query</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignBottom|Qt::AlignLeading|Qt::AlignLeft</set>
+       </property>
+      </widget>
+     </item>
+     <item row="2" column="0">
+      <widget class="QLineEdit" name="le_curr_sdf">
+       <property name="minimumSize">
+        <size>
+         <width>150</width>
+         <height>0</height>
+        </size>
+       </property>
+       <property name="readOnly">
+        <bool>true</bool>
+       </property>
+      </widget>
+     </item>
+     <item row="2" column="1">
+      <widget class="QComboBox" name="combo_querytype">
+       <property name="toolTip">
+        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;remember to prefix the fieldnames with &amp;quot;s_&amp;quot;, &amp;quot;n_&amp;quot; or &amp;quot;k_&amp;quot; in the factsearch and that string literals are lowercase, e.g.:&lt;/p&gt;&lt;p&gt;&amp;quot;m.5&amp;quot; in s_family &lt;br/&gt;n_pIC50 &amp;gt;= 8&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+       </property>
+       <item>
+        <property name="text">
+         <string>fact</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>fact_inverted</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>substruct</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>substruct_inverted</string>
+        </property>
+       </item>
+      </widget>
+     </item>
+     <item row="0" column="3">
+      <widget class="QLabel" name="label_5">
+       <property name="text">
+        <string> store in</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignBottom|Qt::AlignLeading|Qt::AlignLeft</set>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="1">
+      <widget class="QLabel" name="label_3">
+       <property name="text">
+        <string> querytype</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignBottom|Qt::AlignLeading|Qt::AlignLeft</set>
+       </property>
+      </widget>
+     </item>
+     <item row="2" column="3">
+      <widget class="QLineEdit" name="le_out">
+       <property name="minimumSize">
+        <size>
+         <width>150</width>
+         <height>0</height>
+        </size>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </widget>
+   <widget class="QTableWidget" name="table_query_view">
+    <property name="geometry">
+     <rect>
+      <x>-2</x>
+      <y>109</y>
+      <width>781</width>
+      <height>111</height>
+     </rect>
+    </property>
+    <property name="columnCount">
+     <number>6</number>
+    </property>
+    <attribute name="horizontalHeaderCascadingSectionResizes">
+     <bool>false</bool>
+    </attribute>
+    <column/>
+    <column/>
+    <column/>
+    <column/>
+    <column/>
+    <column/>
+   </widget>
+   <widget class="QWidget" name="layoutWidget_2">
+    <property name="geometry">
+     <rect>
+      <x>8</x>
+      <y>610</y>
+      <width>541</width>
+      <height>52</height>
+     </rect>
+    </property>
+    <layout class="QGridLayout" name="gridLayout_3">
+     <item row="0" column="0">
+      <widget class="QPushButton" name="btn_hist">
+       <property name="text">
+        <string>histogram</string>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="1">
+      <widget class="QLabel" name="label_6">
+       <property name="text">
+        <string> color by</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignBottom|Qt::AlignLeading|Qt::AlignLeft</set>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="3">
+      <widget class="QLabel" name="label_7">
+       <property name="text">
+        <string> compare to</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignBottom|Qt::AlignLeading|Qt::AlignLeft</set>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="0">
+      <widget class="QPushButton" name="btn_scatter">
+       <property name="text">
+        <string>scattermatrix</string>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="1">
+      <widget class="QComboBox" name="combo_colorby"/>
+     </item>
+     <item row="1" column="2">
+      <widget class="QPushButton" name="btn_scatter2">
+       <property name="text">
+        <string>scattermatrix2</string>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="3">
+      <widget class="QComboBox" name="combo_compareto"/>
+     </item>
+    </layout>
+   </widget>
+   <widget class="QWidget" name="layoutWidget_3">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>1</y>
+      <width>781</width>
+      <height>51</height>
+     </rect>
+    </property>
+    <layout class="QGridLayout" name="gridLayout">
+     <item row="1" column="0">
+      <widget class="QLineEdit" name="le_sdf_name">
+       <property name="minimumSize">
+        <size>
+         <width>200</width>
+         <height>0</height>
+        </size>
+       </property>
+       <property name="baseSize">
+        <size>
+         <width>0</width>
+         <height>0</height>
+        </size>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="1">
+      <widget class="QPushButton" name="btn_sdf_load">
+       <property name="text">
+        <string>load</string>
+       </property>
+       <property name="icon">
+        <iconset theme="document-open">
+         <normaloff>../../../../.designer/backup</normaloff>../../../../.designer/backup</iconset>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="2">
+      <widget class="QPushButton" name="btn_load_prev_cluster">
+       <property name="text">
+        <string>load prev</string>
+       </property>
+       <property name="icon">
+        <iconset theme="go-previous-view">
+         <normaloff/>
+        </iconset>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="3">
+      <widget class="QPushButton" name="btn_load_next_cluster">
+       <property name="layoutDirection">
+        <enum>Qt::RightToLeft</enum>
+       </property>
+       <property name="text">
+        <string>load next</string>
+       </property>
+       <property name="icon">
+        <iconset theme="go-next-view">
+         <normaloff/>
+        </iconset>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="0" colspan="2">
+      <widget class="QLabel" name="label">
+       <property name="text">
+        <string> sd file</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignBottom|Qt::AlignLeading|Qt::AlignLeft</set>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </widget>
+   <widget class="QWidget" name="layoutWidget_4">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>230</y>
+      <width>791</width>
+      <height>375</height>
+     </rect>
+    </property>
+    <layout class="QHBoxLayout" name="horizontalLayout">
+     <item>
+      <layout class="QVBoxLayout" name="verticalLayout">
+       <item>
+        <widget class="QLabel" name="label_molimage">
+         <property name="minimumSize">
+          <size>
+           <width>300</width>
+           <height>300</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>300</width>
+           <height>300</height>
+          </size>
+         </property>
+         <property name="contextMenuPolicy">
+          <enum>Qt::CustomContextMenu</enum>
+         </property>
+         <property name="frameShape">
+          <enum>QFrame::Box</enum>
+         </property>
+         <property name="frameShadow">
+          <enum>QFrame::Plain</enum>
+         </property>
+         <property name="text">
+          <string/>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <layout class="QHBoxLayout" name="horizontalLayout_2">
+         <item>
+          <widget class="QPushButton" name="btn_prev">
+           <property name="text">
+            <string/>
+           </property>
+           <property name="icon">
+            <iconset theme="go-previous-view">
+             <normaloff/>
+            </iconset>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLineEdit" name="le_recnumber">
+           <property name="alignment">
+            <set>Qt::AlignCenter</set>
+           </property>
+           <property name="readOnly">
+            <bool>true</bool>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="btn_next">
+           <property name="text">
+            <string/>
+           </property>
+           <property name="icon">
+            <iconset theme="go-next-view">
+             <normaloff/>
+            </iconset>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QCheckBox" name="check_rec_selected">
+           <property name="text">
+            <string>selected</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item>
+        <spacer name="verticalSpacer">
+         <property name="orientation">
+          <enum>Qt::Vertical</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>20</width>
+           <height>40</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+      </layout>
+     </item>
+     <item>
+      <layout class="QVBoxLayout" name="verticalLayout_2">
+       <item>
+        <widget class="QTableWidget" name="table_props">
+         <property name="columnCount">
+          <number>2</number>
+         </property>
+         <column/>
+         <column/>
+        </widget>
+       </item>
+       <item>
+        <widget class="QCheckBox" name="check_lipinski">
+         <property name="layoutDirection">
+          <enum>Qt::LeftToRight</enum>
+         </property>
+         <property name="text">
+          <string>highlight Lipinski</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </item>
+     <item>
+      <layout class="QVBoxLayout" name="verticalLayout_3">
+       <item>
+        <widget class="QPushButton" name="btn_del_sdf">
+         <property name="text">
+          <string>delete
+current sdf</string>
+         </property>
+         <property name="icon">
+          <iconset theme="edit-delete">
+           <normaloff/>
+          </iconset>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="btn_sdf_save">
+         <property name="text">
+          <string>save 
+current sdf</string>
+         </property>
+         <property name="icon">
+          <iconset theme="document-save">
+           <normaloff>../../../../.designer/backup</normaloff>../../../../.designer/backup</iconset>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="btn_session_load">
+         <property name="text">
+          <string>load session</string>
+         </property>
+         <property name="icon">
+          <iconset theme="document-open">
+           <normaloff/>
+          </iconset>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="btn_session_save">
+         <property name="text">
+          <string>save session</string>
+         </property>
+         <property name="icon">
+          <iconset theme="document-save">
+           <normaloff/>
+          </iconset>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="btn_select_all">
+         <property name="text">
+          <string>select all</string>
+         </property>
+         <property name="icon">
+          <iconset theme="list-add">
+           <normaloff/>
+          </iconset>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="btn_select_none">
+         <property name="text">
+          <string>select none</string>
+         </property>
+         <property name="icon">
+          <iconset theme="list-remove">
+           <normaloff/>
+          </iconset>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="btn_select_invert">
+         <property name="text">
+          <string>invert selection</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="btn_sdf_from_selection">
+         <property name="text">
+          <string>create sdf 
+from selection</string>
+         </property>
+         <property name="icon">
+          <iconset theme="task-accepted">
+           <normaloff/>
+          </iconset>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="btn_copy_molids">
+         <property name="text">
+          <string>copy selected 
+molids</string>
+         </property>
+         <property name="icon">
+          <iconset theme="edit-copy">
+           <normaloff/>
+          </iconset>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="btn_browse">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="text">
+          <string>open in
+ browser</string>
+         </property>
+         <property name="icon">
+          <iconset theme="download">
+           <normaloff/>
+          </iconset>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </item>
+    </layout>
+   </widget>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+ </widget>
+ <tabstops>
+  <tabstop>le_sdf_name</tabstop>
+  <tabstop>btn_sdf_load</tabstop>
+  <tabstop>btn_load_prev_cluster</tabstop>
+  <tabstop>btn_load_next_cluster</tabstop>
+  <tabstop>le_curr_sdf</tabstop>
+  <tabstop>combo_querytype</tabstop>
+  <tabstop>le_query</tabstop>
+  <tabstop>le_out</tabstop>
+  <tabstop>btn_start</tabstop>
+  <tabstop>btn_prev</tabstop>
+  <tabstop>le_recnumber</tabstop>
+  <tabstop>btn_next</tabstop>
+  <tabstop>check_lipinski</tabstop>
+  <tabstop>btn_hist</tabstop>
+  <tabstop>btn_scatter</tabstop>
+  <tabstop>combo_colorby</tabstop>
+  <tabstop>btn_scatter2</tabstop>
+  <tabstop>combo_compareto</tabstop>
+  <tabstop>btn_del_sdf</tabstop>
+  <tabstop>btn_sdf_save</tabstop>
+  <tabstop>btn_session_load</tabstop>
+  <tabstop>btn_session_save</tabstop>
+  <tabstop>table_props</tabstop>
+  <tabstop>table_query_view</tabstop>
+ </tabstops>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>le_sdf_name</sender>
+   <signal>returnPressed()</signal>
+   <receiver>btn_sdf_load</receiver>
+   <slot>click()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>195</x>
+     <y>37</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>431</x>
+     <y>38</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>le_out</sender>
+   <signal>returnPressed()</signal>
+   <receiver>btn_start</receiver>
+   <slot>click()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>600</x>
+     <y>89</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>740</x>
+     <y>90</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+</ui>

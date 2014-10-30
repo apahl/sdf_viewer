@@ -1,0 +1,9 @@
+.ipynb_checkpoints/
+.kdev4/
+sdf/
+*.pkl
+*.png
+*.mrv
+*.mol
+*.pyc
+.spyderproject
