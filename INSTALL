@@ -6,7 +6,7 @@ license: BSD, see license.txt in this folder
 *** Installation
 
 * dependencies:
-- RDKit (www.rdkit.org)
+- RDKit (http://rdkit.org)
 - Matplotlib
 - PyQt4
 
