@@ -46,6 +46,8 @@ cd into the extracted program folder and start the program by one of the followi
     (values are converted to lower-case in the text search):  "a.1" in s_family
   - field names beginning with "k_" (key, e.g. "k_molid") are used neither for plotting nor for coloring,
     but can be used in fact searching.
+* When the opened SDF does not follow this field naming scheme, the program tries to guess the types
+  of the fields and renames them accordingly.
 * Searches can be performed in the original sdf as well as in any other sublist derived from it by earlier searches.
   Just click on the respective entry in the table that lists all the search results 
   to make it the base for the next search. 
@@ -67,5 +69,3 @@ cd into the extracted program folder and start the program by one of the followi
 [ ] rename property
 [ ] select calculable properties
 [ ] create some unit tests
-
-

@@ -513,17 +513,17 @@ def remove_props_from_mol(mol, prop_or_propslist):
             mol.ClearProp(prop)
 
 
-def remove_props(mol_or_sdf, props):
-    if type(mol_or_sdf) == file:
+def remove_props(mol_or_sdf_list, props):
+    if type(mol_or_sdf_list) == file:
         print("  * operation not supported for file objects.")
         return
 
-    if type(mol_or_sdf) == list:
-        for mol in mol_or_sdf:
+    if type(mol_or_sdf_list) == list:
+        for mol in mol_or_sdf_list:
             if mol:
                 remove_props_from_mol(mol, props)
     else:
-        remove_props_from_mol(mol_or_sdf, props)
+        remove_props_from_mol(mol_or_sdf_list, props)
 
 
 def rename_prop_in_mol(mol, old_prop, new_prop):
@@ -533,12 +533,12 @@ def rename_prop_in_mol(mol, old_prop, new_prop):
         mol.ClearProp(old_prop)
 
 
-def rename_prop(mol_or_sdf, old_prop, new_prop):
-    if type(mol_or_sdf) == list:
-        for mol in mol_or_sdf:
+def rename_prop(mol_or_sdf_list, old_prop, new_prop):
+    if type(mol_or_sdf_list) == list:
+        for mol in mol_or_sdf_list:
             rename_prop_in_mol(mol, old_prop, new_prop)
     else:
-        rename_prop_in_mol(mol_or_sdf, old_prop, new_prop)
+        rename_prop_in_mol(mol_or_sdf_list, old_prop, new_prop)
 
 
 def calc_props_in_mol(mol, dateprop="k_date", include_date=True, force2d=False):
