@@ -23,10 +23,10 @@
   to make it the base for the next search. 
 
   * The **open in browser** button is used to call a website for the displayed record.
-  The function of the **open in browser** button can be defined in the *sdf_viewer_config.py* file (2 examples are given)   
+  The function of the **open in browser** button can be defined in the *sdf_viewer_config.py* file (2 examples are given)
     * when defined, a url template is formatted with an sdf property (e.g. "k_molid") 
     and the url is passed to webbrowser.open(url)
-    
+
 
   * Saved sessions can be opened again under the name of the original sd file, e.g. when the original file was openend 
   as *ugm2014_bzr* (with or without *.sdf*) then the saved session can also be loaded as *ugm2014_bzr*
