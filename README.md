@@ -10,9 +10,9 @@
   * When performing fact searches, please remember that number field names are prefixed with "n_"
   and text field names are prefixed with "s_". The program uses this to determine the plottable fields
   and the fields that can be used for the "colorby" option.   
-   * A search in the field that is displayed as "pIC50" in the table would therefore have to look 
+   * a search in the field that is displayed as "pIC50" in the table would therefore have to look 
    like this in the **query** entry field:  n_pIC50 >= 8
-   * And a search in the text field "family" accordingly like this 
+   * and a search in the text field "family" accordingly like this 
    (values are converted to lower-case in the text search):  "a.1" in s_family
    * field names beginning with "k_" (key, e.g. "k_molid") are used neither for plotting nor for coloring,
    but can be used in fact searching.
