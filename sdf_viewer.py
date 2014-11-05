@@ -23,13 +23,22 @@ from PyQt4 import QtGui, QtCore
 from gui.app import Ui_MainWindow
 
 import sdf_tools as sdft
-import sdf_viewer_config as config
 
 import pickle
 import webbrowser
 import os.path as op
 import os
 import tempfile
+
+# try to import local options file from ~/.sdf_viewer/ by adding the folder to sys.path:
+folder = op.join(op.expanduser("~"), ".sdf_viewer")
+if op.isdir(folder):
+    if not folder in sys.path:
+        sys.path.insert(0, folder)
+
+import sdf_viewer_config as config
+
+sys.stdout.flush() # flush the printing buffer...
 
 
 class App(QtGui.QMainWindow, Ui_MainWindow):
@@ -39,7 +48,7 @@ class App(QtGui.QMainWindow, Ui_MainWindow):
 
         self.FIRSTRUN = True
         self.SDFTYPE = ""
-        # self.le_sdf_name.setText("aviru_db")
+        self.le_sdf_name.setText(config.STARTUP_SDF)
         self.highlight_dict = config.HIGHLIGHT_DICT
 
         if not sys.platform.startswith("linux"): # to have some icons also on Windows
@@ -530,7 +539,7 @@ class App(QtGui.QMainWindow, Ui_MainWindow):
         print("  > available fields:", end="")
 
         for idx, field in enumerate(fields):
-            if idx % 4 == 0:
+            if idx % 5 == 0:
                 # new line
                 print()
                 print("    ", end="")

@@ -4,6 +4,9 @@
 
 from __future__ import absolute_import, division, print_function
 
+# this string will be used to fill the SDF file name entry field
+STARTUP_SDF = ""
+
 # used for Lipinski highlighting, change as needed
 HIGHLIGHT_DICT = {"n_molwt": 500.0, "n_hbd": 5, "n_hba": 10, "n_logp": 5.0, "n_rotb": 10, "n_tpsa": 130}
 
