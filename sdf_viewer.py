@@ -28,7 +28,7 @@ import pickle
 import webbrowser
 import os.path as op
 import os
-import tempfile
+from cStringIO import StringIO
 
 # try to import local options file from ~/.sdf_viewer/ by adding the folder to sys.path:
 folder = op.join(op.expanduser("~"), ".sdf_viewer")
@@ -101,7 +101,6 @@ class App(QtGui.QMainWindow, Ui_MainWindow):
         self.btn_select_none.setEnabled(False)
         self.btn_select_invert.setEnabled(False)
         self.label_molimage.customContextMenuRequested.connect(self.cntxt_menu)
-        self.tempfile = tempfile.NamedTemporaryFile(mode="w", delete=False) # for image depiction
 
         # can be omitted when @pyqtslot decorator is ***NOT*** used !!
         # QtCore.QObject.connect(self.table_query_view, QtCore.SIGNAL("cellClicked(int, int)"),
@@ -633,8 +632,13 @@ class App(QtGui.QMainWindow, Ui_MainWindow):
         else:
             self.btn_next.setEnabled(True)
 
-        Draw.MolToFile(self.curr_sdf[self.curr_sdf_mol_index], self.tempfile.name, imageType="png")
-        self.label_molimage.setPixmap(QtGui.QPixmap(self.tempfile.name))
+        img_file = StringIO() # for structure depiction
+        img = Draw.MolToImage(self.curr_sdf[self.curr_sdf_mol_index])
+        img.save(img_file, format='PNG')
+        # qimg = QtGui.QImage.fromData(img_file.getvalue())
+        qp = QtGui.QPixmap()
+        qp.loadFromData(img_file.getvalue(), "PNG")
+        self.label_molimage.setPixmap(qp)
         self.le_recnumber.setText("{} of {}".format(self.curr_sdf_mol_index+1, self.curr_sdf_num_of_mols))
 
         if self.SDF_CHANGED:
