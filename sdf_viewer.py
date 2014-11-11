@@ -273,7 +273,7 @@ class App(QtGui.QMainWindow, Ui_MainWindow):
         if "fact" in querytype:
             mol_list = sdft.factsearch(self.curr_sdf, query, invert=invert)
         else:
-            mol_list = sdft.fact_search(self.curr_sdf, query, invert=invert)
+            mol_list = sdft.substruct_search(self.curr_sdf, query, invert=invert)
         self.statusbar.showMessage("found {} matching records.".format(len(mol_list)), 2000)
         if mol_list:
             self.sdf_dict[sdf_name] = mol_list
