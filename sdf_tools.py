@@ -1559,7 +1559,7 @@ def neutralize_sdf(sdf_list_or_file, idprop="k_molid", show=False):
     return neutral_sdf, neutralized_molids
 
 
-def mol_grid(sdf_list, props, fn="img/grid.png"):
+def mol_grid(sdf_list, props, fn="img/grid.png", mols_per_row=5, sub_img_size=(200, 200)):
     """Draw a molecule grid from the input <sdf_list>. On IPython, an inline graphics will be returned
     in addition to writing the image to <fn>.
     The given sdf <props> (as a list) will be concatenated to the molecules' legends."""
@@ -1573,7 +1573,7 @@ def mol_grid(sdf_list, props, fn="img/grid.png"):
         leg_str = "_".join(leg)
         legends.append(leg_str)
 
-    img = Draw.MolsToGridImage(sdf_list, molsPerRow=5, subImgSize=(200, 200), legends=legends)
+    img = Draw.MolsToGridImage(sdf_list, molsPerRow=mols_per_row, subImgSize=sub_img_size, legends=legends)
     img.save(fn)
 
     if IPYTHON:
