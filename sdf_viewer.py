@@ -404,11 +404,14 @@ class App(QtGui.QMainWindow, Ui_MainWindow):
         menu = QtGui.QMenu()
         copy_as_ctab = menu.addAction("Copy as CTab")
         copy_as_smiles = menu.addAction("Copy as Smiles")
+        copy_as_image = menu.addAction("Copy as Image")
         action = menu.exec_(self.mapToGlobal(pos))
         if action == copy_as_ctab:
             self.do_copy_as_ctab()
         elif action == copy_as_smiles:
             self.do_copy_as_smiles()
+        elif action == copy_as_image:
+            self.do_copy_as_image()
 
 
     def do_copy_as_ctab(self):
@@ -419,6 +422,10 @@ class App(QtGui.QMainWindow, Ui_MainWindow):
     def do_copy_as_smiles(self):
         smiles = Chem.MolToSmiles(self.curr_sdf[self.curr_sdf_mol_index])
         QtGui.QApplication.clipboard().setText(smiles)
+
+
+    def do_copy_as_image(self):
+        QtGui.QApplication.clipboard().setPixmap(self.qpixmap)
 
 
     #@QtCore.pyqtSlot()
@@ -636,9 +643,9 @@ class App(QtGui.QMainWindow, Ui_MainWindow):
         img = Draw.MolToImage(self.curr_sdf[self.curr_sdf_mol_index])
         img.save(img_file, format='PNG')
         # qimg = QtGui.QImage.fromData(img_file.getvalue())
-        qp = QtGui.QPixmap()
-        qp.loadFromData(img_file.getvalue(), "PNG")
-        self.label_molimage.setPixmap(qp)
+        self.qpixmap = QtGui.QPixmap()
+        self.qpixmap.loadFromData(img_file.getvalue(), "PNG")
+        self.label_molimage.setPixmap(self.qpixmap)
         self.le_recnumber.setText("{} of {}".format(self.curr_sdf_mol_index+1, self.curr_sdf_num_of_mols))
 
         if self.SDF_CHANGED:
