@@ -743,8 +743,9 @@ def substruct_search(sdf_list_or_file, smarts, invert=False, max_hits=5000, coun
 
     print("  > searching...")
     for mol_counter_in, mol in enumerate(sdf_list_or_file):
-        hit = False
         if not mol: continue
+
+        hit = False
         if add_h:
             mol_with_h = Chem.AddHs(mol)
             if mol_with_h.HasSubstructMatch(query):
