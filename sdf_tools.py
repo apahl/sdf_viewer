@@ -1561,15 +1561,15 @@ def neutralize_sdf(sdf_list_or_file, idprop="k_molid", show=False):
 
 
 def scatter_props(sdf_list, props_list):
-    """plot a scatter plot for exactly two properties, x and y
-    currently cmdline only, not yet implemented in the GUI"""
+    """Plot a scatter plot for exactly two properties, x and y.
+    Currently cmdline only, not yet implemented in the GUI"""
     if len(props_list) != 2:
         print("  * function scatter_props has to be used with a props_list of length 2")
         return
     sdf_list_sel = [mol for mol in sdf_list if mol.HasProp(props_list[0]) and mol.HasProp(props_list[1])]
     x = [float(mol.GetProp(props_list[0])) for mol in sdf_list_sel]
     y = [float(mol.GetProp(props_list[1])) for mol in sdf_list_sel]
-    pylab.scatter(x,y, s=40, color="r")
+    pylab.scatter(x, y, s=40, color="r")
 
 
 def mol_grid(sdf_list, props, fn="img/grid.png", mols_per_row=5, sub_img_size=(200, 200)):
