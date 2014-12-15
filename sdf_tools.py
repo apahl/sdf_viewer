@@ -35,6 +35,8 @@ from rdkit.Chem.Fingerprints import FingerprintMols
 from rdkit import DataStructs
 from rdkit.ML.Cluster import Butina
 
+from PIL import Image, ImageChops
+
 import os
 import sys
 import random
@@ -103,6 +105,17 @@ def create_dir_if_not_exist(dir_name):
     if not op.exists(dir_name):
         print("  * target folder does not exist, creating {}...".format(dir_name))
         os.makedirs(dir_name)
+
+
+def autocrop(im, bgcolor):
+    if im.mode != "RGB":
+        im = im.convert("RGB")
+    bg = Image.new("RGB", im.teiize, bgcolor)
+    diff = ImageChops.difference(im, bg)
+    bbox = diff.getbbox()
+    if bbox:
+        return im.crop(bbox)
+    return None # no contents
 
 
 def load_sdf(file_name_or_obj="testset.sdf", large_sdf=False):
