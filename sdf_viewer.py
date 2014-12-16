@@ -24,8 +24,6 @@ from gui.app import Ui_MainWindow
 
 import sdf_tools as sdft
 
-from PIL import ImageQt
-
 import pickle
 import webbrowser
 import os.path as op
