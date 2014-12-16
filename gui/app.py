@@ -2,8 +2,8 @@
 
 # Form implementation generated from reading ui file 'gui/app.ui'
 #
-# Created: Thu Oct 30 12:54:58 2014
-#      by: PyQt4 UI code generator 4.11.2
+# Created: Tue Dec 16 14:25:42 2014
+#      by: PyQt4 UI code generator 4.11.3
 #
 # WARNING! All changes made in this file will be lost!
 
@@ -157,9 +157,12 @@ class Ui_MainWindow(object):
         self.label_molimage.setMinimumSize(QtCore.QSize(300, 300))
         self.label_molimage.setMaximumSize(QtCore.QSize(300, 300))
         self.label_molimage.setContextMenuPolicy(QtCore.Qt.CustomContextMenu)
+        self.label_molimage.setAutoFillBackground(True)
+        self.label_molimage.setStyleSheet(_fromUtf8("background-color : white;"))
         self.label_molimage.setFrameShape(QtGui.QFrame.Box)
         self.label_molimage.setFrameShadow(QtGui.QFrame.Plain)
         self.label_molimage.setText(_fromUtf8(""))
+        self.label_molimage.setAlignment(QtCore.Qt.AlignCenter)
         self.label_molimage.setObjectName(_fromUtf8("label_molimage"))
         self.verticalLayout.addWidget(self.label_molimage)
         self.horizontalLayout_2 = QtGui.QHBoxLayout()

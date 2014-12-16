@@ -24,6 +24,8 @@ from gui.app import Ui_MainWindow
 
 import sdf_tools as sdft
 
+from PIL import ImageQt
+
 import pickle
 import webbrowser
 import os.path as op
@@ -640,7 +642,7 @@ class App(QtGui.QMainWindow, Ui_MainWindow):
             self.btn_next.setEnabled(True)
 
         img_file = StringIO() # for structure depiction
-        img = Draw.MolToImage(self.curr_sdf[self.curr_sdf_mol_index])
+        img = sdft.autocrop(Draw.MolToImage(self.curr_sdf[self.curr_sdf_mol_index]), "white")
         img.save(img_file, format='PNG')
         # qimg = QtGui.QImage.fromData(img_file.getvalue())
         self.qpixmap = QtGui.QPixmap()
