@@ -110,7 +110,7 @@ def create_dir_if_not_exist(dir_name):
 def autocrop(im, bgcolor):
     if im.mode != "RGB":
         im = im.convert("RGB")
-    bg = Image.new("RGB", im.teiize, bgcolor)
+    bg = Image.new("RGB", im.size, bgcolor)
     diff = ImageChops.difference(im, bg)
     bbox = diff.getbbox()
     if bbox:
