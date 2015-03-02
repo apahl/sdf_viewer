@@ -118,6 +118,12 @@ def autocrop(im, bgcolor):
     return None # no contents
 
 
+def print_dict(d):
+    max_len = max(map(len, d.keys()))
+    for k in sorted(d.keys()):
+        print("  {d_key:{width}s}: {num:7d}".format(d_key=k, width=max_len, num=d[k]))
+
+
 def load_sdf(file_name_or_obj="testset.sdf", large_sdf=False):
     """load small sdf completely in memory as list; return large sdf as file object
     function accepts a string filename or a file object"""
@@ -298,6 +304,7 @@ def iterate_over_reagents_file(fn="testset.sdf", supplier="__guess__",
 def iterate_over_sdf_file(fn="testset.sdf", max_num_recs=1000000, actives_only=False, dryrun=False):
     reader = Chem.SDMolSupplier(fn)
     if not dryrun:
+        removals_sdf = []
         writer = Chem.SDWriter("output.sdf")
     mol_counter_in = 0
     mol_counter_out = 0
@@ -316,8 +323,11 @@ def iterate_over_sdf_file(fn="testset.sdf", max_num_recs=1000000, actives_only=F
                 old_value = float(mol.GetProp("n_clpp_percact"))
 
             except ValueError:
-                removals["no_activity"] += 1
+                removals["valueerror"] += 1
                 mol.ClearProp("n_clpp_percact")
+                if not dryrun:
+                    mol.SetProp("s_reason", "valueerror")
+                    removals_sdf.append(mol)
                 continue
 
             new_value = 100 - old_value
@@ -328,6 +338,10 @@ def iterate_over_sdf_file(fn="testset.sdf", max_num_recs=1000000, actives_only=F
 
         else:
             removals["no_activity"] += 1
+            if not dryrun:
+                mol.SetProp("s_reason", "no activity")
+                removals_sdf.append(mol)
+
             continue
 
         if mol.HasProp("pIC50@ClpP"):
@@ -344,11 +358,14 @@ def iterate_over_sdf_file(fn="testset.sdf", max_num_recs=1000000, actives_only=F
         # remove organometallics
         WRITE_TO_OUTPUT = True
         calc_props_in_mol(mol, include_date = False)
-        formula = mol.GetProp("s_formula").lower()
-        for element in ["hg", "pd", "pt", "os", "mn", "ti"]:
+        formula = mol.GetProp("s_formula")
+        for element in ["Hg", "Pd", "Pt", "Os", "Mn", "Ti"]:
             if element in formula:
                 WRITE_TO_OUTPUT = False
                 removals["organometallic"] += 1
+                if not dryrun:
+                    mol.SetProp("s_reason", "organometallic")
+                    removals_sdf.append(mol)
                 break
 
         # remove low or high molwt
@@ -357,9 +374,17 @@ def iterate_over_sdf_file(fn="testset.sdf", max_num_recs=1000000, actives_only=F
             if molwt > 600:
                 WRITE_TO_OUTPUT = False
                 removals["molwt_high"] += 1
+                if not dryrun:
+                    mol.SetProp("s_reason", "molwt high")
+                    removals_sdf.append(mol)
+
             if molwt < 200:
                 WRITE_TO_OUTPUT = False
                 removals["molwt_low"] += 1
+                if not dryrun:
+                    mol.SetProp("s_reason", "molwt low")
+                    removals_sdf.append(mol)
+
 
 
         if WRITE_TO_OUTPUT:
@@ -379,15 +404,22 @@ def iterate_over_sdf_file(fn="testset.sdf", max_num_recs=1000000, actives_only=F
             print("  > processed: {:7d}   found: {:6d}\r".format(mol_counter_in, mol_counter_out), end="")
             sys.stdout.flush()
 
-    print("  > processed: {:7d}   found: {:6d}".format(mol_counter_in, mol_counter_out))
+    print("  > processed: {:6d}   found: {:6d}".format(mol_counter_in, mol_counter_out))
     print("    done.")
 
     if not dryrun:
         writer.close()
+        if len(removals_sdf) > 0:
+            write_sdf(removals_sdf, "removals.sdf")
+        else:
+            print("  > no molecules in removals_sdf")
 
-    print("Molecules removed for the following reasons:")
-    for reason in removals:
-        print("{:20s}: {:4d}".format(reason, removals[reason]))
+    print("Molecules removed for the following reasons:", end="")
+    if not dryrun and len(removals_sdf) > 0:
+        print(" (written to removals.sdf)")
+    else:
+        print()
+    print_dict(removals)
 
 
 def enum_racemates(sdf_list_or_file, find_only=True):
