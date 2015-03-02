@@ -406,19 +406,19 @@ def iterate_over_sdf_file(fn="testset.sdf", max_num_recs=1000000, actives_only=F
 
     print("  > processed: {:6d}   found: {:6d}".format(mol_counter_in, mol_counter_out))
     print("    done.")
+    print("Molecules removed for the following reasons:", end="")
 
     if not dryrun:
         writer.close()
+
         if len(removals_sdf) > 0:
             write_sdf(removals_sdf, "removals.sdf")
+            print(" (written to removals.sdf)")
         else:
-            print("  > no molecules in removals_sdf")
-
-    print("Molecules removed for the following reasons:", end="")
-    if not dryrun and len(removals_sdf) > 0:
-        print(" (written to removals.sdf)")
+            print(" (no molecules in removals_sdf)")
     else:
         print()
+
     print_dict(removals)
 
 
