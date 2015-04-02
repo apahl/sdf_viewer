@@ -1,4 +1,4 @@
-#!/usr/bin/env python2
+#!/usr/bin/env python
 #-*- coding: utf-8 -*-
 # sdf_tools.py
 # version: 2014-10-24
@@ -44,8 +44,16 @@ import math
 import csv
 import os.path as op
 
-from time import strftime
+from time import sleep, strftime
 from collections import Counter
+
+if sys.version_info[0] > 2:
+    import io
+    PY3 = True
+    file_type = io.IOBase
+else:
+    PY3 = False
+    file_type = file
 
 if hasattr(sys, "ps1"): # <True> when called from an interactive session
     print("  > interactive session, trying to import display_png from IPython...", end="")
@@ -128,15 +136,18 @@ def load_sdf(file_name_or_obj="testset.sdf", large_sdf=False):
     """load small sdf completely in memory as list; return large sdf as file object
     function accepts a string filename or a file object"""
 
-    if type(file_name_or_obj) == str:
-        file_obj = open(file_name_or_obj)
+    if isinstance(file_name_or_obj, str):
+        if PY3:
+            file_obj = open(file_name_or_obj, "rb")
+        else:
+            file_obj = open(file_name_or_obj)
     else:
         file_obj = file_name_or_obj
 
     reader = Chem.ForwardSDMolSupplier(file_obj)
 
     if large_sdf:
-        if type(file_name_or_obj) == str:
+        if isinstance(file_name_or_obj, str):
             print("  > large sdf {} loaded as file object.".format(file_name_or_obj.split(".")[0]))
         else:
             print("  > large sdf loaded as file object.")
@@ -149,7 +160,7 @@ def load_sdf(file_name_or_obj="testset.sdf", large_sdf=False):
         if mol:
             sdf_list.append(mol)
 
-    if type(file_name_or_obj) == str:
+    if isinstance(file_name_or_obj, str):
         print("  > sdf {} loaded with {} records.".format(file_name_or_obj.split(".")[0], len(sdf_list)))
     else:
         print("  > sdf loaded with {} records.".format(len(sdf_list)))
@@ -158,7 +169,7 @@ def load_sdf(file_name_or_obj="testset.sdf", large_sdf=False):
 
 
 def write_sdf(sdf_list, fn, conf_id=-1):
-    if type(sdf_list) != list and type(sdf_list) != file:
+    if not (isinstance(sdf_list, list) or isinstance(sdf_list, file_type)):
         sdf_list = [sdf_list]
 
     writer = Chem.SDWriter(fn)
@@ -172,7 +183,7 @@ def write_sdf(sdf_list, fn, conf_id=-1):
 def write_pdb(sdf_list, fn):
     """sdf_list can be a single molecule or a list of molecules"""
 
-    if type(sdf_list) != list:
+    if not isinstance(sdf_list, list):
         sdf_list = list(sdf_list)
 
     writer = Chem.PDBWriter(fn)
@@ -185,7 +196,7 @@ def write_pdb(sdf_list, fn):
 
 def prepare_for_viewer(sdf_list):
 
-    if type(sdf_list) != list:
+    if not isinstance(sdf_list, list):
         print("  * function prepare_for_viewer currently only handles lists.")
         return
 
@@ -435,7 +446,7 @@ def enum_racemates(sdf_list_or_file, find_only=True):
     result_sdf = []
     racemic_molids = []
 
-    if type(sdf_list_or_file) != list and sdf_list_or_file.atEnd(): # sdf is file
+    if not isinstance(sdf_list_or_file, list) and sdf_list_or_file.atEnd(): # sdf is file
         print("  * file object is at end, please reload.")
         return None
 
@@ -471,7 +482,7 @@ def enum_racemates(sdf_list_or_file, find_only=True):
 def list_fields(sdf_list_or_file):
     field_list = []
 
-    if type(sdf_list_or_file) == list:
+    if isinstance(sdf_list_or_file, list):
         if len(sdf_list_or_file) > 100:
             sdf_sample = random.sample(sdf_list_or_file, len(sdf_list_or_file)//2)
         else:
@@ -551,7 +562,7 @@ def merge_prop_from_file(sdf_list, fn, prop):
 
 
 def remove_props_from_mol(mol, prop_or_propslist):
-    if type(prop_or_propslist) != list:
+    if not isinstance(prop_or_propslist, list):
         prop_or_propslist = [prop_or_propslist]
     for prop in prop_or_propslist:
         if prop in mol.GetPropNames():
@@ -559,11 +570,11 @@ def remove_props_from_mol(mol, prop_or_propslist):
 
 
 def remove_props(mol_or_sdf_list, props):
-    if type(mol_or_sdf_list) == file:
+    if isinstance(mol_or_sdf_list, file_type):
         print("  * operation not supported for file objects.")
         return
 
-    if type(mol_or_sdf_list) == list:
+    if isinstance(mol_or_sdf_list, list):
         for mol in mol_or_sdf_list:
             if mol:
                 remove_props_from_mol(mol, props)
@@ -579,7 +590,7 @@ def rename_prop_in_mol(mol, old_prop, new_prop):
 
 
 def rename_prop(mol_or_sdf_list, old_prop, new_prop):
-    if type(mol_or_sdf_list) == list:
+    if isinstance(mol_or_sdf_list, list):
         for mol in mol_or_sdf_list:
             rename_prop_in_mol(mol, old_prop, new_prop)
     else:
@@ -622,7 +633,7 @@ def get_highest_counter(mol_or_sdf, counterprop="k_molid"):
 
 def calc_props(mol_or_sdf, counterprop="k_molid", dateprop="k_date",
                include_date=True, force2d=False):
-    if type(mol_or_sdf) != list:
+    if not isinstance(mol_or_sdf, list):
         calc_props_in_mol(mol_or_sdf, dateprop, include_date, force2d)
         return
 
@@ -639,7 +650,7 @@ def calc_props(mol_or_sdf, counterprop="k_molid", dateprop="k_date",
 
 def sort_sdf(sdf_list, field, reverse=True):
     if field[:2] in "n_ k_":
-        sdf_list.sort(cmp=lambda x,y: cmp(float(x.GetProp(field)), float(y.GetProp(field))), reverse=reverse)
+        sdf_list.sort(key=lambda x: float(x.GetProp(field)), reverse=reverse)
     else:
         print("  * only sorting of numbers is currently supported.")
 
@@ -651,7 +662,7 @@ def activity_hist(sdf_list_or_file, activityprop):
     act_med = "medium (20 - <50)"
     act_low = "low    ( 0 - <20)"
 
-    if type(sdf_list_or_file) != list and sdf_list_or_file.atEnd(): # sdf is file
+    if not isinstance(sdf_list_or_file, list) and sdf_list_or_file.atEnd(): # sdf is file
         print("  * file object is at end, please reload.")
         return
 
@@ -708,7 +719,7 @@ def factsearch(sdf_list_or_file, query, invert=False, max_hits=2000, count_only=
 
     query_mod = query.replace(field, "val")
 
-    if type(sdf_list_or_file) != list and sdf_list_or_file.atEnd(): # sdf is file
+    if not isinstance(sdf_list_or_file, list) and sdf_list_or_file.atEnd(): # sdf is file
         print("  * file object is at end, please reload.")
         return None
 
@@ -778,7 +789,7 @@ def substruct_search(sdf_list_or_file, smarts, invert=False, max_hits=5000, coun
         print("  * ERROR: could not generate query from SMARTS.")
         return None
 
-    if type(sdf_list_or_file) != list and sdf_list_or_file.atEnd(): # sdf is file
+    if not isinstance(sdf_list_or_file, list) and sdf_list_or_file.atEnd(): # sdf is file
         print("  * file object is at end, please reload.")
         return None
 
@@ -843,7 +854,7 @@ def similarity_search(sdf_list_or_file, smarts, similarity=0.8, max_hits=2000, c
 
     query_fp = FingerprintMols.FingerprintMol(query_mol)
 
-    if type(sdf_list_or_file) != list and sdf_list_or_file.atEnd(): # sdf is file
+    if not isinstance(sdf_list_or_file, list) and sdf_list_or_file.atEnd(): # sdf is file
         print("  * file object is at end, please reload.")
         return None
 
@@ -894,7 +905,7 @@ def similarity_hist(sdf_list_or_file, smarts, min_similarity=0.5):
 
     query_fp = FingerprintMols.FingerprintMol(query_mol)
 
-    if type(sdf_list_or_file) != list and sdf_list_or_file.atEnd(): # sdf is file
+    if not isinstance(sdf_list_or_file, list) and sdf_list_or_file.atEnd(): # sdf is file
         print("  * file object is at end, please reload.")
         return None
 
@@ -930,7 +941,7 @@ def similarity_list(sdf_list_or_file, smarts):
 
     query_fp = FingerprintMols.FingerprintMol(query_mol)
 
-    if type(sdf_list_or_file) != list and sdf_list_or_file.atEnd(): # sdf is file
+    if not isinstance(sdf_list_or_file, list) and sdf_list_or_file.atEnd(): # sdf is file
         print("  * file object is at end, please reload.")
         return None
 
@@ -959,7 +970,7 @@ def get_num_props_dict(sdf_list, fields=None):
     # only return the numerical database fields:
     num_props_list = [prop for prop in all_props_list if prop[:2] == "n_"]
 
-    if fields == None or type(fields) != list:
+    if fields == None or not isinstance(fields, list):
         props_list = num_props_list
     else:
         # make sure the <fields> are valid fields in the sdf
@@ -1046,7 +1057,7 @@ def show_hist(sdf_list, fields=None, show=True, savefig=True):
         print("  * show_hist does not work because pylab could not be imported.")
         return
 
-    if type(sdf_list) != list:
+    if not isinstance(sdf_list, list):
         print("  * ERROR: plots are currently only implemented for sdf lists (no files).")
         return
 
@@ -1090,7 +1101,7 @@ def show_scattermatrix(sdf_list, fields=None, colorby=None, mode="show"):
         print("  * show_scattermatrix does not work because pylab could not be imported.")
         return
 
-    if type(sdf_list) != list:
+    if not isinstance(sdf_list, list):
         print("  * ERROR: plots are currently only implemented for sdf lists (no files).")
         return
 
@@ -1220,7 +1231,7 @@ def show_scattermatrix2(sdf_list, sdf_base, fields=None, mode="show"):
         print("  * show_scattermatrix does not work because pylab could not be imported.")
         return
 
-    if type(sdf_list) != list:
+    if not isinstance(sdf_list, list):
         print("  * ERROR: plots are currently only implemented for sdf lists (no files).")
         return
 
@@ -1353,7 +1364,7 @@ def cluster_from_sdf_list(sdf_list, cutoff=0.2):
         print("        {:4d}            {:3d}".format(length, counter[length]))
 
     # return sorted by cluster length
-    return sorted(cluster_idx_list, cmp=lambda x,y: cmp(len(x), len(y)), reverse=True)
+    return sorted(cluster_idx_list, key=len, reverse=True)
 
 
 def get_sdf_from_index_list(orig_sdf, index_list):
@@ -1366,11 +1377,11 @@ def get_sdf_from_id_list(sdf_list_or_file, id_dict_or_list, calc_ex_mw=True):
     result_sdf = []
     result_id_list = []
 
-    if type(sdf_list_or_file) != list and sdf_list_or_file.atEnd(): # sdf is file
+    if not isinstance(sdf_list_or_file, list) and sdf_list_or_file.atEnd(): # sdf is file
         print("  * file object is at end, please reload.")
         return None
 
-    if type(id_dict_or_list) == dict:
+    if isinstance(id_dict_or_list, dict):
         add_props = True
         id_list = id_dict_or_list.keys()
     else:
@@ -1466,7 +1477,7 @@ def analyze_cluster_idx_list(orig_sdf, cluster_idx_list, mode="remove_singletons
         return new_idx_list
 
     if mode == "ind_activity":
-        new_idx_list = sorted(cluster_idx_list, cmp=lambda x,y: cmp(get_max_act_in_cluster(orig_sdf, x, act_prop), get_max_act_in_cluster(orig_sdf, y, act_prop)), reverse=True)
+        new_idx_list = sorted(cluster_idx_list, key=lambda x: get_max_act_in_cluster(orig_sdf, x, act_prop), reverse=True)
         print("  > max ind_activity and number of members in the first ten clusters:")
         print("    index  ind_act  #members")
         print("    =====  =======  ========")
@@ -1477,7 +1488,7 @@ def analyze_cluster_idx_list(orig_sdf, cluster_idx_list, mode="remove_singletons
         return new_idx_list
 
     if mode == "med_activity":
-        new_idx_list = sorted(cluster_idx_list, cmp=lambda x,y: cmp(get_med_act_in_cluster(orig_sdf, x, act_prop), get_med_act_in_cluster(orig_sdf, y, act_prop)), reverse=True)
+        new_idx_list = sorted(cluster_idx_list, key=lambda x: get_med_act_in_cluster(orig_sdf, x, act_prop), reverse=True)
         print("  > max med_activity in the first ten clusters:")
         for cl_counter, cluster in enumerate(new_idx_list):
             print("{}: {}   ".format(cl_counter, get_med_act_in_cluster(orig_sdf, cluster, act_prop)), end="")
@@ -1584,7 +1595,7 @@ def neutralize_sdf(sdf_list_or_file, idprop="k_molid", show=False):
     counter_in = 0
     counter_out = 0
 
-    if type(sdf_list_or_file) != list and sdf_list_or_file.atEnd(): # sdf is file
+    if not isinstance(sdf_list_or_file, list) and sdf_list_or_file.atEnd(): # sdf is file
         print("  * file object is at end, please reload.")
         return None
 
@@ -1622,7 +1633,7 @@ def mol_grid(sdf_list, props, fn="img/grid.png", mols_per_row=5, sub_img_size=(2
     in addition to writing the image to <fn>.
     The given sdf <props> (as a list) will be concatenated to the molecules' legends."""
 
-    if type(props) != list:
+    if not isinstance(props, list):
         props = [props]
 
     legends = []

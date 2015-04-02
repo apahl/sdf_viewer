@@ -1,11 +1,10 @@
-#!/usr/bin/env python2
+#!/usr/bin/env python
+#-*- coding: utf-8 -*-
 # sdf_viewer.py
 # version: 2014-10-24
 # author:  Axel Pahl (APL)
 # contact: firstnamelastname at gmx dot de
 # license: BSD, see license.txt in this folder
-
-# *** REFACTOR: db --> sdf
 
 from __future__ import absolute_import, division, print_function # , unicode_literals
 
@@ -28,7 +27,18 @@ import pickle
 import webbrowser
 import os.path as op
 import os
-from cStringIO import StringIO
+
+if sys.version_info[0] > 2:
+    import io
+    from io import BytesIO as IO
+    print("  > runnning on Python3")
+    PY3 = True
+    file_type = io.IOBase
+else:
+    from cStringIO import StringIO as IO
+    PY3 = False
+    file_type = file
+
 
 # try to import local options file from ~/.sdf_viewer/ by adding the folder to sys.path:
 folder = op.join(op.expanduser("~"), ".sdf_viewer")
@@ -639,7 +649,7 @@ class App(QtGui.QMainWindow, Ui_MainWindow):
         else:
             self.btn_next.setEnabled(True)
 
-        img_file = StringIO() # for structure depiction
+        img_file = IO() # for structure depiction
         img = sdft.autocrop(Draw.MolToImage(self.curr_sdf[self.curr_sdf_mol_index]), "white")
         img.save(img_file, format='PNG')
         # qimg = QtGui.QImage.fromData(img_file.getvalue())
