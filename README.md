@@ -5,7 +5,7 @@
 
 ## News
 
-This is the first version that runs under Python 2 *and* Python3 (with the latest RDKit master compiled for the respective Python version, of course)
+* 2015-05-28: This is the first version that runs under Python 2 **and** Python3 (with the latest RDKit master compiled for the respective Python version, of course)
 
 ## Introduction
 
