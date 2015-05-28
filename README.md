@@ -3,6 +3,16 @@
 ### axelpahl at gmx dot de
 ### license: BSD, see [license.txt](license.txt) in this folder
 
+## News
+
+This is the first version that runs under Python 2 *and* Python3 (with the latest RDKit master compiled for the respective Python version, of course)
+
+## Introduction
+
+SDF_Viewer is a Python program that uses EDKit, PyQt and Matplotlib to display chemical structure data files (SDF) 
+and display their properties in charts.
+The program runs under Python2 and Python3 and has been developed on and for Linux and was also tested on Windows.
+
 ## Usage
 
 * For features and usage of the program, see also sdf_viewer.pdf, included in this folder (presented on RDKit UGM 2014).

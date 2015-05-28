@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 #-*- coding: utf-8 -*-
 # sdf_viewer.py
-# version: 2014-10-24
+# version: 2015-05-28
 # author:  Axel Pahl (APL)
 # contact: firstnamelastname at gmx dot de
 # license: BSD, see license.txt in this folder

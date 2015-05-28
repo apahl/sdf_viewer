@@ -1,25 +1,13 @@
 #!/usr/bin/env python
 #-*- coding: utf-8 -*-
 # sdf_tools.py
-# version: 2014-10-24
+# version: 2015-05-28
 # author:  Axel Pahl (APL)
 # contact: firstnamelastname at gmx dot de
 # license: BSD, see license.txt in this folder
 
 #==============================================================================
 # TODO: implement class-based version
-#==============================================================================
-# TODO: implement progressbar
-# progressbar code:
-# import progressbar as pb
-# # downloaded from https://github.com/fnoble/python-progressbar/tree/ipython_support
-# # location: /home/apl/dev/python/libs/
-# # encapsulate in try: ... except:
-# widgets = ['Processed: ', pb.Counter("%5d"), ' molecules [', pb.Timer(), ']']
-# pbar = pb.ProgressBar(widgets=widgets).start()
-# for i in range(80):
-#   pbar.update(i+1)
-#   time.sleep(0.2)
 #==============================================================================
 
 from __future__ import absolute_import, division, print_function # , unicode_literals
