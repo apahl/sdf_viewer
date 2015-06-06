@@ -7,7 +7,8 @@
 # license: BSD, see license.txt in this folder
 
 #==============================================================================
-# TODO: implement class-based version
+# current development (05-Jun-2015): make the tools less dependent 
+#         from the type in the property name (k_molid, n_LogP, ...)
 #==============================================================================
 
 from __future__ import absolute_import, division, print_function # , unicode_literals
@@ -636,11 +637,18 @@ def calc_props(mol_or_sdf, counterprop="k_molid", dateprop="k_date",
         calc_props_in_mol(mol, dateprop, include_date, force2d)
 
 
+def _key_get_prop(mol, field):
+    try:
+        val = float(mol.GetProp(field))
+    except ValueError: # GetProp could not be converted to float
+        val = mol.GetProp(field)
+    except KeyError:   # field is not present in the mol properties
+        val = 10000000.0
+    return val
+
+
 def sort_sdf(sdf_list, field, reverse=True):
-    if field[:2] in "n_ k_":
-        sdf_list.sort(key=lambda x: float(x.GetProp(field)), reverse=reverse)
-    else:
-        print("  * only sorting of numbers is currently supported.")
+    sdf_list.sort(key=lambda x: _key_get_prop(x, field), reverse=reverse)
 
 
 def activity_hist(sdf_list_or_file, activityprop):
