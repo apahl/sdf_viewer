@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 #-*- coding: utf-8 -*-
 # sdf_tools.py
 # version: 2015-05-28
@@ -7,8 +7,12 @@
 # license: BSD, see license.txt in this folder
 
 #==============================================================================
-# current development (05-Jun-2015): make the tools less dependent 
-#         from the type in the property name (k_molid, n_LogP, ...)
+# current development branch (05-Jun-2015): 
+# * make the tools less dependent from the type in the property name 
+#   (k_molid, n_LogP, ...)
+# * add SAR table to the tools
+# -----------------------------------------------------------------------------
+# - sort_sdf: done (05-Jun-2015)
 #==============================================================================
 
 from __future__ import absolute_import, division, print_function # , unicode_literals
@@ -586,7 +590,7 @@ def rename_prop(mol_or_sdf_list, old_prop, new_prop):
         rename_prop_in_mol(mol_or_sdf_list, old_prop, new_prop)
 
 
-def calc_props_in_mol(mol, dateprop="k_date", include_date=True, force2d=False):
+def calc_props_in_mol(mol, dateprop="date", include_date=True, force2d=False):
 
     if force2d:
         mol.Compute2DCoords()
@@ -596,18 +600,18 @@ def calc_props_in_mol(mol, dateprop="k_date", include_date=True, force2d=False):
         except ValueError: # no 2D coords... calculate them
             mol.Compute2DCoords()
 
-    mol.SetProp("n_molwt", "{:.2f}".format(Desc.MolWt(mol)))
-    mol.SetProp("s_formula", Chem.CalcMolFormula(mol))
-    mol.SetProp("n_logp", "{:.2f}".format(Desc.MolLogP(mol)))
-    mol.SetProp("n_hba", str(Desc.NOCount(mol)))
-    mol.SetProp("n_hbd", str(Desc.NHOHCount(mol)))
-    mol.SetProp("n_rotb", str(Desc.NumRotatableBonds(mol)))
-    mol.SetProp("n_tpsa", str(int(Desc.TPSA(mol))))
+    mol.SetProp("molwt", "{:.2f}".format(Desc.MolWt(mol)))
+    mol.SetProp("formula", Chem.CalcMolFormula(mol))
+    mol.SetProp("logp", "{:.2f}".format(Desc.MolLogP(mol)))
+    mol.SetProp("hba", str(Desc.NOCount(mol)))
+    mol.SetProp("hbd", str(Desc.NHOHCount(mol)))
+    mol.SetProp("rotb", str(Desc.NumRotatableBonds(mol)))
+    mol.SetProp("tpsa", str(int(Desc.TPSA(mol))))
     if include_date and not dateprop in mol.GetPropNames():
         mol.SetProp(dateprop, strftime("%Y%m%d"))
 
 
-def get_highest_counter(mol_or_sdf, counterprop="k_molid"):
+def get_highest_counter(mol_or_sdf, counterprop="molid"):
     # get highest counter in sdf
     molid_counter = 0
 
@@ -620,7 +624,7 @@ def get_highest_counter(mol_or_sdf, counterprop="k_molid"):
     return molid_counter
 
 
-def calc_props(mol_or_sdf, counterprop="k_molid", dateprop="k_date",
+def calc_props(mol_or_sdf, counterprop="molid", dateprop="date",
                include_date=True, force2d=False):
     if not isinstance(mol_or_sdf, list):
         calc_props_in_mol(mol_or_sdf, dateprop, include_date, force2d)
@@ -640,7 +644,7 @@ def calc_props(mol_or_sdf, counterprop="k_molid", dateprop="k_date",
 def _key_get_prop(mol, field):
     try:
         val = float(mol.GetProp(field))
-    except ValueError: # GetProp could not be converted to float
+    except ValueError: # GetProp value could not be converted to float
         val = mol.GetProp(field)
     except KeyError:   # field is not present in the mol properties
         val = 10000000.0

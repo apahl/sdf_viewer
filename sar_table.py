@@ -6,11 +6,12 @@ from rdkit.Chem import Draw
 #from rdkit.Chem.Descriptors import MolWt
 #from rdkit.Chem import Lipinski as Lip
 
-import sdf_tools as sdft
+from sdf_viewer import sdf_tools as sdft
 
 import numpy as np
 import re
 import os.path as op
+import colorsys
 
 
 try:
@@ -55,13 +56,52 @@ def combine_frags():
         display_png(gen_mol)
 
 
+def get_color_scale(num_values):
+    """returns a list with <num_of_values> html colors for color coding"""
+    color_scale = []
+    hsv_tuples = [(0.35 + ((x*0.65)/(num_values-1)), 0.9, 0.9) for x in range(num_values)]
+    rgb_tuples = map(lambda x: colorsys.hsv_to_rgb(*x), hsv_tuples)
+    for rgb in rgb_tuples:
+        rgb_int = [int(255*x) for x in rgb]
+        color_scale.append('#{:02x}{:02x}{:02x}'.format(*rgb_int))
+    
+    return color_scale
 
-def generate_sar_table(db_list, core, id_prop, act_prop, dir_name="sar_table", color_prop="logp"):
-    """core: smiles string; act_prop: string"""
 
-    act_xy = np.zeros([30, 30], dtype=np.float)    # coordinates for the activity
-    color_xy = np.zeros([30, 30], dtype=np.float)
-    molid_xy = np.zeros([30, 30], dtype=np.int)
+def get_color_from_scale(color_scale, value_min, value_max, value, reverse=False):
+    """return the color from the scale corresponding to the place in the value_min ..  value_max range"""
+    num_values = len(color_scale) - 1
+    value_range = value_max - value_min
+    pos = round(((value - value_min) / value_range) * num_values)
+    if reverse:
+        pos = num_values - pos
+    
+    return color_scale[pos]
+
+
+def get_value_min_max(sdf_list, prop):
+    """get the min and max value for the given property prop"""
+    value_min = 1000000000.0
+    value_max = -1000000000.0
+    
+    for mol in sdf_list:
+        # properties should all be defined, no check !!
+        value = mol.GetProp(prop)
+        if value > value_max:
+            value_max = value
+        if value < value_min:
+            value_min = value
+    
+    return value_min, value_max
+
+
+def generate_sar_table(db_list, core, id_prop, act_prop, dir_name="html/sar_table", color_prop="logp"):
+    """core: smiles string; id_prop, act_prop: string"""
+
+    act_xy = np.zeros([55, 55], dtype=np.float)    # coordinates for the activity
+    # color_xy = np.zeros([55, 55], dtype=np.float)
+    color_xy = np.full([55, 55], np.NaN, dtype=np.float)
+    molid_xy = np.zeros([55, 55], dtype=np.int)
     # molid_xy = np.arange(900, dtype=np.int).reshape(30, 30)  # coordinates for the molid
     rx_dict = {}  # axes for the residues
     ry_dict = {}
@@ -130,9 +170,16 @@ def generate_sar_table(db_list, core, id_prop, act_prop, dir_name="sar_table", c
     return act_xy, molid_xy, color_xy, max_x, max_y
 
 
-def sar_table_report_html(act_xy, molid_xy, color_xy, max_x, max_y, color_by="logp", show_link=False, show_tooltip=True):
-    # logp_colors = {2.7: "#5F84FF", 3.0: "#A4D8FF", 4.2: "#66FF66", 5.0: "#FFFF66", 1000.0: "#FF4E4E"}
-    logp_colors = {2.7: "#98C0FF", 3.0: "#BDF1FF", 4.2: "#AAFF9B", 5.0: "#F3FFBF", 1000.0: "#FF9E9E"}
+def sar_table_report_html(act_xy, molid_xy, color_xy, max_x, max_y, color_by="logp", reverse_color=False, 
+                          show_link=False, show_tooltip=True):
+    if color_by == "logp":
+        # logp_colors = {2.7: "#5F84FF", 3.0: "#A4D8FF", 4.2: "#66FF66", 5.0: "#FFFF66", 1000.0: "#FF4E4E"}
+        logp_colors = {2.7: "#98C0FF", 3.0: "#BDF1FF", 4.2: "#AAFF9B", 5.0: "#F3FFBF", 1000.0: "#FF9E9E"}
+
+    else:
+        color_scale = get_color_scale(20)
+        color_min = float(np.nanmin(color_xy))
+        color_max = float(np.nanmax(color_xy))
 
     # write horizontal residues
     line = ["<table width=\"\" cellspacing=\"1\" cellpadding=\"1\" border=\"1\" align=\"center\" height=\"60\" summary=\"\">\n<tbody>"]
@@ -155,7 +202,7 @@ def sar_table_report_html(act_xy, molid_xy, color_xy, max_x, max_y, color_by="lo
                     link = "../reports/ind_stock_results.htm#cpd_%05d" % molid
                     link_in = "<a href=\"%s\">" % link
                     link_out = "</a>"
-                if color_by == "n_logp":
+                if color_by == "logp":
                     logp = color_xy[curr_x][curr_y]
                     if show_tooltip:
                         tooltip = ' title="LogP: %.2f"' % logp
@@ -164,10 +211,14 @@ def sar_table_report_html(act_xy, molid_xy, color_xy, max_x, max_y, color_by="lo
                             bg_color = ' bgcolor="%s"' % logp_colors[limit]
                             break
                 else:
+                    value = float(color_xy[curr_x][curr_y])
+                    html_color = get_color_from_scale(color_scale, color_min, color_max, 
+                                                      value, reverse=reverse_color)
+                    bg_color = ' bgcolor="{}"'.format(html_color)
                     if show_tooltip:
-                        tooltip = ' title="%.2f"' % color_xy[curr_x][curr_y]
+                        tooltip = ' title="{}: {:.2f}"'.format(color_by, color_xy[curr_x][curr_y])
 
-                line.append("<td%s align=\"center\"%s><b>%.2f</b><br>(%s%d%s)</td>" % (tooltip, bg_color, act_xy[curr_x][curr_y], link_in, molid_xy[curr_x][curr_y], link_out))
+                line.append("<td%s align=\"center\"%s><b>%.2f</b><br><br>(%s%d%s)</td>" % (tooltip, bg_color, act_xy[curr_x][curr_y], link_in, molid_xy[curr_x][curr_y], link_out))
 
             else: #empty value in numpy array
                 line.append("<td></td>")
@@ -175,7 +226,7 @@ def sar_table_report_html(act_xy, molid_xy, color_xy, max_x, max_y, color_by="lo
 
         line.append("</tr>\n")
 
-    if color_by == "n_logp":
+    if color_by == "logp":
         line.append("</tbody>\n</table>\n<p><p>LogP color coding:</p>\n<table width=\"\" cellspacing=\"1\" cellpadding=\"1\" border=\"1\" align=\"left\" height=\"40\" summary=\"\">\n<tbody><tr>\n")
         for limit in sorted(logp_colors):
             line.append('<td align="center" bgcolor="%s">&le; %.2f</td>' % (logp_colors[limit], limit))
@@ -187,7 +238,7 @@ def sar_table_report_html(act_xy, molid_xy, color_xy, max_x, max_y, color_by="lo
     return html_table
 
 
-def write_html_page(html_content, dir_name="sar_table", page_name="sar_table", page_title="SAR Table"):
+def write_html_page(html_content, dir_name="html/sar_table", page_name="sar_table", page_title="SAR Table"):
     intro = "<html>\n<head>\n  <meta http-equiv=\"Content-Type\" content=\"text/html; charset=utf-8\" />\n  <link rel=\"stylesheet\" type=\"text/css\" href=\"css/style.css\" />\n  <title>%s</title>\n</head>\n<body>\n" % page_title
     extro = "</body>\n</html>"
 
