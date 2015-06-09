@@ -79,22 +79,6 @@ def get_color_from_scale(color_scale, value_min, value_max, value, reverse=False
     return color_scale[pos]
 
 
-def get_value_min_max(sdf_list, prop):
-    """get the min and max value for the given property prop"""
-    value_min = 1000000000.0
-    value_max = -1000000000.0
-    
-    for mol in sdf_list:
-        # properties should all be defined, no check !!
-        value = mol.GetProp(prop)
-        if value > value_max:
-            value_max = value
-        if value < value_min:
-            value_min = value
-    
-    return value_min, value_max
-
-
 def generate_sar_table(db_list, core, id_prop, act_prop, dir_name="html/sar_table", color_prop="logp"):
     """core: smiles string; id_prop, act_prop: string"""
 
@@ -163,6 +147,11 @@ def generate_sar_table(db_list, core, id_prop, act_prop, dir_name="html/sar_tabl
             curr_y = max_y
             Draw.MolToFile(frag_mols[1], "%s/img/frag_y_%02d.png" % (dir_name, max_y), [100, 100])
 
+        # draw thw whole molecule for the tooltip
+        img_file = op.join(dir_name, "img/", "cpd_{}_{}.png".format(curr_x, curr_y))
+        img = sdft.autocrop(Draw.MolToImage(mol), "white")
+        img.save(img_file, format='PNG')
+
         act_xy[curr_x][curr_y] = act
         color_xy[curr_x][curr_y] = color
         molid_xy[curr_x][curr_y] = molid
@@ -197,7 +186,7 @@ def sar_table_report_html(act_xy, molid_xy, color_xy, max_x, max_y, color_by="lo
                 link_in = ""
                 link_out = ""
                 bg_color = " "
-                tooltip = " "
+                mouseover = ""
                 if show_link:
                     link = "../reports/ind_stock_results.htm#cpd_%05d" % molid
                     link_in = "<a href=\"%s\">" % link
@@ -205,7 +194,7 @@ def sar_table_report_html(act_xy, molid_xy, color_xy, max_x, max_y, color_by="lo
                 if color_by == "logp":
                     logp = color_xy[curr_x][curr_y]
                     if show_tooltip:
-                        tooltip = ' title="LogP: %.2f"' % logp
+                        prop_tip = 'LogP: %.2f' % logp
                     for limit in sorted(logp_colors):
                         if logp <= limit:
                             bg_color = ' bgcolor="%s"' % logp_colors[limit]
@@ -216,9 +205,13 @@ def sar_table_report_html(act_xy, molid_xy, color_xy, max_x, max_y, color_by="lo
                                                       value, reverse=reverse_color)
                     bg_color = ' bgcolor="{}"'.format(html_color)
                     if show_tooltip:
-                        tooltip = ' title="{}: {:.2f}"'.format(color_by, color_xy[curr_x][curr_y])
+                        prop_tip = '{}: {:.2f}'.format(color_by, color_xy[curr_x][curr_y])
+                
+                if show_tooltip:
+                    tool_tip = '<img src=&quot;img/cpd_{}_{}.png&quot; alt=&quot;icon&quot; /><br><br>{}'.format(curr_x, curr_y, prop_tip)
+                    mouseover = """ onmouseover="Tip('{}')" onmouseout="UnTip()" """.format(tool_tip)
 
-                line.append("<td%s align=\"center\"%s><b>%.2f</b><br><br>(%s%d%s)</td>" % (tooltip, bg_color, act_xy[curr_x][curr_y], link_in, molid_xy[curr_x][curr_y], link_out))
+                line.append("<td%s align=\"center\"%s><b>%.2f</b><br><br>(%s%d%s)</td>" % (mouseover, bg_color, act_xy[curr_x][curr_y], link_in, molid_xy[curr_x][curr_y], link_out))
 
             else: #empty value in numpy array
                 line.append("<td></td>")
@@ -239,7 +232,7 @@ def sar_table_report_html(act_xy, molid_xy, color_xy, max_x, max_y, color_by="lo
 
 
 def write_html_page(html_content, dir_name="html/sar_table", page_name="sar_table", page_title="SAR Table"):
-    intro = "<html>\n<head>\n  <meta http-equiv=\"Content-Type\" content=\"text/html; charset=utf-8\" />\n  <link rel=\"stylesheet\" type=\"text/css\" href=\"css/style.css\" />\n  <title>%s</title>\n</head>\n<body>\n" % page_title
+    intro = "<html>\n<head>\n  <meta http-equiv=\"Content-Type\" content=\"text/html; charset=utf-8\" />\n  <link rel=\"stylesheet\" type=\"text/css\" href=\"css/style.css\" />\n  <title>%s</title>\n</head>\n<body>\n<script type=\"text/javascript\" src=\"script/wz_tooltip.js\"></script>\n" % page_title
     extro = "</body>\n</html>"
 
     sdft.create_dir_if_not_exist(op.join(sdft.REPORT_FOLDER, dir_name))
