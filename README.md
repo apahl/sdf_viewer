@@ -3,6 +3,11 @@
 ### axelpahl at gmx dot de
 ### license: BSD, see [license.txt](license.txt) in this folder
 
+## Development branch - WIP
+* added 2D SAR table viewer
+* working on making the sdf_viewer and sdf_tools independent on the field types in the names (k_..., n_..., s_...)
+* the field types can be given as a dict to the functions that need them or are determined on the fly
+
 ## News
 
 * 2015-05-28: This is the first version that runs under Python2 **and** Python3 (with the latest RDKit master compiled for the respective Python version)
