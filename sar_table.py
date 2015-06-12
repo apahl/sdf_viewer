@@ -11,6 +11,7 @@ from sdf_viewer import sdf_tools as sdft
 import numpy as np
 import re
 import os.path as op
+import time
 import colorsys
 
 
@@ -20,6 +21,50 @@ try:
 except:
     IPYTHON = False
     print("  * no inline display of molecule structures supported.")
+
+
+TABLE_INTRO = """<table id="sar_table" width="" cellspacing="1" cellpadding="1" border="1" align="center" height="60" summary="">"""
+HTML_INTRO = """<!DOCTYPE html>
+<html>
+<head>
+  <title>%s</title>
+  <meta charset="UTF-8">
+
+  <link rel="stylesheet" type="text/css" href="css/style.css" />
+
+  <script src="lib/float.js"></script>
+
+</head>
+<body>
+<script src="lib/wz_tooltip.js"></script>
+<h2>%s (%s)</h2>
+
+"""
+HTML_EXTRO = """<div style="width:4000px;height:2000px"></div>
+<script>
+      function addEvent(obj, ev, fu) {
+	  if (obj.addEventListener) {
+	      obj.addEventListener(ev, fu, false);
+	  } else {
+	      var eev = 'on' + ev;
+	      obj.attachEvent(eev, fu);
+	  }
+      }
+      addEvent(window, 'load', function () {
+	  tt1 = floatHeader('sar_table', {ncpth: [1], nccol: 1, topDif: 0, leftDif: 0});
+      });
+</script>
+</body>
+</html>"""
+
+LOGP_INSERT = """</tbody>
+</table>
+<p></p>
+<p>LogP color coding:</p>
+<table width="" cellspacing="1" cellpadding="1" border="1" align="left" height="40" summary="">
+<tbody>
+<tr>
+"""
 
 
 def get_res_pos(smiles):
@@ -82,6 +127,9 @@ def get_color_from_scale(color_scale, value_min, value_max, value, reverse=False
 def generate_sar_table(db_list, core, id_prop, act_prop, dir_name="html/sar_table", color_prop="logp"):
     """core: smiles string; id_prop, act_prop: string"""
 
+    sdft.create_dir_if_not_exist(op.join(sdft.REPORT_FOLDER, dir_name))
+    sdft.create_dir_if_not_exist(op.join(sdft.REPORT_FOLDER, dir_name, "img"))
+
     act_xy = np.zeros([55, 55], dtype=np.float)    # coordinates for the activity
     # color_xy = np.zeros([55, 55], dtype=np.float)
     color_xy = np.full([55, 55], np.NaN, dtype=np.float)
@@ -95,7 +143,7 @@ def generate_sar_table(db_list, core, id_prop, act_prop, dir_name="html/sar_tabl
     res_pos_y = -1
 
     core_mol = Chem.MolFromSmiles(core)
-    Draw.MolToFile(core_mol, "%s/img/core.png" % dir_name, [80, 80])
+    Draw.MolToFile(core_mol, "%s/img/core.png" % dir_name, [90, 90])
 
     for idx, mol in enumerate(db_list):
         act = float(mol.GetProp(act_prop))
@@ -161,7 +209,7 @@ def generate_sar_table(db_list, core, id_prop, act_prop, dir_name="html/sar_tabl
 
 def sar_table_report_html(act_xy, molid_xy, color_xy, max_x, max_y, color_by="logp", reverse_color=False, 
                           show_link=False, show_tooltip=True):
-    if color_by == "logp":
+    if "logp" in color_by.lower():
         # logp_colors = {2.7: "#5F84FF", 3.0: "#A4D8FF", 4.2: "#66FF66", 5.0: "#FFFF66", 1000.0: "#FF4E4E"}
         logp_colors = {2.7: "#98C0FF", 3.0: "#BDF1FF", 4.2: "#AAFF9B", 5.0: "#F3FFBF", 1000.0: "#FF9E9E"}
 
@@ -171,12 +219,12 @@ def sar_table_report_html(act_xy, molid_xy, color_xy, max_x, max_y, color_by="lo
         color_max = float(np.nanmax(color_xy))
 
     # write horizontal residues
-    line = ["<table width=\"\" cellspacing=\"1\" cellpadding=\"1\" border=\"1\" align=\"center\" height=\"60\" summary=\"\">\n<tbody>"]
-    line.append("  <tr><td align=\"left\">Core:<br><img src=\"img/core.png\" alt=\"icon\" /></td>")
+    line = [TABLE_INTRO]
+    line.append("\n<thead><tr><th align=\"left\">Core:<br><img src=\"img/core.png\" alt=\"icon\" /></th>")
     for curr_x in range(max_x+1):
-        line.append("<td><img src=\"img/frag_x_%02d.png\" alt=\"icon\" /></td>" % curr_x)
+        line.append("<th><img src=\"img/frag_x_%02d.png\" alt=\"icon\" /></th>" % curr_x)
 
-    line.append("</tr>\n")
+    line.append("</tr></thead>\n<tbody>\n")
 
     for curr_y in range(max_y+1):
         line.append("<tr><td><img src=\"img/frag_y_%02d.png\" alt=\"icon\" /></td>" % curr_y)
@@ -191,7 +239,7 @@ def sar_table_report_html(act_xy, molid_xy, color_xy, max_x, max_y, color_by="lo
                     link = "../reports/ind_stock_results.htm#cpd_%05d" % molid
                     link_in = "<a href=\"%s\">" % link
                     link_out = "</a>"
-                if color_by == "logp":
+                if "logp" in color_by.lower():
                     logp = color_xy[curr_x][curr_y]
                     if show_tooltip:
                         prop_tip = 'LogP: %.2f' % logp
@@ -219,11 +267,11 @@ def sar_table_report_html(act_xy, molid_xy, color_xy, max_x, max_y, color_by="lo
 
         line.append("</tr>\n")
 
-    if color_by == "logp":
-        line.append("</tbody>\n</table>\n<p><p>LogP color coding:</p>\n<table width=\"\" cellspacing=\"1\" cellpadding=\"1\" border=\"1\" align=\"left\" height=\"40\" summary=\"\">\n<tbody><tr>\n")
+    if "logp" in color_by.lower():
+        line.append(LOGP_INSERT)
         for limit in sorted(logp_colors):
             line.append('<td align="center" bgcolor="%s">&le; %.2f</td>' % (logp_colors[limit], limit))
-        line.append("</tr>")
+        line.append("\n</tr>\n")
 
     line.append("</tbody>\n</table>\n")
     html_table = "".join(line)
@@ -232,19 +280,17 @@ def sar_table_report_html(act_xy, molid_xy, color_xy, max_x, max_y, color_by="lo
 
 
 def write_html_page(html_content, dir_name="html/sar_table", page_name="sar_table", page_title="SAR Table"):
-    intro = "<html>\n<head>\n  <meta http-equiv=\"Content-Type\" content=\"text/html; charset=utf-8\" />\n  <link rel=\"stylesheet\" type=\"text/css\" href=\"css/style.css\" />\n  <title>%s</title>\n</head>\n<body>\n<script type=\"text/javascript\" src=\"script/wz_tooltip.js\"></script>\n" % page_title
-    extro = "</body>\n</html>"
 
     sdft.create_dir_if_not_exist(op.join(sdft.REPORT_FOLDER, dir_name))
     sdft.create_dir_if_not_exist(op.join(sdft.REPORT_FOLDER, dir_name, "img"))
 
     filename = op.join(sdft.REPORT_FOLDER, dir_name, "%s.htm" % page_name)
     f = open(filename, "w")
-    f.write(intro)
+    f.write(HTML_INTRO % (page_title, page_title, time.strftime("%d-%b-%Y")))
 
     f.write(html_content)
 
-    f.write(extro)
+    f.write(HTML_EXTRO)
     f.close()
 
 
