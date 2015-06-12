@@ -499,6 +499,56 @@ def list_fields(sdf_list_or_file):
     return list(set(field_list))
 
 
+def get_field_types(sdf_list_or_file):
+    """guess all the property field types and return as dict"""
+    
+    field_types = {}
+
+    if isinstance(sdf_list_or_file, list):
+        if len(sdf_list_or_file) > 100:
+            sdf_sample = random.sample(sdf_list_or_file, len(sdf_list_or_file)//2)
+        else:
+            sdf_sample = sdf_list_or_file
+
+    else: # sdf is file
+        sdf_sample = []
+        if sdf_list_or_file.atEnd():
+            print("  * file object is at end, please reload.")
+            return None
+        index = 0
+        while sdf_list_or_file and index < 500:
+            try:
+                mol = sdf_list_or_file.next()
+                sdf_sample.append(mol)
+            except StopIteration:
+                break
+
+    for mol in sdf_sample:
+        prop_names = mol.GetPropNames()
+        
+        for prop in prop_names:
+            prop_type = "number"
+            prop_str = mol.GetProp(prop)
+            
+            try:
+                val = float(prop_str)
+                if prop.lower().endswith("id"):
+                    prop_type = "key"
+                    
+            except ValueError:
+                prop_type = "str"
+                
+            if prop in field_types:
+                if field_types[prop] in ["number", "key"] and prop_type == "str":
+                    # "str" overrides everything: if one string is among the values 
+                    # of a property, all values become type "str"
+                    field_types[prop] = prop_type 
+            else:
+                field_types[prop] = prop_type
+                
+    return field_types
+
+
 def logp_from_smiles(smiles):
     mol = Chem.MolFromSmiles(smiles)
     if IPYTHON:
@@ -625,7 +675,7 @@ def get_highest_counter(mol_or_sdf, counterprop="molid"):
 
 
 def calc_props(mol_or_sdf, counterprop="molid", dateprop="date",
-               include_date=True, force2d=False):
+               include_date=False, force2d=False):
     if not isinstance(mol_or_sdf, list):
         calc_props_in_mol(mol_or_sdf, dateprop, include_date, force2d)
         return
@@ -704,17 +754,28 @@ def activity_hist(sdf_list_or_file, activityprop):
             print("  {:<18s}: {:6d}".format(key, hist[key]))
 
 
-def factsearch(sdf_list_or_file, query, invert=False, max_hits=2000, count_only=False, sorted=True, reverse=True):
+def factsearch(sdf_list_or_file, query, invert=False, max_hits=2000, count_only=False, sorted=True, reverse=True, field_types=None):
     result_list = []
     result_indexes_list = []
-
     mol_counter_out = 0
+    
+    if not field_types:
+        field_types = get_field_types(sdf_list_or_file)
+    
+    if not field_types:
+        print("  # no field type information available! -aborted")
+        return None
 
+    field = None
     for el in query.split():
-        if el[:2] in "n_ s_ k_":
+        if el in field_types:
             field = el
             break
 
+    if not field:
+        print("  # field could be extracted from query! -aborted")
+        return None
+    
     print("  > field {} extracted from query: {}".format(field, query))
 
     query_mod = query.replace(field, "val")
@@ -730,7 +791,7 @@ def factsearch(sdf_list_or_file, query, invert=False, max_hits=2000, count_only=
         hit = False
         if field in mol.GetPropNames():
             val = mol.GetProp(field).lower()
-            if field[:2] in "n_ k_":
+            if field_types[field] in ["number", "key"]:
                 try:
                     val_float = float(val)
 
