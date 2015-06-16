@@ -70,6 +70,11 @@ except:
     print("    plotting will not work.")
 
 
+class NoFieldTypes(Exception):
+    def __str__(self):
+        return repr("FieldTypeError: field types could not be extracted from sdf list")
+
+
 def set_sdf_report_folder():
 
     if "SDF_VIEWER_REPORTS" in os.environ:
@@ -500,8 +505,9 @@ def list_fields(sdf_list_or_file):
 
 
 def get_field_types(sdf_list_or_file):
-    """guess all the property field types and return as dict"""
+    """detect all the property field types and return as dict"""
     
+    print("  > detecting field types...")
     field_types = {}
 
     if isinstance(sdf_list_or_file, list):
@@ -513,8 +519,8 @@ def get_field_types(sdf_list_or_file):
     else: # sdf is file
         sdf_sample = []
         if sdf_list_or_file.atEnd():
-            print("  * file object is at end, please reload.")
-            return None
+            raise Exception("  * file object is at end, please reload.")
+
         index = 0
         while sdf_list_or_file and index < 500:
             try:
@@ -546,6 +552,9 @@ def get_field_types(sdf_list_or_file):
             else:
                 field_types[prop] = prop_type
                 
+    if not field_types:
+        raise NoFieldTypes()
+        
     return field_types
 
 
@@ -763,7 +772,7 @@ def factsearch(sdf_list_or_file, query, invert=False, max_hits=2000, count_only=
         field_types = get_field_types(sdf_list_or_file)
     
     if not field_types:
-        print("  # no field type information available! -aborted")
+        print("  # no field type information available! -aborted.")
         return None
 
     field = None
@@ -773,10 +782,10 @@ def factsearch(sdf_list_or_file, query, invert=False, max_hits=2000, count_only=
             break
 
     if not field:
-        print("  # field could be extracted from query! -aborted")
+        print("  # field could be extracted from query! -aborted.")
         return None
     
-    print("  > field {} extracted from query: {}".format(field, query))
+    print("  > field {} extracted from query: {}.".format(field, query))
 
     query_mod = query.replace(field, "val")
 
@@ -1023,13 +1032,18 @@ def similarity_list(sdf_list_or_file, smarts):
     return result_list
 
 
-def get_num_props_dict(sdf_list, fields=None):
+def get_num_props_dict(sdf_list, fields=None, id_prop="molid", field_types=None):
+    print("  > getting numerical fields...")
     DEBUG = False
     props_dict = {}
     molid_list = [] # list of molid for picking and structure display
-    all_props_list = list_fields(sdf_list)
+    
+    if not field_types:
+        field_types = get_field_types(sdf_list)
+        
     # only return the numerical database fields:
-    num_props_list = [prop for prop in all_props_list if prop[:2] == "n_"]
+    num_props_list = [prop for prop in field_types if field_types[prop] == "number"]
+
 
     if fields == None or not isinstance(fields, list):
         props_list = num_props_list
@@ -1046,7 +1060,7 @@ def get_num_props_dict(sdf_list, fields=None):
         DEBUG = False
 
     for mol in sdf_list:
-        molid = int(mol.GetProp("k_molid"))
+        molid = int(mol.GetProp(id_prop))
         molid_list.append(molid)
         for prop in props_list:
             if mol.HasProp(prop):
@@ -1109,7 +1123,7 @@ def remove_missing_values(l1, l2, l3, l4=None):
         print("  * ERROR: different length of value list and color list after removal of MISSING_VAL !")
 
 
-def show_hist(sdf_list, fields=None, show=True, savefig=True):
+def show_hist(sdf_list, fields=None, show=True, savefig=True, id_prop="molid", field_types=None):
     """if fields==None, show histograms of all available fields in the sdf,
     otherwise use the supplied list of fields, e.g.
     fields=["n_pic50, "n_hba"]"""
@@ -1122,7 +1136,7 @@ def show_hist(sdf_list, fields=None, show=True, savefig=True):
         print("  * ERROR: plots are currently only implemented for sdf lists (no files).")
         return
 
-    props_dict, molid_list = get_num_props_dict(sdf_list, fields)
+    props_dict, molid_list = get_num_props_dict(sdf_list, fields, id_prop, field_types)
 
     num_of_plots = len(props_dict)
     num_rows = int(math.sqrt(num_of_plots))
@@ -1145,7 +1159,7 @@ def show_hist(sdf_list, fields=None, show=True, savefig=True):
 
         pylab.subplot(num_rows, num_cols, counter+1)
         pylab.hist(value_list)
-        pylab.title(prop[2:])
+        pylab.title(prop)
 
     if savefig:
         pylab.savefig("histogram.png")
@@ -1153,10 +1167,10 @@ def show_hist(sdf_list, fields=None, show=True, savefig=True):
         pylab.show()
 
 
-def show_scattermatrix(sdf_list, fields=None, colorby=None, mode="show"):
+def show_scattermatrix(sdf_list, fields=None, colorby=None, mode="show", id_prop="molid", field_types=None):
     """if fields==None, show a scattermatrix of all available fields in the sdf,
     otherwise use the supplied list of fields, e.g.
-    fields=["n_pic50, "n_hba"]"""
+    fields=["pic50, "hba"]"""
 
     if not PYLAB:
         print("  * show_scattermatrix does not work because pylab could not be imported.")
@@ -1166,7 +1180,7 @@ def show_scattermatrix(sdf_list, fields=None, colorby=None, mode="show"):
         print("  * ERROR: plots are currently only implemented for sdf lists (no files).")
         return
 
-    props_dict, molid_list = get_num_props_dict(sdf_list, fields)
+    props_dict, molid_list = get_num_props_dict(sdf_list, fields, id_prop=id_prop, field_types=field_types)
 
     props_dict_len = len(props_dict)
     num_of_plots = props_dict_len ** 2
@@ -1278,12 +1292,13 @@ def show_scattermatrix(sdf_list, fields=None, colorby=None, mode="show"):
         # pylab.text(.5, 0, color_coding, horizontalalignment='center')
     pylab.savefig("scatter.png")
     if mode == "show":
-        fig.show()
+        # fig.show()
+        pylab.show()
     elif mode == "gui":
         return fig, axes_molid_dict
 
 
-def show_scattermatrix2(sdf_list, sdf_base, fields=None, mode="show"):
+def show_scattermatrix2(sdf_list, sdf_base, fields=None, mode="show", id_prop="molid", field_types=None):
     """if fields==None, show a scattermatrix of all available fields in the sdf,
     otherwise use the supplied list of fields, e.g.
     fields=["n_pic50, "n_hba"]"""
@@ -1296,8 +1311,8 @@ def show_scattermatrix2(sdf_list, sdf_base, fields=None, mode="show"):
         print("  * ERROR: plots are currently only implemented for sdf lists (no files).")
         return
 
-    props_dict, molid_list = get_num_props_dict(sdf_list, fields)
-    props_dict_base, molid_list_base = get_num_props_dict(sdf_base, fields)
+    props_dict, molid_list = get_num_props_dict(sdf_list, fields, id_prop=id_prop, field_types=field_types)
+    props_dict_base, molid_list_base = get_num_props_dict(sdf_base, fields, id_prop=id_prop, field_types=field_types)
 
     props_dict_len = len(props_dict)
     num_rows = props_dict_len
@@ -1396,7 +1411,7 @@ def show_scattermatrix2(sdf_list, sdf_base, fields=None, mode="show"):
 
     pylab.savefig("scatter.png")
     if mode == "show":
-        fig.show()
+        pylab.show()
     elif mode == "gui":
         return fig, axes_molid_dict
 
@@ -1647,7 +1662,7 @@ def neutralize_mol(mol, pattern=None, idprop="k_molid", show=False):
         return mol, replaced
 
 
-def neutralize_sdf(sdf_list_or_file, idprop="k_molid", show=False):
+def neutralize_sdf(sdf_list_or_file, idprop="molid", show=False):
     """returns:            neutral_sdf::list<mol>, neutralized_molids::list<int>
     neutral_sdf:         new sdf with all input mols, where the salts have been neutralized
     neutralized_molids: list with the neutralized molids"""
@@ -1666,7 +1681,7 @@ def neutralize_sdf(sdf_list_or_file, idprop="k_molid", show=False):
         new_mol, replaced = neutralize_mol(mol, idprop=idprop, show=show)
         if replaced:
             counter_out += 1
-            neutralized_molids.append(int(mol.GetProp("k_molid")))
+            neutralized_molids.append(int(mol.GetProp(idprop)))
 
         neutral_sdf.append(new_mol)
 
