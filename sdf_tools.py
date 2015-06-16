@@ -193,22 +193,13 @@ def write_pdb(sdf_list, fn):
 
 
 def prepare_for_viewer(sdf_list):
-
+    """deprecated. All functions detect the field types"""
+    
     if not isinstance(sdf_list, list):
         print("  * function prepare_for_viewer currently only handles lists.")
         return
-
-    print("  > assigning types to fields...", end="")
-    for mol in sdf_list:
-        for field in mol.GetPropNames():
-            try:
-                value = float(mol.GetProp(field))
-                rename_prop_in_mol(mol, field, "n_"+field)
-
-            except ValueError:
-                rename_prop_in_mol(mol, field, "s_"+field)
-
-    print("done.")
+    
+    return
 
 
 def iterate_over_reagents_file(fn="testset.sdf", supplier="__guess__",
@@ -249,23 +240,23 @@ def iterate_over_reagents_file(fn="testset.sdf", supplier="__guess__",
             remove_props_from_mol(mol, ["ASSAY_NAME", "COMMON_NAME", "MOLECULAR_FORMULA", "MOLECULAR_WEIGHT",
                                       "MOLECULAR_WEIGHT", "BOILING_POINT", "FLASH_POINT", "PRODUCTS", "DENSITY"])
 
-            rename_prop_in_mol(mol, "Similarity", "n_sim")
-            rename_prop_in_mol(mol, "IUPAC_NAME", "s_name")
-            rename_prop_in_mol(mol, "MDL_NUMBER", "s_mdl")
-            rename_prop_in_mol(mol, "CAS_NUMBER", "s_cas")
+            rename_prop_in_mol(mol, "Similarity", "sim")
+            rename_prop_in_mol(mol, "IUPAC_NAME", "name")
+            rename_prop_in_mol(mol, "MDL_NUMBER", "mdl")
+            rename_prop_in_mol(mol, "CAS_NUMBER", "cas")
 
         elif supplier == "chemspider":
             remove_props_from_mol(mol, ["MF", "MW", "SMILES", "InChI", "InChIKey", "Data Sources", "References", "PubMed",
                                         "RSC", "CSURL"])
 
-            rename_prop_in_mol(mol, "CSID", "k_csid")
+            rename_prop_in_mol(mol, "CSID", "csid")
             # rename_prop_in_mol(mol, "CSURL", "s_url")
 
         # remove organometallics
         WRITE_TO_OUTPUT = True
         calc_props_in_mol(mol, include_date = False)
-        formula = mol.GetProp("s_formula").lower()
-        for element in ["hg", "pd", "pt", "os", "mg", "mn", "ti", "zn"]:
+        formula = mol.GetProp("formula")
+        for element in ["Hg", "Pd", "Pt", "Os", "Mg", "Mn", "Ti", "Zn"]:
             if element in formula:
                 WRITE_TO_OUTPUT = False
                 removals["organometallic"] += 1
@@ -273,7 +264,7 @@ def iterate_over_reagents_file(fn="testset.sdf", supplier="__guess__",
 
         # remove low or high molwt
         if WRITE_TO_OUTPUT:
-            molwt = float(mol.GetProp("n_molwt"))
+            molwt = float(mol.GetProp("molwt"))
             if molwt > mw_high:
                 WRITE_TO_OUTPUT = False
                 removals["molwt_high"] += 1
@@ -327,13 +318,13 @@ def iterate_over_sdf_file(fn="testset.sdf", max_num_recs=1000000, actives_only=F
         remove_props_from_mol(mol, ["ASSAY_NAME"])
 
         if mol.HasProp("% activity@ClpP"):
-            rename_prop_in_mol(mol, "% activity@ClpP", "n_clpp_percact")
+            rename_prop_in_mol(mol, "% activity@ClpP", "clpp_percact")
             try:
-                old_value = float(mol.GetProp("n_clpp_percact"))
+                old_value = float(mol.GetProp("clpp_percact"))
 
             except ValueError:
                 removals["valueerror"] += 1
-                mol.ClearProp("n_clpp_percact")
+                mol.ClearProp("clpp_percact")
                 if not dryrun:
                     mol.SetProp("s_reason", "valueerror")
                     removals_sdf.append(mol)
@@ -343,7 +334,7 @@ def iterate_over_sdf_file(fn="testset.sdf", max_num_recs=1000000, actives_only=F
             if actives_only and new_value < 0:
                 removals["activity_low"] += 1
                 continue
-            mol.SetProp("n_clpp_percinh", str(new_value))
+            mol.SetProp("clpp_percinh", str(new_value))
 
         else:
             removals["no_activity"] += 1
@@ -354,15 +345,15 @@ def iterate_over_sdf_file(fn="testset.sdf", max_num_recs=1000000, actives_only=F
             continue
 
         if mol.HasProp("pIC50@ClpP"):
-            rename_prop_in_mol(mol, "pIC50@ClpP", "n_clpp_pic50")
+            rename_prop_in_mol(mol, "pIC50@ClpP", "clpp_pic50")
             try:
-                old_value = float(mol.GetProp("n_clpp_pic50"))
+                old_value = float(mol.GetProp("clpp_pic50"))
             except ValueError: # not a number
-                mol.SetProp("n_clpp_pic50", "n.d.")
+                mol.SetProp("clpp_pic50", "n.d.")
 
-        rename_prop_in_mol(mol, "COMPOUND_ID", "k_molid")
-        rename_prop_in_mol(mol, "SUPPLIER", "s_supplier")
-        rename_prop_in_mol(mol, "BATCH_ID", "k_batchid")
+        rename_prop_in_mol(mol, "COMPOUND_ID", "molid")
+        rename_prop_in_mol(mol, "SUPPLIER", "supplier")
+        rename_prop_in_mol(mol, "BATCH_ID", "batchid")
 
         # remove organometallics
         WRITE_TO_OUTPUT = True
@@ -373,13 +364,13 @@ def iterate_over_sdf_file(fn="testset.sdf", max_num_recs=1000000, actives_only=F
                 WRITE_TO_OUTPUT = False
                 removals["organometallic"] += 1
                 if not dryrun:
-                    mol.SetProp("s_reason", "organometallic")
+                    mol.SetProp("reason", "organometallic")
                     removals_sdf.append(mol)
                 break
 
         # remove low or high molwt
         if WRITE_TO_OUTPUT:
-            molwt = float(mol.GetProp("n_molwt"))
+            molwt = float(mol.GetProp("molwt"))
             if molwt > 600:
                 WRITE_TO_OUTPUT = False
                 removals["molwt_high"] += 1
@@ -439,7 +430,7 @@ def enum_racemates(sdf_list_or_file, find_only=True):
                       equal in size or larger as the input sdf.
     Multiple stereo centers are not yet handled.
     In the new sdf the molids are no longer unique and should be reassigned
-    (remove k_molid and run calc_props(sdf))."""
+    (remove molid and run calc_props(sdf))."""
 
     result_sdf = []
     racemic_molids = []
@@ -457,7 +448,7 @@ def enum_racemates(sdf_list_or_file, find_only=True):
             first_undefined = chiral_centers[0][1] == "?"
 
         if first_undefined:
-            racemic_molids.append(int(mol.GetProp("k_molid")))
+            racemic_molids.append(int(mol.GetProp("molid")))
             if find_only:
                 result_sdf.append(mol)
                 continue
@@ -840,7 +831,7 @@ def factsearch(sdf_list_or_file, query, invert=False, max_hits=2000, count_only=
         print("  > option <count_only> was selected.")
         print("    no results were returned.")
 
-    if not count_only and sorted and field[:2] in "n_ k_":
+    if sorted:
         sort_sdf(result_list, field, reverse=reverse)
 
     if 0 < mol_counter_out < 6:
@@ -936,7 +927,7 @@ def similarity_search(sdf_list_or_file, smarts, similarity=0.8, max_hits=2000, c
         if sim >= similarity:
             mol_counter_out += 1
             if not count_only:
-                mol.SetProp("n_sim", "{:4.3f}".format(sim))
+                mol.SetProp("sim", "{:4.3f}".format(sim))
                 result_list.append(mol)
                 result_indexes_list.append(mol_counter_in)
 
@@ -1020,7 +1011,7 @@ def similarity_list(sdf_list_or_file, smarts):
 
         mol_fp = FingerprintMols.FingerprintMol(mol)
         sim = DataStructs.FingerprintSimilarity(query_fp, mol_fp)
-        result_list.append([mol.GetProp("k_molid"), sim])
+        result_list.append([mol.GetProp("molid"), sim])
 
         if mol_counter_in > 0 and mol_counter_in % 500 == 0:
             print("\r    processed: {:7d}".format(mol_counter_in, ), end="")
@@ -1126,7 +1117,7 @@ def remove_missing_values(l1, l2, l3, l4=None):
 def show_hist(sdf_list, fields=None, show=True, savefig=True, id_prop="molid", field_types=None):
     """if fields==None, show histograms of all available fields in the sdf,
     otherwise use the supplied list of fields, e.g.
-    fields=["n_pic50, "n_hba"]"""
+    fields=["pic50, "hba"]"""
 
     if not PYLAB:
         print("  * show_hist does not work because pylab could not be imported.")
@@ -1301,7 +1292,7 @@ def show_scattermatrix(sdf_list, fields=None, colorby=None, mode="show", id_prop
 def show_scattermatrix2(sdf_list, sdf_base, fields=None, mode="show", id_prop="molid", field_types=None):
     """if fields==None, show a scattermatrix of all available fields in the sdf,
     otherwise use the supplied list of fields, e.g.
-    fields=["n_pic50, "n_hba"]"""
+    fields=["pic50, "hba"]"""
 
     if not PYLAB:
         print("  * show_scattermatrix does not work because pylab could not be imported.")
@@ -1466,11 +1457,11 @@ def get_sdf_from_id_list(sdf_list_or_file, id_dict_or_list, calc_ex_mw=True):
 
     print("  > searching...")
     for mol_counter_in, mol in enumerate(sdf_list_or_file):
-        molid = int(mol.GetProp("k_molid"))
+        molid = int(mol.GetProp("molid"))
         if molid in id_dict_or_list:
             if calc_ex_mw:
                 exmw = Desc.ExactMolWt(mol)
-                mol.SetProp("n_exmolwt", "{:.2f}".format(exmw))
+                mol.SetProp("exmolwt", "{:.2f}".format(exmw))
             if add_props:
                 mol.SetProp("s_pos", id_dict_or_list[molid])
 
@@ -1539,9 +1530,9 @@ def analyze_cluster_idx_list(orig_sdf, cluster_idx_list, mode="remove_singletons
             sdf_list = get_sdf_from_index_list(orig_sdf, cluster)
             for pos, idx in enumerate(cluster):
                 mol = sdf_list[pos]
-                cluster_dict[int(mol.GetProp("k_molid"))] = idx
+                cluster_dict[int(mol.GetProp("molid"))] = idx
             sort_sdf(sdf_list, act_prop, reverse=True)
-            cluster_sorted = [cluster_dict[int(mol.GetProp("k_molid"))] for mol in sdf_list]
+            cluster_sorted = [cluster_dict[int(mol.GetProp("molid"))] for mol in sdf_list]
             cluster_idx_list_sorted.append(cluster_sorted)
         cluster_idx_list = cluster_idx_list_sorted
         print(" done.")
@@ -1607,7 +1598,7 @@ def write_cluster_report(orig_sdf, cluster_idx_list, captionprop, reportname="cl
     f.close()
 
 
-def neutralize_mol(mol, pattern=None, idprop="k_molid", show=False):
+def neutralize_mol(mol, pattern=None, id_prop="molid", show=False):
     if not pattern:
         pattern = (
             # Imidazoles
@@ -1651,8 +1642,8 @@ def neutralize_mol(mol, pattern=None, idprop="k_molid", show=False):
             calc_props_in_mol(mol, include_date=False)
 
             if show:
-                if mol.HasProp(idprop):
-                    molid = mol.GetProp(idprop)
+                if mol.HasProp(id_prop):
+                    molid = mol.GetProp(id_prop)
                 else:
                     molid = ""
                 print("    {:5d}:  {:15s} --> {:15s}".format(molid, old_smiles, new_smiles))
@@ -1662,7 +1653,7 @@ def neutralize_mol(mol, pattern=None, idprop="k_molid", show=False):
         return mol, replaced
 
 
-def neutralize_sdf(sdf_list_or_file, idprop="molid", show=False):
+def neutralize_sdf(sdf_list_or_file, id_prop="molid", show=False):
     """returns:            neutral_sdf::list<mol>, neutralized_molids::list<int>
     neutral_sdf:         new sdf with all input mols, where the salts have been neutralized
     neutralized_molids: list with the neutralized molids"""
@@ -1678,10 +1669,10 @@ def neutralize_sdf(sdf_list_or_file, idprop="molid", show=False):
     print("  > neutralizing...")
     for mol in sdf_list_or_file:
         counter_in += 1
-        new_mol, replaced = neutralize_mol(mol, idprop=idprop, show=show)
+        new_mol, replaced = neutralize_mol(mol, id_prop=id_prop, show=show)
         if replaced:
             counter_out += 1
-            neutralized_molids.append(int(mol.GetProp(idprop)))
+            neutralized_molids.append(int(mol.GetProp(id_prop)))
 
         neutral_sdf.append(new_mol)
 
