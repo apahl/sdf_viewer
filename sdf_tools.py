@@ -113,7 +113,7 @@ def create_dir_if_not_exist(dir_name):
         os.makedirs(dir_name)
 
 
-def autocrop(im, bgcolor):
+def autocrop(im, bgcolor="white"):
     if im.mode != "RGB":
         im = im.convert("RGB")
     bg = Image.new("RGB", im.size, bgcolor)

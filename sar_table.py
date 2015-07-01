@@ -67,6 +67,27 @@ LOGP_INSERT = """</tbody>
 """
 
 
+class ColorScale():
+    
+    def __init__(self, num_values):
+        self.num_values = num_values
+        self.color_scale = []
+        hsv_tuples = [(0.35 + ((x*0.65)/(self.num_values-1)), 0.9, 0.9) for x in range(self.num_values)]
+        rgb_tuples = map(lambda x: colorsys.hsv_to_rgb(*x), hsv_tuples)
+        for rgb in rgb_tuples:
+            rgb_int = [int(255*x) for x in rgb]
+            self.color_scale.append('#{:02x}{:02x}{:02x}'.format(*rgb_int))
+
+    def get_color(self, value_min, value_max, value, reverse=False):
+        """return the color from the scale corresponding to the place in the value_min ..  value_max range"""
+        value_range = value_max - value_min
+        pos = round(((value - value_min) / value_range) * self.num_values)
+        if reverse:
+            pos = self.num_values - pos
+        
+        return self.color_scale[pos]
+        
+
 def get_res_pos(smiles):
     pat = re.compile('\[(.*?)\*\]')
     pos_str = re.findall(pat, smiles)[0]
@@ -99,29 +120,6 @@ def combine_frags():
     if IPYTHON:
         print("  try to display molecule:")
         display_png(gen_mol)
-
-
-def get_color_scale(num_values):
-    """returns a list with <num_of_values> html colors for color coding"""
-    color_scale = []
-    hsv_tuples = [(0.35 + ((x*0.65)/(num_values-1)), 0.9, 0.9) for x in range(num_values)]
-    rgb_tuples = map(lambda x: colorsys.hsv_to_rgb(*x), hsv_tuples)
-    for rgb in rgb_tuples:
-        rgb_int = [int(255*x) for x in rgb]
-        color_scale.append('#{:02x}{:02x}{:02x}'.format(*rgb_int))
-    
-    return color_scale
-
-
-def get_color_from_scale(color_scale, value_min, value_max, value, reverse=False):
-    """return the color from the scale corresponding to the place in the value_min ..  value_max range"""
-    num_values = len(color_scale) - 1
-    value_range = value_max - value_min
-    pos = round(((value - value_min) / value_range) * num_values)
-    if reverse:
-        pos = num_values - pos
-    
-    return color_scale[pos]
 
 
 def generate_sar_table(db_list, core, id_prop, act_prop, dir_name="html/sar_table", color_prop="logp"):
@@ -214,7 +212,7 @@ def sar_table_report_html(act_xy, molid_xy, color_xy, max_x, max_y, color_by="lo
         logp_colors = {2.7: "#98C0FF", 3.0: "#BDF1FF", 4.2: "#AAFF9B", 5.0: "#F3FFBF", 1000.0: "#FF9E9E"}
 
     else:
-        color_scale = get_color_scale(20)
+        color_scale = ColorScale(20)
         color_min = float(np.nanmin(color_xy))
         color_max = float(np.nanmax(color_xy))
 
@@ -249,7 +247,7 @@ def sar_table_report_html(act_xy, molid_xy, color_xy, max_x, max_y, color_by="lo
                             break
                 else:
                     value = float(color_xy[curr_x][curr_y])
-                    html_color = get_color_from_scale(color_scale, color_min, color_max, 
+                    html_color = color_scale.get_color(color_min, color_max, 
                                                       value, reverse=reverse_color)
                     bg_color = ' bgcolor="{}"'.format(html_color)
                     if show_tooltip:
