@@ -5,8 +5,8 @@
 
 ## Development branch - WIP
 * added 2D SAR table viewer
-* working on making the sdf_viewer and sdf_tools independent on the field types in the names (k_..., n_..., s_...)
-* the field types can be given as a dict to the functions that need them or are determined on the fly
+* working on making the sdf_viewer and sdf_tools not depend on the field types in the names (k_..., n_..., s_...)
+* the field types can be given as a dict to the functions that need them or are determined on the fly.
 
 ## News
 
@@ -49,7 +49,7 @@ The function of the **open in browser** button can be defined in the *sdf_viewer
 as *ugm2014_bzr* (with or without *.sdf*) then the saved session can also be loaded as *ugm2014_bzr*
 
 * The functions used by the sdf_viewer are bundled in the module *sdf_tools.py* and can also be accessed
-e.g. from an IPython session. A few examples are given in the included IPython notebook [nb_example.ipynb](http://nbviewer.ipython.org/github/apahl/sdf_viewer/blob/master/nb_example.ipynb)
+e.g. from an IPython session. A few examples are given in the included IPython notebook [nb_example.ipynb](http://nbviewer.ipython.org/github/apahl/sdf_viewer/blob/dev/nb_example.ipynb)
 
 ### Planned Improvements (many based on discussions during the RDKit UGM 2014)
 
