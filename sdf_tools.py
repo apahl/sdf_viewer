@@ -192,6 +192,76 @@ def write_pdb(sdf_list, fn):
     writer.close()
 
 
+def smiles_supplier(fn, smiles_prop=""):
+    """Process a text file containing Smiles or Smarts and other properties (separated by tab)
+    and yield mol objects as generator.
+    If <smiles_prop> is empty, the first column header containing "smiles" (case-insensitive) 
+    is assumed to be the Smiles column.
+    If <smiles_prop> contains "smarts" (case-insensitive),
+    then the molecule is generated from the Smarts in this column."""
+    
+    with open(fn) as f:
+        first_line = True
+        smiles_idx = -1
+        props_dict = {}
+        for line in f:
+            line = line.strip().split("\t")
+            if first_line: # determine available properties
+                first_line = False
+                for idx, prop in enumerate(line):
+                    if not smiles_prop:
+                        if "smiles" in prop.lower():
+                            props_dict[idx] = "Smiles"
+                            smiles_idx = idx
+                            
+                    else:
+                        if prop == smiles_prop:
+                            props_dict[idx] = smiles_prop
+                            smiles_idx = idx
+                    
+                    props_dict[idx] = prop
+                
+                if smiles_idx < 0:
+                    raise ValueError("no Smiles column found in {}".format(fn))
+                
+                continue   # ...with second line
+            
+            if "smarts" in smiles_prop.lower():
+                mol = Chem.MolFromSmarts(line[smiles_idx])
+            else:
+                mol = Chem.MolFromSmiles(line[smiles_idx])
+            
+            if not mol: continue
+            
+            for idx, prop in enumerate(line):
+                if idx != smiles_idx:
+                    mol.SetProp(props_dict[idx], prop)
+            
+            yield mol
+
+
+def smiles_writer(sdf_list, fn="smiles.csv", smiles_prop="Smiles"):
+    """Process an iterator containing RDKit mols and write a tab-separated file with
+    the Smiles and the mol properties. The properties have to be present in every mol."""
+
+    with open(fn, "w") as f:
+        first_line = True
+        for mol in sdf_list:
+            if not mol: continue
+            if first_line: # determine and write header
+                first_line = False
+                props = mol.GetPropNames()
+                line = [smiles_prop]
+                line.extend(props)
+                line_str = "\t".join(line) + "\n"
+                f.write(line_str)
+
+            line = [Chem.MolToSmiles(mol)]
+            line.extend([mol.GetProp(prop) for prop in props])
+            line_str = "\t".join(line) + "\n"
+            f.write(line_str)
+
+
 def prepare_for_viewer(sdf_list):
     """deprecated. All functions detect the field types"""
     

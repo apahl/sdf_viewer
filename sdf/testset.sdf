@@ -62,40 +62,40 @@
  24 26  1  0
  26 27  1  0
 M  END
->  <k_molid>  (1) 
+>  <molid>  (1) 
 275
 
->  <n_hba>  (1) 
+>  <hba>  (1) 
 7
 
->  <n_hbd>  (1) 
+>  <hbd>  (1) 
 3
 
->  <n_logp>  (1) 
+>  <logp>  (1) 
 3.61
 
->  <n_molwt>  (1) 
+>  <molwt>  (1) 
 375.43
 
->  <n_pIC50>  (1) 
+>  <pIC50>  (1) 
 9.00
 
->  <n_rotb>  (1) 
+>  <rotb>  (1) 
 6
 
->  <n_tpsa>  (1) 
+>  <tpsa>  (1) 
 86
 
->  <s_family>  (1) 
+>  <family>  (1) 
 I
 
->  <s_formula>  (1) 
+>  <formula>  (1) 
 C21H21N5O2
 
->  <s_name>  (1) 
+>  <name>  (1) 
 4-GBLD_345
 
->  <s_set>  (1) 
+>  <set>  (1) 
 0
 
 $$$$
@@ -153,40 +153,40 @@ Meclonazepam
  20 22  1  0
 M  CHG  2  20   1  22  -1
 M  END
->  <k_molid>  (2) 
+>  <molid>  (2) 
 81
 
->  <n_hba>  (2) 
+>  <hba>  (2) 
 6
 
->  <n_hbd>  (2) 
+>  <hbd>  (2) 
 1
 
->  <n_logp>  (2) 
+>  <logp>  (2) 
 3.43
 
->  <n_molwt>  (2) 
+>  <molwt>  (2) 
 329.74
 
->  <n_pIC50>  (2) 
+>  <pIC50>  (2) 
 8.92
 
->  <n_rotb>  (2) 
+>  <rotb>  (2) 
 2
 
->  <n_tpsa>  (2) 
+>  <tpsa>  (2) 
 84
 
->  <s_family>  (2) 
+>  <family>  (2) 
 A.1
 
->  <s_formula>  (2) 
+>  <formula>  (2) 
 C16H12ClN3O3
 
->  <s_name>  (2) 
+>  <name>  (2) 
 Meclonazepam
 
->  <s_set>  (2) 
+>  <set>  (2) 
 1
 
 $$$$
@@ -242,40 +242,40 @@ Ro05-4435
  19 21  1  0
 M  CHG  2  19   1  21  -1
 M  END
->  <k_molid>  (3) 
+>  <molid>  (3) 
 19
 
->  <n_hba>  (3) 
+>  <hba>  (3) 
 6
 
->  <n_hbd>  (3) 
+>  <hbd>  (3) 
 1
 
->  <n_logp>  (3) 
+>  <logp>  (3) 
 2.52
 
->  <n_molwt>  (3) 
+>  <molwt>  (3) 
 299.26
 
->  <n_pIC50>  (3) 
+>  <pIC50>  (3) 
 8.82
 
->  <n_rotb>  (3) 
+>  <rotb>  (3) 
 2
 
->  <n_tpsa>  (3) 
+>  <tpsa>  (3) 
 84
 
->  <s_family>  (3) 
+>  <family>  (3) 
 A.1
 
->  <s_formula>  (3) 
+>  <formula>  (3) 
 C15H10FN3O3
 
->  <s_name>  (3) 
+>  <name>  (3) 
 Ro05-4435
 
->  <s_set>  (3) 
+>  <set>  (3) 
 2
 
 $$$$
@@ -343,40 +343,40 @@ $$$$
  24 26  1  0
  26 27  1  0
 M  END
->  <k_molid>  (4) 
+>  <molid>  (4) 
 268
 
->  <n_hba>  (4) 
+>  <hba>  (4) 
 6
 
->  <n_hbd>  (4) 
+>  <hbd>  (4) 
 1
 
->  <n_logp>  (4) 
+>  <logp>  (4) 
 4.16
 
->  <n_molwt>  (4) 
+>  <molwt>  (4) 
 378.41
 
->  <n_pIC50>  (4) 
+>  <pIC50>  (4) 
 8.82
 
->  <n_rotb>  (4) 
+>  <rotb>  (4) 
 6
 
->  <n_tpsa>  (4) 
+>  <tpsa>  (4) 
 60
 
->  <s_family>  (4) 
+>  <family>  (4) 
 I
 
->  <s_formula>  (4) 
+>  <formula>  (4) 
 C21H19FN4O2
 
->  <s_name>  (4) 
+>  <name>  (4) 
 4-GBLD_274
 
->  <s_set>  (4) 
+>  <set>  (4) 
 0
 
 $$$$
@@ -429,40 +429,40 @@ Ro07-3953
  18 19  2  0
  19 20  1  0
 M  END
->  <k_molid>  (5) 
+>  <molid>  (5) 
 8
 
->  <n_hba>  (5) 
+>  <hba>  (5) 
 3
 
->  <n_hbd>  (5) 
+>  <hbd>  (5) 
 1
 
->  <n_logp>  (5) 
+>  <logp>  (5) 
 3.41
 
->  <n_molwt>  (5) 
+>  <molwt>  (5) 
 306.70
 
->  <n_pIC50>  (5) 
+>  <pIC50>  (5) 
 8.80
 
->  <n_rotb>  (5) 
+>  <rotb>  (5) 
 1
 
->  <n_tpsa>  (5) 
+>  <tpsa>  (5) 
 41
 
->  <s_family>  (5) 
+>  <family>  (5) 
 A.1
 
->  <s_formula>  (5) 
+>  <formula>  (5) 
 C15H9ClF2N2O
 
->  <s_name>  (5) 
+>  <name>  (5) 
 Ro07-3953
 
->  <s_set>  (5) 
+>  <set>  (5) 
 0
 
 $$$$
@@ -513,40 +513,40 @@ Delorazepam
  18 19  2  0
  19 20  1  0
 M  END
->  <k_molid>  (6) 
+>  <molid>  (6) 
 10
 
->  <n_hba>  (6) 
+>  <hba>  (6) 
 3
 
->  <n_hbd>  (6) 
+>  <hbd>  (6) 
 1
 
->  <n_logp>  (6) 
+>  <logp>  (6) 
 3.78
 
->  <n_molwt>  (6) 
+>  <molwt>  (6) 
 305.16
 
->  <n_pIC50>  (6) 
+>  <pIC50>  (6) 
 8.74
 
->  <n_rotb>  (6) 
+>  <rotb>  (6) 
 1
 
->  <n_tpsa>  (6) 
+>  <tpsa>  (6) 
 41
 
->  <s_family>  (6) 
+>  <family>  (6) 
 A.1
 
->  <s_formula>  (6) 
+>  <formula>  (6) 
 C15H10Cl2N2O
 
->  <s_name>  (6) 
+>  <name>  (6) 
 Delorazepam
 
->  <s_set>  (6) 
+>  <set>  (6) 
 0
 
 $$$$
@@ -602,40 +602,40 @@ Clonazepam
  19 21  1  0
 M  CHG  2  19   1  21  -1
 M  END
->  <k_molid>  (7) 
+>  <molid>  (7) 
 21
 
->  <n_hba>  (7) 
+>  <hba>  (7) 
 6
 
->  <n_hbd>  (7) 
+>  <hbd>  (7) 
 1
 
->  <n_logp>  (7) 
+>  <logp>  (7) 
 3.04
 
->  <n_molwt>  (7) 
+>  <molwt>  (7) 
 315.72
 
->  <n_pIC50>  (7) 
+>  <pIC50>  (7) 
 8.74
 
->  <n_rotb>  (7) 
+>  <rotb>  (7) 
 2
 
->  <n_tpsa>  (7) 
+>  <tpsa>  (7) 
 84
 
->  <s_family>  (7) 
+>  <family>  (7) 
 A.1
 
->  <s_formula>  (7) 
+>  <formula>  (7) 
 C15H10ClN3O3
 
->  <s_name>  (7) 
+>  <name>  (7) 
 Clonazepam
 
->  <s_set>  (7) 
+>  <set>  (7) 
 0
 
 $$$$
@@ -703,40 +703,40 @@ $$$$
  24 27  1  0
  27 28  1  0
 M  END
->  <k_molid>  (8) 
+>  <molid>  (8) 
 274
 
->  <n_hba>  (8) 
+>  <hba>  (8) 
 7
 
->  <n_hbd>  (8) 
+>  <hbd>  (8) 
 3
 
->  <n_logp>  (8) 
+>  <logp>  (8) 
 3.61
 
->  <n_molwt>  (8) 
+>  <molwt>  (8) 
 375.43
 
->  <n_pIC50>  (8) 
+>  <pIC50>  (8) 
 8.74
 
->  <n_rotb>  (8) 
+>  <rotb>  (8) 
 6
 
->  <n_tpsa>  (8) 
+>  <tpsa>  (8) 
 86
 
->  <s_family>  (8) 
+>  <family>  (8) 
 I
 
->  <s_formula>  (8) 
+>  <formula>  (8) 
 C21H21N5O2
 
->  <s_name>  (8) 
+>  <name>  (8) 
 4-GBLD_313
 
->  <s_set>  (8) 
+>  <set>  (8) 
 0
 
 $$$$
@@ -787,40 +787,40 @@ Ro05-3367
  18 19  2  0
  19 20  1  0
 M  END
->  <k_molid>  (9) 
+>  <molid>  (9) 
 7
 
->  <n_hba>  (9) 
+>  <hba>  (9) 
 3
 
->  <n_hbd>  (9) 
+>  <hbd>  (9) 
 1
 
->  <n_logp>  (9) 
+>  <logp>  (9) 
 3.27
 
->  <n_molwt>  (9) 
+>  <molwt>  (9) 
 288.71
 
->  <n_pIC50>  (9) 
+>  <pIC50>  (9) 
 8.70
 
->  <n_rotb>  (9) 
+>  <rotb>  (9) 
 1
 
->  <n_tpsa>  (9) 
+>  <tpsa>  (9) 
 41
 
->  <s_family>  (9) 
+>  <family>  (9) 
 A.1
 
->  <s_formula>  (9) 
+>  <formula>  (9) 
 C15H10ClFN2O
 
->  <s_name>  (9) 
+>  <name>  (9) 
 Ro05-3367
 
->  <s_set>  (9) 
+>  <set>  (9) 
 0
 
 $$$$
@@ -886,40 +886,40 @@ $$$$
  24 26  1  0
  26 27  1  0
 M  END
->  <k_molid>  (10) 
+>  <molid>  (10) 
 265
 
->  <n_hba>  (10) 
+>  <hba>  (10) 
 7
 
->  <n_hbd>  (10) 
+>  <hbd>  (10) 
 1
 
->  <n_logp>  (10) 
+>  <logp>  (10) 
 3.42
 
->  <n_molwt>  (10) 
+>  <molwt>  (10) 
 361.41
 
->  <n_pIC50>  (10) 
+>  <pIC50>  (10) 
 8.68
 
->  <n_rotb>  (10) 
+>  <rotb>  (10) 
 6
 
->  <n_tpsa>  (10) 
+>  <tpsa>  (10) 
 73
 
->  <s_family>  (10) 
+>  <family>  (10) 
 I
 
->  <s_formula>  (10) 
+>  <formula>  (10) 
 C20H19N5O2
 
->  <s_name>  (10) 
+>  <name>  (10) 
 4-GBLD_254
 
->  <s_set>  (10) 
+>  <set>  (10) 
 0
 
 $$$$
@@ -977,40 +977,40 @@ Ro05-4082
  19 21  1  0
 M  CHG  2  19   1  21  -1
 M  END
->  <k_molid>  (11) 
+>  <molid>  (11) 
 22
 
->  <n_hba>  (11) 
+>  <hba>  (11) 
 6
 
->  <n_hbd>  (11) 
+>  <hbd>  (11) 
 0
 
->  <n_logp>  (11) 
+>  <logp>  (11) 
 3.06
 
->  <n_molwt>  (11) 
+>  <molwt>  (11) 
 329.74
 
->  <n_pIC50>  (11) 
+>  <pIC50>  (11) 
 8.66
 
->  <n_rotb>  (11) 
+>  <rotb>  (11) 
 2
 
->  <n_tpsa>  (11) 
+>  <tpsa>  (11) 
 75
 
->  <s_family>  (11) 
+>  <family>  (11) 
 A.1
 
->  <s_formula>  (11) 
+>  <formula>  (11) 
 C16H12ClN3O3
 
->  <s_name>  (11) 
+>  <name>  (11) 
 Ro05-4082
 
->  <s_set>  (11) 
+>  <set>  (11) 
 0
 
 $$$$
@@ -1078,40 +1078,40 @@ $$$$
  25 27  1  0
  27 28  1  0
 M  END
->  <k_molid>  (12) 
+>  <molid>  (12) 
 273
 
->  <n_hba>  (12) 
+>  <hba>  (12) 
 6
 
->  <n_hbd>  (12) 
+>  <hbd>  (12) 
 1
 
->  <n_logp>  (12) 
+>  <logp>  (12) 
 4.16
 
->  <n_molwt>  (12) 
+>  <molwt>  (12) 
 378.41
 
->  <n_pIC50>  (12) 
+>  <pIC50>  (12) 
 8.66
 
->  <n_rotb>  (12) 
+>  <rotb>  (12) 
 6
 
->  <n_tpsa>  (12) 
+>  <tpsa>  (12) 
 60
 
->  <s_family>  (12) 
+>  <family>  (12) 
 I
 
->  <s_formula>  (12) 
+>  <formula>  (12) 
 C21H19FN4O2
 
->  <s_name>  (12) 
+>  <name>  (12) 
 4-GBLD_312
 
->  <s_set>  (12) 
+>  <set>  (12) 
 2
 
 $$$$
@@ -1166,40 +1166,40 @@ Ro13-3780
  18 19  2  0
  19 20  1  0
 M  END
->  <k_molid>  (13) 
+>  <molid>  (13) 
 14
 
->  <n_hba>  (13) 
+>  <hba>  (13) 
 3
 
->  <n_hbd>  (13) 
+>  <hbd>  (13) 
 0
 
->  <n_logp>  (13) 
+>  <logp>  (13) 
 3.54
 
->  <n_molwt>  (13) 
+>  <molwt>  (13) 
 365.18
 
->  <n_pIC50>  (13) 
+>  <pIC50>  (13) 
 8.62
 
->  <n_rotb>  (13) 
+>  <rotb>  (13) 
 1
 
->  <n_tpsa>  (13) 
+>  <tpsa>  (13) 
 32
 
->  <s_family>  (13) 
+>  <family>  (13) 
 A.1
 
->  <s_formula>  (13) 
+>  <formula>  (13) 
 C16H11BrF2N2O
 
->  <s_name>  (13) 
+>  <name>  (13) 
 Ro13-3780
 
->  <s_set>  (13) 
+>  <set>  (13) 
 0
 
 $$$$
@@ -1272,40 +1272,40 @@ $$$$
  28 30  1  0
 M  CHG  2  28   1  30  -1
 M  END
->  <k_molid>  (14) 
+>  <molid>  (14) 
 271
 
->  <n_hba>  (14) 
+>  <hba>  (14) 
 9
 
->  <n_hbd>  (14) 
+>  <hbd>  (14) 
 1
 
->  <n_logp>  (14) 
+>  <logp>  (14) 
 3.93
 
->  <n_molwt>  (14) 
+>  <molwt>  (14) 
 405.41
 
->  <n_pIC50>  (14) 
+>  <pIC50>  (14) 
 8.60
 
->  <n_rotb>  (14) 
+>  <rotb>  (14) 
 7
 
->  <n_tpsa>  (14) 
+>  <tpsa>  (14) 
 103
 
->  <s_family>  (14) 
+>  <family>  (14) 
 I
 
->  <s_formula>  (14) 
+>  <formula>  (14) 
 C21H19N5O4
 
->  <s_name>  (14) 
+>  <name>  (14) 
 4-GBLD_307
 
->  <s_set>  (14) 
+>  <set>  (14) 
 2
 
 $$$$
@@ -1358,40 +1358,40 @@ Ro07-9957
  18 19  2  0
  19 20  1  0
 M  END
->  <k_molid>  (15) 
+>  <molid>  (15) 
 15
 
->  <n_hba>  (15) 
+>  <hba>  (15) 
 3
 
->  <n_hbd>  (15) 
+>  <hbd>  (15) 
 0
 
->  <n_logp>  (15) 
+>  <logp>  (15) 
 3.24
 
->  <n_molwt>  (15) 
+>  <molwt>  (15) 
 394.19
 
->  <n_pIC50>  (15) 
+>  <pIC50>  (15) 
 8.54
 
->  <n_rotb>  (15) 
+>  <rotb>  (15) 
 1
 
->  <n_tpsa>  (15) 
+>  <tpsa>  (15) 
 32
 
->  <s_family>  (15) 
+>  <family>  (15) 
 A.1
 
->  <s_formula>  (15) 
+>  <formula>  (15) 
 C16H12FIN2O
 
->  <s_name>  (15) 
+>  <name>  (15) 
 Ro07-9957
 
->  <s_set>  (15) 
+>  <set>  (15) 
 0
 
 $$$$
@@ -1457,40 +1457,40 @@ $$$$
  24 26  1  0
  26 27  1  0
 M  END
->  <k_molid>  (16) 
+>  <molid>  (16) 
 262
 
->  <n_hba>  (16) 
+>  <hba>  (16) 
 6
 
->  <n_hbd>  (16) 
+>  <hbd>  (16) 
 1
 
->  <n_logp>  (16) 
+>  <logp>  (16) 
 4.03
 
->  <n_molwt>  (16) 
+>  <molwt>  (16) 
 360.42
 
->  <n_pIC50>  (16) 
+>  <pIC50>  (16) 
 8.54
 
->  <n_rotb>  (16) 
+>  <rotb>  (16) 
 6
 
->  <n_tpsa>  (16) 
+>  <tpsa>  (16) 
 60
 
->  <s_family>  (16) 
+>  <family>  (16) 
 I
 
->  <s_formula>  (16) 
+>  <formula>  (16) 
 C21H20N4O2
 
->  <s_name>  (16) 
+>  <name>  (16) 
 4-GBLD_231
 
->  <s_set>  (16) 
+>  <set>  (16) 
 1
 
 $$$$
@@ -1543,40 +1543,40 @@ Ro07-5193
  18 19  2  0
  19 20  1  0
 M  END
->  <k_molid>  (17) 
+>  <molid>  (17) 
 11
 
->  <n_hba>  (17) 
+>  <hba>  (17) 
 3
 
->  <n_hbd>  (17) 
+>  <hbd>  (17) 
 1
 
->  <n_logp>  (17) 
+>  <logp>  (17) 
 3.92
 
->  <n_molwt>  (17) 
+>  <molwt>  (17) 
 323.15
 
->  <n_pIC50>  (17) 
+>  <pIC50>  (17) 
 8.52
 
->  <n_rotb>  (17) 
+>  <rotb>  (17) 
 1
 
->  <n_tpsa>  (17) 
+>  <tpsa>  (17) 
 41
 
->  <s_family>  (17) 
+>  <family>  (17) 
 A.1
 
->  <s_formula>  (17) 
+>  <formula>  (17) 
 C15H9Cl2FN2O
 
->  <s_name>  (17) 
+>  <name>  (17) 
 Ro07-5193
 
->  <s_set>  (17) 
+>  <set>  (17) 
 0
 
 $$$$
@@ -1644,40 +1644,40 @@ $$$$
  24 26  1  0
  26 27  1  0
 M  END
->  <k_molid>  (18) 
+>  <molid>  (18) 
 272
 
->  <n_hba>  (18) 
+>  <hba>  (18) 
 6
 
->  <n_hbd>  (18) 
+>  <hbd>  (18) 
 1
 
->  <n_logp>  (18) 
+>  <logp>  (18) 
 4.33
 
->  <n_molwt>  (18) 
+>  <molwt>  (18) 
 374.44
 
->  <n_pIC50>  (18) 
+>  <pIC50>  (18) 
 8.49
 
->  <n_rotb>  (18) 
+>  <rotb>  (18) 
 6
 
->  <n_tpsa>  (18) 
+>  <tpsa>  (18) 
 60
 
->  <s_family>  (18) 
+>  <family>  (18) 
 I
 
->  <s_formula>  (18) 
+>  <formula>  (18) 
 C22H22N4O2
 
->  <s_name>  (18) 
+>  <name>  (18) 
 4-GBLD_308
 
->  <s_set>  (18) 
+>  <set>  (18) 
 0
 
 $$$$
@@ -1739,40 +1739,40 @@ Ro05-3590
  22 25  1  0
 M  CHG  2  19   1  21  -1
 M  END
->  <k_molid>  (19) 
+>  <molid>  (19) 
 23
 
->  <n_hba>  (19) 
+>  <hba>  (19) 
 6
 
->  <n_hbd>  (19) 
+>  <hbd>  (19) 
 1
 
->  <n_logp>  (19) 
+>  <logp>  (19) 
 3.40
 
->  <n_molwt>  (19) 
+>  <molwt>  (19) 
 349.27
 
->  <n_pIC50>  (19) 
+>  <pIC50>  (19) 
 8.46
 
->  <n_rotb>  (19) 
+>  <rotb>  (19) 
 2
 
->  <n_tpsa>  (19) 
+>  <tpsa>  (19) 
 84
 
->  <s_family>  (19) 
+>  <family>  (19) 
 A.1
 
->  <s_formula>  (19) 
+>  <formula>  (19) 
 C16H10F3N3O3
 
->  <s_name>  (19) 
+>  <name>  (19) 
 Ro05-3590
 
->  <s_set>  (19) 
+>  <set>  (19) 
 1
 
 $$$$
@@ -1825,40 +1825,40 @@ Ro11-4878
  18 19  2  0
  19 20  1  0
 M  END
->  <k_molid>  (20) 
+>  <molid>  (20) 
 80
 
->  <n_hba>  (20) 
+>  <hba>  (20) 
 3
 
->  <n_hbd>  (20) 
+>  <hbd>  (20) 
 1
 
->  <n_logp>  (20) 
+>  <logp>  (20) 
 3.66
 
->  <n_molwt>  (20) 
+>  <molwt>  (20) 
 302.74
 
->  <n_pIC50>  (20) 
+>  <pIC50>  (20) 
 8.46
 
->  <n_rotb>  (20) 
+>  <rotb>  (20) 
 1
 
->  <n_tpsa>  (20) 
+>  <tpsa>  (20) 
 41
 
->  <s_family>  (20) 
+>  <family>  (20) 
 A.1
 
->  <s_formula>  (20) 
+>  <formula>  (20) 
 C16H12ClFN2O
 
->  <s_name>  (20) 
+>  <name>  (20) 
 Ro11-4878
 
->  <s_set>  (20) 
+>  <set>  (20) 
 2
 
 $$$$
@@ -1911,40 +1911,40 @@ Lorazepam
  17 18  2  0
  18 21  1  0
 M  END
->  <k_molid>  (21) 
+>  <molid>  (21) 
 87
 
->  <n_hba>  (21) 
+>  <hba>  (21) 
 4
 
->  <n_hbd>  (21) 
+>  <hbd>  (21) 
 2
 
->  <n_logp>  (21) 
+>  <logp>  (21) 
 3.10
 
->  <n_molwt>  (21) 
+>  <molwt>  (21) 
 321.16
 
->  <n_pIC50>  (21) 
+>  <pIC50>  (21) 
 8.46
 
->  <n_rotb>  (21) 
+>  <rotb>  (21) 
 1
 
->  <n_tpsa>  (21) 
+>  <tpsa>  (21) 
 61
 
->  <s_family>  (21) 
+>  <family>  (21) 
 A.1
 
->  <s_formula>  (21) 
+>  <formula>  (21) 
 C15H10Cl2N2O2
 
->  <s_name>  (21) 
+>  <name>  (21) 
 Lorazepam
 
->  <s_set>  (21) 
+>  <set>  (21) 
 1
 
 $$$$
@@ -1997,40 +1997,40 @@ Ro20-8065
  17 18  2  0
  18 21  1  0
 M  END
->  <k_molid>  (22) 
+>  <molid>  (22) 
 51
 
->  <n_hba>  (22) 
+>  <hba>  (22) 
 3
 
->  <n_hbd>  (22) 
+>  <hbd>  (22) 
 1
 
->  <n_logp>  (22) 
+>  <logp>  (22) 
 3.92
 
->  <n_molwt>  (22) 
+>  <molwt>  (22) 
 323.15
 
->  <n_pIC50>  (22) 
+>  <pIC50>  (22) 
 8.44
 
->  <n_rotb>  (22) 
+>  <rotb>  (22) 
 1
 
->  <n_tpsa>  (22) 
+>  <tpsa>  (22) 
 41
 
->  <s_family>  (22) 
+>  <family>  (22) 
 A.1
 
->  <s_formula>  (22) 
+>  <formula>  (22) 
 C15H9Cl2FN2O
 
->  <s_name>  (22) 
+>  <name>  (22) 
 Ro20-8065
 
->  <s_set>  (22) 
+>  <set>  (22) 
 1
 
 $$$$
@@ -2088,40 +2088,40 @@ Flunitrazepam
  19 21  1  0
 M  CHG  2  19   1  21  -1
 M  END
->  <k_molid>  (23) 
+>  <molid>  (23) 
 20
 
->  <n_hba>  (23) 
+>  <hba>  (23) 
 6
 
->  <n_hbd>  (23) 
+>  <hbd>  (23) 
 0
 
->  <n_logp>  (23) 
+>  <logp>  (23) 
 2.55
 
->  <n_molwt>  (23) 
+>  <molwt>  (23) 
 313.29
 
->  <n_pIC50>  (23) 
+>  <pIC50>  (23) 
 8.42
 
->  <n_rotb>  (23) 
+>  <rotb>  (23) 
 2
 
->  <n_tpsa>  (23) 
+>  <tpsa>  (23) 
 75
 
->  <s_family>  (23) 
+>  <family>  (23) 
 A.1
 
->  <s_formula>  (23) 
+>  <formula>  (23) 
 C16H12FN3O3
 
->  <s_name>  (23) 
+>  <name>  (23) 
 Flunitrazepam
 
->  <s_set>  (23) 
+>  <set>  (23) 
 1
 
 $$$$
@@ -2172,40 +2172,40 @@ Ro05-4608
  17 18  2  0
  18 19  1  0
 M  END
->  <k_molid>  (24) 
+>  <molid>  (24) 
 43
 
->  <n_hba>  (24) 
+>  <hba>  (24) 
 3
 
->  <n_hbd>  (24) 
+>  <hbd>  (24) 
 0
 
->  <n_logp>  (24) 
+>  <logp>  (24) 
 3.15
 
->  <n_molwt>  (24) 
+>  <molwt>  (24) 
 284.75
 
->  <n_pIC50>  (24) 
+>  <pIC50>  (24) 
 8.42
 
->  <n_rotb>  (24) 
+>  <rotb>  (24) 
 1
 
->  <n_tpsa>  (24) 
+>  <tpsa>  (24) 
 32
 
->  <s_family>  (24) 
+>  <family>  (24) 
 A.1
 
->  <s_formula>  (24) 
+>  <formula>  (24) 
 C16H13ClN2O
 
->  <s_name>  (24) 
+>  <name>  (24) 
 Ro05-4608
 
->  <s_set>  (24) 
+>  <set>  (24) 
 0
 
 $$$$
@@ -2260,40 +2260,40 @@ Ro07-4065
  18 19  2  0
  19 20  1  0
 M  END
->  <k_molid>  (25) 
+>  <molid>  (25) 
 9
 
->  <n_hba>  (25) 
+>  <hba>  (25) 
 3
 
->  <n_hbd>  (25) 
+>  <hbd>  (25) 
 0
 
->  <n_logp>  (25) 
+>  <logp>  (25) 
 3.43
 
->  <n_molwt>  (25) 
+>  <molwt>  (25) 
 320.73
 
->  <n_pIC50>  (25) 
+>  <pIC50>  (25) 
 8.39
 
->  <n_rotb>  (25) 
+>  <rotb>  (25) 
 1
 
->  <n_tpsa>  (25) 
+>  <tpsa>  (25) 
 32
 
->  <s_family>  (25) 
+>  <family>  (25) 
 A.1
 
->  <s_formula>  (25) 
+>  <formula>  (25) 
 C16H11ClF2N2O
 
->  <s_name>  (25) 
+>  <name>  (25) 
 Ro07-4065
 
->  <s_set>  (25) 
+>  <set>  (25) 
 0
 
 $$$$
@@ -2346,40 +2346,40 @@ Ro05-6822
  18 19  2  0
  19 20  1  0
 M  END
->  <k_molid>  (26) 
+>  <molid>  (26) 
 4
 
->  <n_hba>  (26) 
+>  <hba>  (26) 
 3
 
->  <n_hbd>  (26) 
+>  <hbd>  (26) 
 0
 
->  <n_logp>  (26) 
+>  <logp>  (26) 
 2.78
 
->  <n_molwt>  (26) 
+>  <molwt>  (26) 
 286.28
 
->  <n_pIC50>  (26) 
+>  <pIC50>  (26) 
 8.29
 
->  <n_rotb>  (26) 
+>  <rotb>  (26) 
 1
 
->  <n_tpsa>  (26) 
+>  <tpsa>  (26) 
 32
 
->  <s_family>  (26) 
+>  <family>  (26) 
 A.1
 
->  <s_formula>  (26) 
+>  <formula>  (26) 
 C16H12F2N2O
 
->  <s_name>  (26) 
+>  <name>  (26) 
 Ro05-6822
 
->  <s_set>  (26) 
+>  <set>  (26) 
 1
 
 $$$$
@@ -2435,40 +2435,40 @@ Ro14-3074
  21 22  2  0
 M  CHG  2  21   1  22  -1
 M  END
->  <k_molid>  (27) 
+>  <molid>  (27) 
 17
 
->  <n_hba>  (27) 
+>  <hba>  (27) 
 6
 
->  <n_hbd>  (27) 
+>  <hbd>  (27) 
 1
 
->  <n_logp>  (27) 
+>  <logp>  (27) 
 3.56
 
->  <n_molwt>  (27) 
+>  <molwt>  (27) 
 295.28
 
->  <n_pIC50>  (27) 
+>  <pIC50>  (27) 
 8.28
 
->  <n_rotb>  (27) 
+>  <rotb>  (27) 
 2
 
->  <n_tpsa>  (27) 
+>  <tpsa>  (27) 
 90
 
->  <s_family>  (27) 
+>  <family>  (27) 
 A.1
 
->  <s_formula>  (27) 
+>  <formula>  (27) 
 C15H10FN5O
 
->  <s_name>  (27) 
+>  <name>  (27) 
 Ro14-3074
 
->  <s_set>  (27) 
+>  <set>  (27) 
 1
 
 $$$$
@@ -2523,40 +2523,40 @@ Ro20-7078
  17 18  2  0
  18 22  1  0
 M  END
->  <k_molid>  (28) 
+>  <molid>  (28) 
 90
 
->  <n_hba>  (28) 
+>  <hba>  (28) 
 3
 
->  <n_hbd>  (28) 
+>  <hbd>  (28) 
 0
 
->  <n_logp>  (28) 
+>  <logp>  (28) 
 3.86
 
->  <n_molwt>  (28) 
+>  <molwt>  (28) 
 337.18
 
->  <n_pIC50>  (28) 
+>  <pIC50>  (28) 
 8.28
 
->  <n_rotb>  (28) 
+>  <rotb>  (28) 
 1
 
->  <n_tpsa>  (28) 
+>  <tpsa>  (28) 
 32
 
->  <s_family>  (28) 
+>  <family>  (28) 
 A.1
 
->  <s_formula>  (28) 
+>  <formula>  (28) 
 C16H11Cl2FN2O
 
->  <s_name>  (28) 
+>  <name>  (28) 
 Ro20-7078
 
->  <s_set>  (28) 
+>  <set>  (28) 
 1
 
 $$$$
@@ -2611,40 +2611,40 @@ Ro07-5220
  18 19  2  0
  19 20  1  0
 M  END
->  <k_molid>  (29) 
+>  <molid>  (29) 
 13
 
->  <n_hba>  (29) 
+>  <hba>  (29) 
 3
 
->  <n_hbd>  (29) 
+>  <hbd>  (29) 
 0
 
->  <n_logp>  (29) 
+>  <logp>  (29) 
 4.46
 
->  <n_molwt>  (29) 
+>  <molwt>  (29) 
 353.64
 
->  <n_pIC50>  (29) 
+>  <pIC50>  (29) 
 8.26
 
->  <n_rotb>  (29) 
+>  <rotb>  (29) 
 1
 
->  <n_tpsa>  (29) 
+>  <tpsa>  (29) 
 32
 
->  <s_family>  (29) 
+>  <family>  (29) 
 A.1
 
->  <s_formula>  (29) 
+>  <formula>  (29) 
 C16H11Cl3N2O
 
->  <s_name>  (29) 
+>  <name>  (29) 
 Ro07-5220
 
->  <s_set>  (29) 
+>  <set>  (29) 
 0
 
 $$$$
@@ -2710,40 +2710,40 @@ $$$$
  24 26  1  0
  26 27  1  0
 M  END
->  <k_molid>  (30) 
+>  <molid>  (30) 
 260
 
->  <n_hba>  (30) 
+>  <hba>  (30) 
 6
 
->  <n_hbd>  (30) 
+>  <hbd>  (30) 
 0
 
->  <n_logp>  (30) 
+>  <logp>  (30) 
 3.99
 
->  <n_molwt>  (30) 
+>  <molwt>  (30) 
 361.40
 
->  <n_pIC50>  (30) 
+>  <pIC50>  (30) 
 8.19
 
->  <n_rotb>  (30) 
+>  <rotb>  (30) 
 6
 
->  <n_tpsa>  (30) 
+>  <tpsa>  (30) 
 57
 
->  <s_family>  (30) 
+>  <family>  (30) 
 I
 
->  <s_formula>  (30) 
+>  <formula>  (30) 
 C21H19N3O3
 
->  <s_name>  (30) 
+>  <name>  (30) 
 4-GBLD_221
 
->  <s_set>  (30) 
+>  <set>  (30) 
 1
 
 $$$$
@@ -2796,40 +2796,40 @@ Ro22-3294
  18 19  2  0
  19 20  1  0
 M  END
->  <k_molid>  (31) 
+>  <molid>  (31) 
 12
 
->  <n_hba>  (31) 
+>  <hba>  (31) 
 3
 
->  <n_hbd>  (31) 
+>  <hbd>  (31) 
 1
 
->  <n_logp>  (31) 
+>  <logp>  (31) 
 4.44
 
->  <n_molwt>  (31) 
+>  <molwt>  (31) 
 339.61
 
->  <n_pIC50>  (31) 
+>  <pIC50>  (31) 
 8.15
 
->  <n_rotb>  (31) 
+>  <rotb>  (31) 
 1
 
->  <n_tpsa>  (31) 
+>  <tpsa>  (31) 
 41
 
->  <s_family>  (31) 
+>  <family>  (31) 
 A.1
 
->  <s_formula>  (31) 
+>  <formula>  (31) 
 C15H9Cl3N2O
 
->  <s_name>  (31) 
+>  <name>  (31) 
 Ro22-3294
 
->  <s_set>  (31) 
+>  <set>  (31) 
 0
 
 $$$$
@@ -2889,40 +2889,40 @@ Ro11-6896
  20 22  1  0
 M  CHG  2  20   1  22  -1
 M  END
->  <k_molid>  (32) 
+>  <molid>  (32) 
 82
 
->  <n_hba>  (32) 
+>  <hba>  (32) 
 6
 
->  <n_hbd>  (32) 
+>  <hbd>  (32) 
 0
 
->  <n_logp>  (32) 
+>  <logp>  (32) 
 2.94
 
->  <n_molwt>  (32) 
+>  <molwt>  (32) 
 327.32
 
->  <n_pIC50>  (32) 
+>  <pIC50>  (32) 
 8.15
 
->  <n_rotb>  (32) 
+>  <rotb>  (32) 
 2
 
->  <n_tpsa>  (32) 
+>  <tpsa>  (32) 
 75
 
->  <s_family>  (32) 
+>  <family>  (32) 
 A.1
 
->  <s_formula>  (32) 
+>  <formula>  (32) 
 C17H14FN3O3
 
->  <s_name>  (32) 
+>  <name>  (32) 
 Ro11-6896
 
->  <s_set>  (32) 
+>  <set>  (32) 
 2
 
 $$$$
@@ -2973,40 +2973,40 @@ Ro05-6820
  18 19  2  0
  19 20  1  0
 M  END
->  <k_molid>  (33) 
+>  <molid>  (33) 
 3
 
->  <n_hba>  (33) 
+>  <hba>  (33) 
 3
 
->  <n_hbd>  (33) 
+>  <hbd>  (33) 
 1
 
->  <n_logp>  (33) 
+>  <logp>  (33) 
 2.75
 
->  <n_molwt>  (33) 
+>  <molwt>  (33) 
 272.25
 
->  <n_pIC50>  (33) 
+>  <pIC50>  (33) 
 8.13
 
->  <n_rotb>  (33) 
+>  <rotb>  (33) 
 1
 
->  <n_tpsa>  (33) 
+>  <tpsa>  (33) 
 41
 
->  <s_family>  (33) 
+>  <family>  (33) 
 A.1
 
->  <s_formula>  (33) 
+>  <formula>  (33) 
 C15H10F2N2O
 
->  <s_name>  (33) 
+>  <name>  (33) 
 Ro05-6820
 
->  <s_set>  (33) 
+>  <set>  (33) 
 2
 
 $$$$
@@ -3057,40 +3057,40 @@ Diazepam
  17 18  1  0
  18 19  2  0
 M  END
->  <k_molid>  (34) 
+>  <molid>  (34) 
 6
 
->  <n_hba>  (34) 
+>  <hba>  (34) 
 3
 
->  <n_hbd>  (34) 
+>  <hbd>  (34) 
 0
 
->  <n_logp>  (34) 
+>  <logp>  (34) 
 3.15
 
->  <n_molwt>  (34) 
+>  <molwt>  (34) 
 284.75
 
->  <n_pIC50>  (34) 
+>  <pIC50>  (34) 
 8.09
 
->  <n_rotb>  (34) 
+>  <rotb>  (34) 
 1
 
->  <n_tpsa>  (34) 
+>  <tpsa>  (34) 
 32
 
->  <s_family>  (34) 
+>  <family>  (34) 
 A.1
 
->  <s_formula>  (34) 
+>  <formula>  (34) 
 C16H13ClN2O
 
->  <s_name>  (34) 
+>  <name>  (34) 
 Diazepam
 
->  <s_set>  (34) 
+>  <set>  (34) 
 0
 
 $$$$
@@ -3156,40 +3156,40 @@ $$$$
  25 26  1  0
  26 27  2  0
 M  END
->  <k_molid>  (35) 
+>  <molid>  (35) 
 277
 
->  <n_hba>  (35) 
+>  <hba>  (35) 
 5
 
->  <n_hbd>  (35) 
+>  <hbd>  (35) 
 1
 
->  <n_logp>  (35) 
+>  <logp>  (35) 
 3.77
 
->  <n_molwt>  (35) 
+>  <molwt>  (35) 
 360.39
 
->  <n_pIC50>  (35) 
+>  <pIC50>  (35) 
 8.09
 
->  <n_rotb>  (35) 
+>  <rotb>  (35) 
 4
 
->  <n_tpsa>  (35) 
+>  <tpsa>  (35) 
 59
 
->  <s_family>  (35) 
+>  <family>  (35) 
 I
 
->  <s_formula>  (35) 
+>  <formula>  (35) 
 C21H17FN4O
 
->  <s_name>  (35) 
+>  <name>  (35) 
 4-GBLD_322
 
->  <s_set>  (35) 
+>  <set>  (35) 
 0
 
 $$$$
@@ -3246,40 +3246,40 @@ Ro07-1986
  21 22  1  0
  22 23  1  0
 M  END
->  <k_molid>  (36) 
+>  <molid>  (36) 
 64
 
->  <n_hba>  (36) 
+>  <hba>  (36) 
 4
 
->  <n_hbd>  (36) 
+>  <hbd>  (36) 
 2
 
->  <n_logp>  (36) 
+>  <logp>  (36) 
 2.62
 
->  <n_molwt>  (36) 
+>  <molwt>  (36) 
 331.78
 
->  <n_pIC50>  (36) 
+>  <pIC50>  (36) 
 8.08
 
->  <n_rotb>  (36) 
+>  <rotb>  (36) 
 3
 
->  <n_tpsa>  (36) 
+>  <tpsa>  (36) 
 58
 
->  <s_family>  (36) 
+>  <family>  (36) 
 A.1
 
->  <s_formula>  (36) 
+>  <formula>  (36) 
 C17H15ClFN3O
 
->  <s_name>  (36) 
+>  <name>  (36) 
 Ro07-1986
 
->  <s_set>  (36) 
+>  <set>  (36) 
 2
 
 $$$$
@@ -3345,40 +3345,40 @@ $$$$
  25 26  1  0
  26 27  1  0
 M  END
->  <k_molid>  (37) 
+>  <molid>  (37) 
 257
 
->  <n_hba>  (37) 
+>  <hba>  (37) 
 5
 
->  <n_hbd>  (37) 
+>  <hbd>  (37) 
 0
 
->  <n_logp>  (37) 
+>  <logp>  (37) 
 4.71
 
->  <n_molwt>  (37) 
+>  <molwt>  (37) 
 377.47
 
->  <n_pIC50>  (37) 
+>  <pIC50>  (37) 
 8.05
 
->  <n_rotb>  (37) 
+>  <rotb>  (37) 
 6
 
->  <n_tpsa>  (37) 
+>  <tpsa>  (37) 
 48
 
->  <s_family>  (37) 
+>  <family>  (37) 
 I
 
->  <s_formula>  (37) 
+>  <formula>  (37) 
 C21H19N3O2S
 
->  <s_name>  (37) 
+>  <name>  (37) 
 4-GBLD_214
 
->  <s_set>  (37) 
+>  <set>  (37) 
 1
 
 $$$$
@@ -3442,40 +3442,40 @@ $$$$
  23 26  1  0
  24 25  2  0
 M  END
->  <k_molid>  (38) 
+>  <molid>  (38) 
 259
 
->  <n_hba>  (38) 
+>  <hba>  (38) 
 5
 
->  <n_hbd>  (38) 
+>  <hbd>  (38) 
 2
 
->  <n_logp>  (38) 
+>  <logp>  (38) 
 4.28
 
->  <n_molwt>  (38) 
+>  <molwt>  (38) 
 362.46
 
->  <n_pIC50>  (38) 
+>  <pIC50>  (38) 
 8.05
 
->  <n_rotb>  (38) 
+>  <rotb>  (38) 
 5
 
->  <n_tpsa>  (38) 
+>  <tpsa>  (38) 
 65
 
->  <s_family>  (38) 
+>  <family>  (38) 
 I
 
->  <s_formula>  (38) 
+>  <formula>  (38) 
 C20H18N4OS
 
->  <s_name>  (38) 
+>  <name>  (38) 
 4-GBLD_220
 
->  <s_set>  (38) 
+>  <set>  (38) 
 0
 
 $$$$
@@ -3524,40 +3524,40 @@ Nordazepam
  17 18  1  0
  18 19  2  0
 M  END
->  <k_molid>  (39) 
+>  <molid>  (39) 
 5
 
->  <n_hba>  (39) 
+>  <hba>  (39) 
 3
 
->  <n_hbd>  (39) 
+>  <hbd>  (39) 
 1
 
->  <n_logp>  (39) 
+>  <logp>  (39) 
 3.13
 
->  <n_molwt>  (39) 
+>  <molwt>  (39) 
 270.72
 
->  <n_pIC50>  (39) 
+>  <pIC50>  (39) 
 8.03
 
->  <n_rotb>  (39) 
+>  <rotb>  (39) 
 1
 
->  <n_tpsa>  (39) 
+>  <tpsa>  (39) 
 41
 
->  <s_family>  (39) 
+>  <family>  (39) 
 A.1
 
->  <s_formula>  (39) 
+>  <formula>  (39) 
 C15H11ClN2O
 
->  <s_name>  (39) 
+>  <name>  (39) 
 Nordazepam
 
->  <s_set>  (39) 
+>  <set>  (39) 
 0
 
 $$$$
@@ -3611,40 +3611,40 @@ Nitrazepam
  19 21  1  0
 M  CHG  2  19   1  21  -1
 M  END
->  <k_molid>  (40) 
+>  <molid>  (40) 
 18
 
->  <n_hba>  (40) 
+>  <hba>  (40) 
 6
 
->  <n_hbd>  (40) 
+>  <hbd>  (40) 
 1
 
->  <n_logp>  (40) 
+>  <logp>  (40) 
 2.38
 
->  <n_molwt>  (40) 
+>  <molwt>  (40) 
 281.27
 
->  <n_pIC50>  (40) 
+>  <pIC50>  (40) 
 8.00
 
->  <n_rotb>  (40) 
+>  <rotb>  (40) 
 2
 
->  <n_tpsa>  (40) 
+>  <tpsa>  (40) 
 84
 
->  <s_family>  (40) 
+>  <family>  (40) 
 A.1
 
->  <s_formula>  (40) 
+>  <formula>  (40) 
 C15H11N3O3
 
->  <s_name>  (40) 
+>  <name>  (40) 
 Nitrazepam
 
->  <s_set>  (40) 
+>  <set>  (40) 
 2
 
 $$$$
@@ -3712,40 +3712,40 @@ $$$$
  24 27  1  0
  27 28  1  0
 M  END
->  <k_molid>  (41) 
+>  <molid>  (41) 
 266
 
->  <n_hba>  (41) 
+>  <hba>  (41) 
 5
 
->  <n_hbd>  (41) 
+>  <hbd>  (41) 
 0
 
->  <n_logp>  (41) 
+>  <logp>  (41) 
 4.84
 
->  <n_molwt>  (41) 
+>  <molwt>  (41) 
 395.46
 
->  <n_pIC50>  (41) 
+>  <pIC50>  (41) 
 8.00
 
->  <n_rotb>  (41) 
+>  <rotb>  (41) 
 6
 
->  <n_tpsa>  (41) 
+>  <tpsa>  (41) 
 48
 
->  <s_family>  (41) 
+>  <family>  (41) 
 I
 
->  <s_formula>  (41) 
+>  <formula>  (41) 
 C21H18FN3O2S
 
->  <s_name>  (41) 
+>  <name>  (41) 
 4-GBLD_266
 
->  <s_set>  (41) 
+>  <set>  (41) 
 0
 
 $$$$
@@ -3811,40 +3811,40 @@ $$$$
  24 26  1  0
  26 27  1  0
 M  END
->  <k_molid>  (42) 
+>  <molid>  (42) 
 256
 
->  <n_hba>  (42) 
+>  <hba>  (42) 
 5
 
->  <n_hbd>  (42) 
+>  <hbd>  (42) 
 0
 
->  <n_logp>  (42) 
+>  <logp>  (42) 
 4.71
 
->  <n_molwt>  (42) 
+>  <molwt>  (42) 
 377.47
 
->  <n_pIC50>  (42) 
+>  <pIC50>  (42) 
 7.96
 
->  <n_rotb>  (42) 
+>  <rotb>  (42) 
 6
 
->  <n_tpsa>  (42) 
+>  <tpsa>  (42) 
 48
 
->  <s_family>  (42) 
+>  <family>  (42) 
 I
 
->  <s_formula>  (42) 
+>  <formula>  (42) 
 C21H19N3O2S
 
->  <s_name>  (42) 
+>  <name>  (42) 
 4-GBLD_190
 
->  <s_set>  (42) 
+>  <set>  (42) 
 0
 
 $$$$
@@ -3912,40 +3912,40 @@ $$$$
  24 27  1  0
  27 28  1  0
 M  END
->  <k_molid>  (43) 
+>  <molid>  (43) 
 263
 
->  <n_hba>  (43) 
+>  <hba>  (43) 
 5
 
->  <n_hbd>  (43) 
+>  <hbd>  (43) 
 0
 
->  <n_logp>  (43) 
+>  <logp>  (43) 
 4.84
 
->  <n_molwt>  (43) 
+>  <molwt>  (43) 
 395.46
 
->  <n_pIC50>  (43) 
+>  <pIC50>  (43) 
 7.96
 
->  <n_rotb>  (43) 
+>  <rotb>  (43) 
 6
 
->  <n_tpsa>  (43) 
+>  <tpsa>  (43) 
 48
 
->  <s_family>  (43) 
+>  <family>  (43) 
 I
 
->  <s_formula>  (43) 
+>  <formula>  (43) 
 C21H18FN3O2S
 
->  <s_name>  (43) 
+>  <name>  (43) 
 4-GBLD_233
 
->  <s_set>  (43) 
+>  <set>  (43) 
 2
 
 $$$$
@@ -4000,40 +4000,40 @@ Ro05-2904
  19 21  1  0
  19 22  1  0
 M  END
->  <k_molid>  (44) 
+>  <molid>  (44) 
 16
 
->  <n_hba>  (44) 
+>  <hba>  (44) 
 3
 
->  <n_hbd>  (44) 
+>  <hbd>  (44) 
 1
 
->  <n_logp>  (44) 
+>  <logp>  (44) 
 3.49
 
->  <n_molwt>  (44) 
+>  <molwt>  (44) 
 304.27
 
->  <n_pIC50>  (44) 
+>  <pIC50>  (44) 
 7.89
 
->  <n_rotb>  (44) 
+>  <rotb>  (44) 
 1
 
->  <n_tpsa>  (44) 
+>  <tpsa>  (44) 
 41
 
->  <s_family>  (44) 
+>  <family>  (44) 
 A.1
 
->  <s_formula>  (44) 
+>  <formula>  (44) 
 C16H11F3N2O
 
->  <s_name>  (44) 
+>  <name>  (44) 
 Ro05-2904
 
->  <s_set>  (44) 
+>  <set>  (44) 
 1
 
 $$$$
@@ -4084,40 +4084,40 @@ Ro05-4520
  17 18  2  0
  18 19  1  0
 M  END
->  <k_molid>  (45) 
+>  <molid>  (45) 
 42
 
->  <n_hba>  (45) 
+>  <hba>  (45) 
 3
 
->  <n_hbd>  (45) 
+>  <hbd>  (45) 
 0
 
->  <n_logp>  (45) 
+>  <logp>  (45) 
 2.64
 
->  <n_molwt>  (45) 
+>  <molwt>  (45) 
 268.29
 
->  <n_pIC50>  (45) 
+>  <pIC50>  (45) 
 7.85
 
->  <n_rotb>  (45) 
+>  <rotb>  (45) 
 1
 
->  <n_tpsa>  (45) 
+>  <tpsa>  (45) 
 32
 
->  <s_family>  (45) 
+>  <family>  (45) 
 A.1
 
->  <s_formula>  (45) 
+>  <formula>  (45) 
 C16H13FN2O
 
->  <s_name>  (45) 
+>  <name>  (45) 
 Ro05-4520
 
->  <s_set>  (45) 
+>  <set>  (45) 
 1
 
 $$$$
@@ -4170,40 +4170,40 @@ Ro20-8552
  17 18  2  0
  18 21  1  0
 M  END
->  <k_molid>  (46) 
+>  <molid>  (46) 
 52
 
->  <n_hba>  (46) 
+>  <hba>  (46) 
 3
 
->  <n_hbd>  (46) 
+>  <hbd>  (46) 
 1
 
->  <n_logp>  (46) 
+>  <logp>  (46) 
 3.58
 
->  <n_molwt>  (46) 
+>  <molwt>  (46) 
 302.74
 
->  <n_pIC50>  (46) 
+>  <pIC50>  (46) 
 7.85
 
->  <n_rotb>  (46) 
+>  <rotb>  (46) 
 1
 
->  <n_tpsa>  (46) 
+>  <tpsa>  (46) 
 41
 
->  <s_family>  (46) 
+>  <family>  (46) 
 A.1
 
->  <s_formula>  (46) 
+>  <formula>  (46) 
 C16H12ClFN2O
 
->  <s_name>  (46) 
+>  <name>  (46) 
 Ro20-8552
 
->  <s_set>  (46) 
+>  <set>  (46) 
 1
 
 $$$$
@@ -4268,40 +4268,40 @@ Flurazepam
  24 25  1  0
  26 27  1  0
 M  END
->  <k_molid>  (47) 
+>  <molid>  (47) 
 65
 
->  <n_hba>  (47) 
+>  <hba>  (47) 
 4
 
->  <n_hbd>  (47) 
+>  <hbd>  (47) 
 0
 
->  <n_logp>  (47) 
+>  <logp>  (47) 
 4.00
 
->  <n_molwt>  (47) 
+>  <molwt>  (47) 
 387.89
 
->  <n_pIC50>  (47) 
+>  <pIC50>  (47) 
 7.83
 
->  <n_rotb>  (47) 
+>  <rotb>  (47) 
 6
 
->  <n_tpsa>  (47) 
+>  <tpsa>  (47) 
 35
 
->  <s_family>  (47) 
+>  <family>  (47) 
 A.1
 
->  <s_formula>  (47) 
+>  <formula>  (47) 
 C21H23ClFN3O
 
->  <s_name>  (47) 
+>  <name>  (47) 
 Flurazepam
 
->  <s_set>  (47) 
+>  <set>  (47) 
 1
 
 $$$$
@@ -4354,40 +4354,40 @@ Temazepam
  16 17  1  0
  17 18  2  0
 M  END
->  <k_molid>  (48) 
+>  <molid>  (48) 
 86
 
->  <n_hba>  (48) 
+>  <hba>  (48) 
 4
 
->  <n_hbd>  (48) 
+>  <hbd>  (48) 
 1
 
->  <n_logp>  (48) 
+>  <logp>  (48) 
 2.47
 
->  <n_molwt>  (48) 
+>  <molwt>  (48) 
 300.75
 
->  <n_pIC50>  (48) 
+>  <pIC50>  (48) 
 7.80
 
->  <n_rotb>  (48) 
+>  <rotb>  (48) 
 1
 
->  <n_tpsa>  (48) 
+>  <tpsa>  (48) 
 52
 
->  <s_family>  (48) 
+>  <family>  (48) 
 A.1
 
->  <s_formula>  (48) 
+>  <formula>  (48) 
 C16H13ClN2O2
 
->  <s_name>  (48) 
+>  <name>  (48) 
 Temazepam
 
->  <s_set>  (48) 
+>  <set>  (48) 
 1
 
 $$$$
@@ -4438,40 +4438,40 @@ Ro05-4865
  17 18  1  0
  18 19  2  0
 M  END
->  <k_molid>  (49) 
+>  <molid>  (49) 
 2
 
->  <n_hba>  (49) 
+>  <hba>  (49) 
 3
 
->  <n_hbd>  (49) 
+>  <hbd>  (49) 
 0
 
->  <n_logp>  (49) 
+>  <logp>  (49) 
 2.64
 
->  <n_molwt>  (49) 
+>  <molwt>  (49) 
 268.29
 
->  <n_pIC50>  (49) 
+>  <pIC50>  (49) 
 7.77
 
->  <n_rotb>  (49) 
+>  <rotb>  (49) 
 1
 
->  <n_tpsa>  (49) 
+>  <tpsa>  (49) 
 32
 
->  <s_family>  (49) 
+>  <family>  (49) 
 A.1
 
->  <s_formula>  (49) 
+>  <formula>  (49) 
 C16H13FN2O
 
->  <s_name>  (49) 
+>  <name>  (49) 
 Ro05-4865
 
->  <s_set>  (49) 
+>  <set>  (49) 
 1
 
 $$$$
@@ -4526,40 +4526,40 @@ Ro20-3053
  20 21  2  0
  20 22  1  0
 M  END
->  <k_molid>  (50) 
+>  <molid>  (50) 
 37
 
->  <n_hba>  (50) 
+>  <hba>  (50) 
 4
 
->  <n_hbd>  (50) 
+>  <hbd>  (50) 
 1
 
->  <n_logp>  (50) 
+>  <logp>  (50) 
 2.82
 
->  <n_molwt>  (50) 
+>  <molwt>  (50) 
 296.30
 
->  <n_pIC50>  (50) 
+>  <pIC50>  (50) 
 7.74
 
->  <n_rotb>  (50) 
+>  <rotb>  (50) 
 2
 
->  <n_tpsa>  (50) 
+>  <tpsa>  (50) 
 58
 
->  <s_family>  (50) 
+>  <family>  (50) 
 A.1
 
->  <s_formula>  (50) 
+>  <formula>  (50) 
 C17H13FN2O2
 
->  <s_name>  (50) 
+>  <name>  (50) 
 Ro20-3053
 
->  <s_set>  (50) 
+>  <set>  (50) 
 1
 
 $$$$
@@ -4608,40 +4608,40 @@ Bromazepam
  17 18  1  0
  18 19  2  0
 M  END
->  <k_molid>  (51) 
+>  <molid>  (51) 
 77
 
->  <n_hba>  (51) 
+>  <hba>  (51) 
 4
 
->  <n_hbd>  (51) 
+>  <hbd>  (51) 
 1
 
->  <n_logp>  (51) 
+>  <logp>  (51) 
 2.63
 
->  <n_molwt>  (51) 
+>  <molwt>  (51) 
 316.16
 
->  <n_pIC50>  (51) 
+>  <pIC50>  (51) 
 7.74
 
->  <n_rotb>  (51) 
+>  <rotb>  (51) 
 1
 
->  <n_tpsa>  (51) 
+>  <tpsa>  (51) 
 54
 
->  <s_family>  (51) 
+>  <family>  (51) 
 A.1
 
->  <s_formula>  (51) 
+>  <formula>  (51) 
 C14H10BrN3O
 
->  <s_name>  (51) 
+>  <name>  (51) 
 Bromazepam
 
->  <s_set>  (51) 
+>  <set>  (51) 
 1
 
 $$$$
@@ -4692,40 +4692,40 @@ Oxazepam
  16 17  1  0
  17 18  2  0
 M  END
->  <k_molid>  (52) 
+>  <molid>  (52) 
 85
 
->  <n_hba>  (52) 
+>  <hba>  (52) 
 4
 
->  <n_hbd>  (52) 
+>  <hbd>  (52) 
 2
 
->  <n_logp>  (52) 
+>  <logp>  (52) 
 2.45
 
->  <n_molwt>  (52) 
+>  <molwt>  (52) 
 286.72
 
->  <n_pIC50>  (52) 
+>  <pIC50>  (52) 
 7.74
 
->  <n_rotb>  (52) 
+>  <rotb>  (52) 
 1
 
->  <n_tpsa>  (52) 
+>  <tpsa>  (52) 
 61
 
->  <s_family>  (52) 
+>  <family>  (52) 
 A.1
 
->  <s_formula>  (52) 
+>  <formula>  (52) 
 C15H11ClN2O2
 
->  <s_name>  (52) 
+>  <name>  (52) 
 Oxazepam
 
->  <s_set>  (52) 
+>  <set>  (52) 
 1
 
 $$$$
@@ -4776,40 +4776,40 @@ Ro07-4419
  17 18  2  0
  18 19  1  0
 M  END
->  <k_molid>  (53) 
+>  <molid>  (53) 
 41
 
->  <n_hba>  (53) 
+>  <hba>  (53) 
 3
 
->  <n_hbd>  (53) 
+>  <hbd>  (53) 
 1
 
->  <n_logp>  (53) 
+>  <logp>  (53) 
 2.75
 
->  <n_molwt>  (53) 
+>  <molwt>  (53) 
 272.25
 
->  <n_pIC50>  (53) 
+>  <pIC50>  (53) 
 7.72
 
->  <n_rotb>  (53) 
+>  <rotb>  (53) 
 1
 
->  <n_tpsa>  (53) 
+>  <tpsa>  (53) 
 41
 
->  <s_family>  (53) 
+>  <family>  (53) 
 A.1
 
->  <s_formula>  (53) 
+>  <formula>  (53) 
 C15H10F2N2O
 
->  <s_name>  (53) 
+>  <name>  (53) 
 Ro07-4419
 
->  <s_set>  (53) 
+>  <set>  (53) 
 1
 
 $$$$
@@ -4860,40 +4860,40 @@ Ro20-8895
  17 18  2  0
  18 19  1  0
 M  END
->  <k_molid>  (54) 
+>  <molid>  (54) 
 47
 
->  <n_hba>  (54) 
+>  <hba>  (54) 
 3
 
->  <n_hbd>  (54) 
+>  <hbd>  (54) 
 1
 
->  <n_logp>  (54) 
+>  <logp>  (54) 
 2.92
 
->  <n_molwt>  (54) 
+>  <molwt>  (54) 
 268.29
 
->  <n_pIC50>  (54) 
+>  <pIC50>  (54) 
 7.72
 
->  <n_rotb>  (54) 
+>  <rotb>  (54) 
 1
 
->  <n_tpsa>  (54) 
+>  <tpsa>  (54) 
 41
 
->  <s_family>  (54) 
+>  <family>  (54) 
 A.1
 
->  <s_formula>  (54) 
+>  <formula>  (54) 
 C16H13FN2O
 
->  <s_name>  (54) 
+>  <name>  (54) 
 Ro20-8895
 
->  <s_set>  (54) 
+>  <set>  (54) 
 1
 
 $$$$
@@ -4942,40 +4942,40 @@ Ro05-4336
  17 18  2  0
  18 19  1  0
 M  END
->  <k_molid>  (55) 
+>  <molid>  (55) 
 40
 
->  <n_hba>  (55) 
+>  <hba>  (55) 
 3
 
->  <n_hbd>  (55) 
+>  <hbd>  (55) 
 1
 
->  <n_logp>  (55) 
+>  <logp>  (55) 
 2.62
 
->  <n_molwt>  (55) 
+>  <molwt>  (55) 
 254.26
 
->  <n_pIC50>  (55) 
+>  <pIC50>  (55) 
 7.68
 
->  <n_rotb>  (55) 
+>  <rotb>  (55) 
 1
 
->  <n_tpsa>  (55) 
+>  <tpsa>  (55) 
 41
 
->  <s_family>  (55) 
+>  <family>  (55) 
 A.1
 
->  <s_formula>  (55) 
+>  <formula>  (55) 
 C15H11FN2O
 
->  <s_name>  (55) 
+>  <name>  (55) 
 Ro05-4336
 
->  <s_set>  (55) 
+>  <set>  (55) 
 0
 
 $$$$
@@ -5026,40 +5026,40 @@ Ro20-5747
  17 18  2  0
  19 20  2  0
 M  END
->  <k_molid>  (56) 
+>  <molid>  (56) 
 35
 
->  <n_hba>  (56) 
+>  <hba>  (56) 
 3
 
->  <n_hbd>  (56) 
+>  <hbd>  (56) 
 1
 
->  <n_logp>  (56) 
+>  <logp>  (56) 
 3.12
 
->  <n_molwt>  (56) 
+>  <molwt>  (56) 
 262.31
 
->  <n_pIC50>  (56) 
+>  <pIC50>  (56) 
 7.62
 
->  <n_rotb>  (56) 
+>  <rotb>  (56) 
 2
 
->  <n_tpsa>  (56) 
+>  <tpsa>  (56) 
 41
 
->  <s_family>  (56) 
+>  <family>  (56) 
 A.1
 
->  <s_formula>  (56) 
+>  <formula>  (56) 
 C17H14N2O
 
->  <s_name>  (56) 
+>  <name>  (56) 
 Ro20-5747
 
->  <s_set>  (56) 
+>  <set>  (56) 
 1
 
 $$$$
@@ -5128,40 +5128,40 @@ $$$$
  26 28  1  0
 M  CHG  2  26   1  28  -1
 M  END
->  <k_molid>  (57) 
+>  <molid>  (57) 
 258
 
->  <n_hba>  (57) 
+>  <hba>  (57) 
 7
 
->  <n_hbd>  (57) 
+>  <hbd>  (57) 
 0
 
->  <n_logp>  (57) 
+>  <logp>  (57) 
 4.61
 
->  <n_molwt>  (57) 
+>  <molwt>  (57) 
 392.44
 
->  <n_pIC50>  (57) 
+>  <pIC50>  (57) 
 7.62
 
->  <n_rotb>  (57) 
+>  <rotb>  (57) 
 6
 
->  <n_tpsa>  (57) 
+>  <tpsa>  (57) 
 82
 
->  <s_family>  (57) 
+>  <family>  (57) 
 I
 
->  <s_formula>  (57) 
+>  <formula>  (57) 
 C20H16N4O3S
 
->  <s_name>  (57) 
+>  <name>  (57) 
 4-GBLD_219
 
->  <s_set>  (57) 
+>  <set>  (57) 
 2
 
 $$$$
@@ -5218,40 +5218,40 @@ Ro07-2750
  21 22  1  0
  22 23  1  0
 M  END
->  <k_molid>  (58) 
+>  <molid>  (58) 
 66
 
->  <n_hba>  (58) 
+>  <hba>  (58) 
 4
 
->  <n_hbd>  (58) 
+>  <hbd>  (58) 
 1
 
->  <n_logp>  (58) 
+>  <logp>  (58) 
 2.66
 
->  <n_molwt>  (58) 
+>  <molwt>  (58) 
 332.76
 
->  <n_pIC50>  (58) 
+>  <pIC50>  (58) 
 7.61
 
->  <n_rotb>  (58) 
+>  <rotb>  (58) 
 3
 
->  <n_tpsa>  (58) 
+>  <tpsa>  (58) 
 52
 
->  <s_family>  (58) 
+>  <family>  (58) 
 A.1
 
->  <s_formula>  (58) 
+>  <formula>  (58) 
 C17H14ClFN2O2
 
->  <s_name>  (58) 
+>  <name>  (58) 
 Ro07-2750
 
->  <s_set>  (58) 
+>  <set>  (58) 
 1
 
 $$$$
@@ -5313,40 +5313,40 @@ $$$$
  22 23  2  0
  24 25  1  0
 M  END
->  <k_molid>  (59) 
+>  <molid>  (59) 
 251
 
->  <n_hba>  (59) 
+>  <hba>  (59) 
 4
 
->  <n_hbd>  (59) 
+>  <hbd>  (59) 
 0
 
->  <n_logp>  (59) 
+>  <logp>  (59) 
 4.70
 
->  <n_molwt>  (59) 
+>  <molwt>  (59) 
 347.44
 
->  <n_pIC50>  (59) 
+>  <pIC50>  (59) 
 7.60
 
->  <n_rotb>  (59) 
+>  <rotb>  (59) 
 5
 
->  <n_tpsa>  (59) 
+>  <tpsa>  (59) 
 39
 
->  <s_family>  (59) 
+>  <family>  (59) 
 I
 
->  <s_formula>  (59) 
+>  <formula>  (59) 
 C20H17N3OS
 
->  <s_name>  (59) 
+>  <name>  (59) 
 4-GBLD_137
 
->  <s_set>  (59) 
+>  <set>  (59) 
 1
 
 $$$$
@@ -5399,40 +5399,40 @@ Ro07-6198
  17 18  2  0
  18 19  1  0
 M  END
->  <k_molid>  (60) 
+>  <molid>  (60) 
 46
 
->  <n_hba>  (60) 
+>  <hba>  (60) 
 3
 
->  <n_hbd>  (60) 
+>  <hbd>  (60) 
 1
 
->  <n_logp>  (60) 
+>  <logp>  (60) 
 3.41
 
->  <n_molwt>  (60) 
+>  <molwt>  (60) 
 306.70
 
->  <n_pIC50>  (60) 
+>  <pIC50>  (60) 
 7.55
 
->  <n_rotb>  (60) 
+>  <rotb>  (60) 
 1
 
->  <n_tpsa>  (60) 
+>  <tpsa>  (60) 
 41
 
->  <s_family>  (60) 
+>  <family>  (60) 
 A.1
 
->  <s_formula>  (60) 
+>  <formula>  (60) 
 C15H9ClF2N2O
 
->  <s_name>  (60) 
+>  <name>  (60) 
 Ro07-6198
 
->  <s_set>  (60) 
+>  <set>  (60) 
 0
 
 $$$$
@@ -5487,40 +5487,40 @@ Ro20-2541
  18 22  1  0
  20 21  3  0
 M  END
->  <k_molid>  (61) 
+>  <molid>  (61) 
 33
 
->  <n_hba>  (61) 
+>  <hba>  (61) 
 4
 
->  <n_hbd>  (61) 
+>  <hbd>  (61) 
 0
 
->  <n_logp>  (61) 
+>  <logp>  (61) 
 2.51
 
->  <n_molwt>  (61) 
+>  <molwt>  (61) 
 293.30
 
->  <n_pIC50>  (61) 
+>  <pIC50>  (61) 
 7.52
 
->  <n_rotb>  (61) 
+>  <rotb>  (61) 
 1
 
->  <n_tpsa>  (61) 
+>  <tpsa>  (61) 
 56
 
->  <s_family>  (61) 
+>  <family>  (61) 
 A.1
 
->  <s_formula>  (61) 
+>  <formula>  (61) 
 C17H12FN3O
 
->  <s_name>  (61) 
+>  <name>  (61) 
 Ro20-2541
 
->  <s_set>  (61) 
+>  <set>  (61) 
 1
 
 $$$$
@@ -5569,40 +5569,40 @@ $$$$
  14 15  2  0
  16 17  1  0
 M  END
->  <k_molid>  (62) 
+>  <molid>  (62) 
 264
 
->  <n_hba>  (62) 
+>  <hba>  (62) 
 4
 
->  <n_hbd>  (62) 
+>  <hbd>  (62) 
 0
 
->  <n_logp>  (62) 
+>  <logp>  (62) 
 2.85
 
->  <n_molwt>  (62) 
+>  <molwt>  (62) 
 257.27
 
->  <n_pIC50>  (62) 
+>  <pIC50>  (62) 
 7.52
 
->  <n_rotb>  (62) 
+>  <rotb>  (62) 
 2
 
->  <n_tpsa>  (62) 
+>  <tpsa>  (62) 
 39
 
->  <s_family>  (62) 
+>  <family>  (62) 
 I
 
->  <s_formula>  (62) 
+>  <formula>  (62) 
 C14H12FN3O
 
->  <s_name>  (62) 
+>  <name>  (62) 
 4-GBLD_251
 
->  <s_set>  (62) 
+>  <set>  (62) 
 1
 
 $$$$
@@ -5663,40 +5663,40 @@ Irazepine
  23 24  2  3
  24 25  2  0
 M  END
->  <k_molid>  (63) 
+>  <molid>  (63) 
 67
 
->  <n_hba>  (63) 
+>  <hba>  (63) 
 4
 
->  <n_hbd>  (63) 
+>  <hbd>  (63) 
 0
 
->  <n_logp>  (63) 
+>  <logp>  (63) 
 3.77
 
->  <n_molwt>  (63) 
+>  <molwt>  (63) 
 373.84
 
->  <n_pIC50>  (63) 
+>  <pIC50>  (63) 
 7.48
 
->  <n_rotb>  (63) 
+>  <rotb>  (63) 
 4
 
->  <n_tpsa>  (63) 
+>  <tpsa>  (63) 
 45
 
->  <s_family>  (63) 
+>  <family>  (63) 
 A.1
 
->  <s_formula>  (63) 
+>  <formula>  (63) 
 C18H13ClFN3OS
 
->  <s_name>  (63) 
+>  <name>  (63) 
 Irazepine
 
->  <s_set>  (63) 
+>  <set>  (63) 
 1
 
 $$$$
@@ -5745,40 +5745,40 @@ Desmethyltetrazepam
  17 18  1  0
  18 19  1  0
 M  END
->  <k_molid>  (64) 
+>  <molid>  (64) 
 74
 
->  <n_hba>  (64) 
+>  <hba>  (64) 
 3
 
->  <n_hbd>  (64) 
+>  <hbd>  (64) 
 1
 
->  <n_logp>  (64) 
+>  <logp>  (64) 
 3.58
 
->  <n_molwt>  (64) 
+>  <molwt>  (64) 
 274.75
 
->  <n_pIC50>  (64) 
+>  <pIC50>  (64) 
 7.47
 
->  <n_rotb>  (64) 
+>  <rotb>  (64) 
 1
 
->  <n_tpsa>  (64) 
+>  <tpsa>  (64) 
 41
 
->  <s_family>  (64) 
+>  <family>  (64) 
 A.1
 
->  <s_formula>  (64) 
+>  <formula>  (64) 
 C15H15ClN2O
 
->  <s_name>  (64) 
+>  <name>  (64) 
 Desmethyltetrazepam
 
->  <s_set>  (64) 
+>  <set>  (64) 
 2
 
 $$$$
@@ -5829,40 +5829,40 @@ Tetrazepam
  17 18  1  0
  18 19  1  0
 M  END
->  <k_molid>  (65) 
+>  <molid>  (65) 
 75
 
->  <n_hba>  (65) 
+>  <hba>  (65) 
 3
 
->  <n_hbd>  (65) 
+>  <hbd>  (65) 
 0
 
->  <n_logp>  (65) 
+>  <logp>  (65) 
 3.61
 
->  <n_molwt>  (65) 
+>  <molwt>  (65) 
 288.78
 
->  <n_pIC50>  (65) 
+>  <pIC50>  (65) 
 7.47
 
->  <n_rotb>  (65) 
+>  <rotb>  (65) 
 1
 
->  <n_tpsa>  (65) 
+>  <tpsa>  (65) 
 32
 
->  <s_family>  (65) 
+>  <family>  (65) 
 A.1
 
->  <s_formula>  (65) 
+>  <formula>  (65) 
 C16H17ClN2O
 
->  <s_name>  (65) 
+>  <name>  (65) 
 Tetrazepam
 
->  <s_set>  (65) 
+>  <set>  (65) 
 2
 
 $$$$
@@ -5913,40 +5913,40 @@ Ro20-2533
  17 18  2  0
  19 20  1  0
 M  END
->  <k_molid>  (66) 
+>  <molid>  (66) 
 34
 
->  <n_hba>  (66) 
+>  <hba>  (66) 
 3
 
->  <n_hbd>  (66) 
+>  <hbd>  (66) 
 1
 
->  <n_logp>  (66) 
+>  <logp>  (66) 
 3.04
 
->  <n_molwt>  (66) 
+>  <molwt>  (66) 
 264.33
 
->  <n_pIC50>  (66) 
+>  <pIC50>  (66) 
 7.44
 
->  <n_rotb>  (66) 
+>  <rotb>  (66) 
 2
 
->  <n_tpsa>  (66) 
+>  <tpsa>  (66) 
 41
 
->  <s_family>  (66) 
+>  <family>  (66) 
 A.1
 
->  <s_formula>  (66) 
+>  <formula>  (66) 
 C17H16N2O
 
->  <s_name>  (66) 
+>  <name>  (66) 
 Ro20-2533
 
->  <s_set>  (66) 
+>  <set>  (66) 
 1
 
 $$$$
@@ -5997,40 +5997,40 @@ Ro05-2750
  16 17  1  0
  17 18  2  0
 M  END
->  <k_molid>  (67) 
+>  <molid>  (67) 
 53
 
->  <n_hba>  (67) 
+>  <hba>  (67) 
 3
 
->  <n_hbd>  (67) 
+>  <hbd>  (67) 
 1
 
->  <n_logp>  (67) 
+>  <logp>  (67) 
 3.78
 
->  <n_molwt>  (67) 
+>  <molwt>  (67) 
 305.16
 
->  <n_pIC50>  (67) 
+>  <pIC50>  (67) 
 7.43
 
->  <n_rotb>  (67) 
+>  <rotb>  (67) 
 1
 
->  <n_tpsa>  (67) 
+>  <tpsa>  (67) 
 41
 
->  <s_family>  (67) 
+>  <family>  (67) 
 A.1
 
->  <s_formula>  (67) 
+>  <formula>  (67) 
 C15H10Cl2N2O
 
->  <s_name>  (67) 
+>  <name>  (67) 
 Ro05-2750
 
->  <s_set>  (67) 
+>  <set>  (67) 
 0
 
 $$$$
@@ -6079,40 +6079,40 @@ Ro05-3061
  17 18  1  0
  18 19  2  0
 M  END
->  <k_molid>  (68) 
+>  <molid>  (68) 
 1
 
->  <n_hba>  (68) 
+>  <hba>  (68) 
 3
 
->  <n_hbd>  (68) 
+>  <hbd>  (68) 
 1
 
->  <n_logp>  (68) 
+>  <logp>  (68) 
 2.62
 
->  <n_molwt>  (68) 
+>  <molwt>  (68) 
 254.26
 
->  <n_pIC50>  (68) 
+>  <pIC50>  (68) 
 7.40
 
->  <n_rotb>  (68) 
+>  <rotb>  (68) 
 1
 
->  <n_tpsa>  (68) 
+>  <tpsa>  (68) 
 41
 
->  <s_family>  (68) 
+>  <family>  (68) 
 A.1
 
->  <s_formula>  (68) 
+>  <formula>  (68) 
 C15H11FN2O
 
->  <s_name>  (68) 
+>  <name>  (68) 
 Ro05-3061
 
->  <s_set>  (68) 
+>  <set>  (68) 
 1
 
 $$$$
@@ -6165,40 +6165,40 @@ Ro22-6762
  16 17  1  0
  17 18  2  0
 M  END
->  <k_molid>  (69) 
+>  <molid>  (69) 
 50
 
->  <n_hba>  (69) 
+>  <hba>  (69) 
 3
 
->  <n_hbd>  (69) 
+>  <hbd>  (69) 
 0
 
->  <n_logp>  (69) 
+>  <logp>  (69) 
 3.81
 
->  <n_molwt>  (69) 
+>  <molwt>  (69) 
 319.19
 
->  <n_pIC50>  (69) 
+>  <pIC50>  (69) 
 7.40
 
->  <n_rotb>  (69) 
+>  <rotb>  (69) 
 1
 
->  <n_tpsa>  (69) 
+>  <tpsa>  (69) 
 32
 
->  <s_family>  (69) 
+>  <family>  (69) 
 A.1
 
->  <s_formula>  (69) 
+>  <formula>  (69) 
 C16H12Cl2N2O
 
->  <s_name>  (69) 
+>  <name>  (69) 
 Ro22-6762
 
->  <s_set>  (69) 
+>  <set>  (69) 
 1
 
 $$$$
@@ -6249,40 +6249,40 @@ Ro20-5397
  17 18  2  0
  19 20  2  0
 M  END
->  <k_molid>  (70) 
+>  <molid>  (70) 
 36
 
->  <n_hba>  (70) 
+>  <hba>  (70) 
 4
 
->  <n_hbd>  (70) 
+>  <hbd>  (70) 
 1
 
->  <n_logp>  (70) 
+>  <logp>  (70) 
 2.29
 
->  <n_molwt>  (70) 
+>  <molwt>  (70) 
 264.28
 
->  <n_pIC50>  (70) 
+>  <pIC50>  (70) 
 7.37
 
->  <n_rotb>  (70) 
+>  <rotb>  (70) 
 2
 
->  <n_tpsa>  (70) 
+>  <tpsa>  (70) 
 58
 
->  <s_family>  (70) 
+>  <family>  (70) 
 A.1
 
->  <s_formula>  (70) 
+>  <formula>  (70) 
 C16H12N2O2
 
->  <s_name>  (70) 
+>  <name>  (70) 
 Ro20-5397
 
->  <s_set>  (70) 
+>  <set>  (70) 
 2
 
 $$$$
@@ -6347,40 +6347,40 @@ Ro08-9013
  25 26  2  0
  25 27  1  0
 M  END
->  <k_molid>  (71) 
+>  <molid>  (71) 
 68
 
->  <n_hba>  (71) 
+>  <hba>  (71) 
 6
 
->  <n_hbd>  (71) 
+>  <hbd>  (71) 
 2
 
->  <n_logp>  (71) 
+>  <logp>  (71) 
 2.17
 
->  <n_molwt>  (71) 
+>  <molwt>  (71) 
 389.81
 
->  <n_pIC50>  (71) 
+>  <pIC50>  (71) 
 7.37
 
->  <n_rotb>  (71) 
+>  <rotb>  (71) 
 6
 
->  <n_tpsa>  (71) 
+>  <tpsa>  (71) 
 84
 
->  <s_family>  (71) 
+>  <family>  (71) 
 A.1
 
->  <s_formula>  (71) 
+>  <formula>  (71) 
 C19H17ClFN3O3
 
->  <s_name>  (71) 
+>  <name>  (71) 
 Ro08-9013
 
->  <s_set>  (71) 
+>  <set>  (71) 
 2
 
 $$$$
@@ -6433,40 +6433,40 @@ Ro06-7263
  16 17  1  0
  17 18  2  0
 M  END
->  <k_molid>  (72) 
+>  <molid>  (72) 
 84
 
->  <n_hba>  (72) 
+>  <hba>  (72) 
 3
 
->  <n_hbd>  (72) 
+>  <hbd>  (72) 
 0
 
->  <n_logp>  (72) 
+>  <logp>  (72) 
 4.07
 
->  <n_molwt>  (72) 
+>  <molwt>  (72) 
 319.19
 
->  <n_pIC50>  (72) 
+>  <pIC50>  (72) 
 7.31
 
->  <n_rotb>  (72) 
+>  <rotb>  (72) 
 1
 
->  <n_tpsa>  (72) 
+>  <tpsa>  (72) 
 32
 
->  <s_family>  (72) 
+>  <family>  (72) 
 A.1
 
->  <s_formula>  (72) 
+>  <formula>  (72) 
 C16H12Cl2N2O
 
->  <s_name>  (72) 
+>  <name>  (72) 
 Ro06-7263
 
->  <s_set>  (72) 
+>  <set>  (72) 
 1
 
 $$$$
@@ -6530,40 +6530,40 @@ $$$$
  24 25  2  0
  25 26  1  0
 M  END
->  <k_molid>  (73) 
+>  <molid>  (73) 
 261
 
->  <n_hba>  (73) 
+>  <hba>  (73) 
 5
 
->  <n_hbd>  (73) 
+>  <hbd>  (73) 
 2
 
->  <n_logp>  (73) 
+>  <logp>  (73) 
 4.28
 
->  <n_molwt>  (73) 
+>  <molwt>  (73) 
 362.46
 
->  <n_pIC50>  (73) 
+>  <pIC50>  (73) 
 7.31
 
->  <n_rotb>  (73) 
+>  <rotb>  (73) 
 5
 
->  <n_tpsa>  (73) 
+>  <tpsa>  (73) 
 65
 
->  <s_family>  (73) 
+>  <family>  (73) 
 I
 
->  <s_formula>  (73) 
+>  <formula>  (73) 
 C20H18N4OS
 
->  <s_name>  (73) 
+>  <name>  (73) 
 4-GBLD_230
 
->  <s_set>  (73) 
+>  <set>  (73) 
 1
 
 $$$$
@@ -6614,40 +6614,40 @@ Ro07-3609
  16 17  1  0
  17 18  2  0
 M  END
->  <k_molid>  (74) 
+>  <molid>  (74) 
 54
 
->  <n_hba>  (74) 
+>  <hba>  (74) 
 3
 
->  <n_hbd>  (74) 
+>  <hbd>  (74) 
 1
 
->  <n_logp>  (74) 
+>  <logp>  (74) 
 3.44
 
->  <n_molwt>  (74) 
+>  <molwt>  (74) 
 284.75
 
->  <n_pIC50>  (74) 
+>  <pIC50>  (74) 
 7.28
 
->  <n_rotb>  (74) 
+>  <rotb>  (74) 
 1
 
->  <n_tpsa>  (74) 
+>  <tpsa>  (74) 
 41
 
->  <s_family>  (74) 
+>  <family>  (74) 
 A.1
 
->  <s_formula>  (74) 
+>  <formula>  (74) 
 C16H13ClN2O
 
->  <s_name>  (74) 
+>  <name>  (74) 
 Ro07-3609
 
->  <s_set>  (74) 
+>  <set>  (74) 
 2
 
 $$$$
@@ -6711,40 +6711,40 @@ $$$$
  22 23  2  0
  24 25  1  0
 M  END
->  <k_molid>  (75) 
+>  <molid>  (75) 
 252
 
->  <n_hba>  (75) 
+>  <hba>  (75) 
 4
 
->  <n_hbd>  (75) 
+>  <hbd>  (75) 
 0
 
->  <n_logp>  (75) 
+>  <logp>  (75) 
 5.35
 
->  <n_molwt>  (75) 
+>  <molwt>  (75) 
 381.89
 
->  <n_pIC50>  (75) 
+>  <pIC50>  (75) 
 7.27
 
->  <n_rotb>  (75) 
+>  <rotb>  (75) 
 5
 
->  <n_tpsa>  (75) 
+>  <tpsa>  (75) 
 39
 
->  <s_family>  (75) 
+>  <family>  (75) 
 I
 
->  <s_formula>  (75) 
+>  <formula>  (75) 
 C20H16ClN3OS
 
->  <s_name>  (75) 
+>  <name>  (75) 
 4-GBLD_150
 
->  <s_set>  (75) 
+>  <set>  (75) 
 1
 
 $$$$
@@ -6799,40 +6799,40 @@ Clorazepate
  20 21  2  0
  20 22  1  0
 M  END
->  <k_molid>  (76) 
+>  <molid>  (76) 
 91
 
->  <n_hba>  (76) 
+>  <hba>  (76) 
 5
 
->  <n_hbd>  (76) 
+>  <hbd>  (76) 
 2
 
->  <n_logp>  (76) 
+>  <logp>  (76) 
 2.58
 
->  <n_molwt>  (76) 
+>  <molwt>  (76) 
 314.73
 
->  <n_pIC50>  (76) 
+>  <pIC50>  (76) 
 7.23
 
->  <n_rotb>  (76) 
+>  <rotb>  (76) 
 2
 
->  <n_tpsa>  (76) 
+>  <tpsa>  (76) 
 78
 
->  <s_family>  (76) 
+>  <family>  (76) 
 A.1
 
->  <s_formula>  (76) 
+>  <formula>  (76) 
 C16H11ClN2O3
 
->  <s_name>  (76) 
+>  <name>  (76) 
 Clorazepate
 
->  <s_set>  (76) 
+>  <set>  (76) 
 2
 
 $$$$
@@ -6891,40 +6891,40 @@ Ro08-3026
  22 23  1  0
  23 24  1  0
 M  END
->  <k_molid>  (77) 
+>  <molid>  (77) 
 57
 
->  <n_hba>  (77) 
+>  <hba>  (77) 
 5
 
->  <n_hbd>  (77) 
+>  <hbd>  (77) 
 2
 
->  <n_logp>  (77) 
+>  <logp>  (77) 
 2.46
 
->  <n_molwt>  (77) 
+>  <molwt>  (77) 
 343.81
 
->  <n_pIC50>  (77) 
+>  <pIC50>  (77) 
 7.20
 
->  <n_rotb>  (77) 
+>  <rotb>  (77) 
 5
 
->  <n_tpsa>  (77) 
+>  <tpsa>  (77) 
 67
 
->  <s_family>  (77) 
+>  <family>  (77) 
 A.1
 
->  <s_formula>  (77) 
+>  <formula>  (77) 
 C18H18ClN3O2
 
->  <s_name>  (77) 
+>  <name>  (77) 
 Ro08-3026
 
->  <s_set>  (77) 
+>  <set>  (77) 
 1
 
 $$$$
@@ -6977,40 +6977,40 @@ Ro20-1815
  17 18  2  0
  18 21  1  0
 M  END
->  <k_molid>  (78) 
+>  <molid>  (78) 
 27
 
->  <n_hba>  (78) 
+>  <hba>  (78) 
 4
 
->  <n_hbd>  (78) 
+>  <hbd>  (78) 
 2
 
->  <n_logp>  (78) 
+>  <logp>  (78) 
 2.22
 
->  <n_molwt>  (78) 
+>  <molwt>  (78) 
 283.31
 
->  <n_pIC50>  (78) 
+>  <pIC50>  (78) 
 7.19
 
->  <n_rotb>  (78) 
+>  <rotb>  (78) 
 1
 
->  <n_tpsa>  (78) 
+>  <tpsa>  (78) 
 58
 
->  <s_family>  (78) 
+>  <family>  (78) 
 A.1
 
->  <s_formula>  (78) 
+>  <formula>  (78) 
 C16H14FN3O
 
->  <s_name>  (78) 
+>  <name>  (78) 
 Ro20-1815
 
->  <s_set>  (78) 
+>  <set>  (78) 
 1
 
 $$$$
@@ -7076,40 +7076,40 @@ $$$$
  24 26  1  0
  26 27  1  0
 M  END
->  <k_molid>  (79) 
+>  <molid>  (79) 
 267
 
->  <n_hba>  (79) 
+>  <hba>  (79) 
 6
 
->  <n_hbd>  (79) 
+>  <hbd>  (79) 
 0
 
->  <n_logp>  (79) 
+>  <logp>  (79) 
 4.34
 
->  <n_molwt>  (79) 
+>  <molwt>  (79) 
 365.36
 
->  <n_pIC50>  (79) 
+>  <pIC50>  (79) 
 7.19
 
->  <n_rotb>  (79) 
+>  <rotb>  (79) 
 5
 
->  <n_tpsa>  (79) 
+>  <tpsa>  (79) 
 57
 
->  <s_family>  (79) 
+>  <family>  (79) 
 I
 
->  <s_formula>  (79) 
+>  <formula>  (79) 
 C20H16FN3O3
 
->  <s_name>  (79) 
+>  <name>  (79) 
 4-GBLD_268
 
->  <s_set>  (79) 
+>  <set>  (79) 
 1
 
 $$$$
@@ -7173,40 +7173,40 @@ $$$$
  24 25  1  0
  25 26  1  0
 M  END
->  <k_molid>  (80) 
+>  <molid>  (80) 
 253
 
->  <n_hba>  (80) 
+>  <hba>  (80) 
 6
 
->  <n_hbd>  (80) 
+>  <hbd>  (80) 
 0
 
->  <n_logp>  (80) 
+>  <logp>  (80) 
 4.21
 
->  <n_molwt>  (80) 
+>  <molwt>  (80) 
 347.37
 
->  <n_pIC50>  (80) 
+>  <pIC50>  (80) 
 7.15
 
->  <n_rotb>  (80) 
+>  <rotb>  (80) 
 5
 
->  <n_tpsa>  (80) 
+>  <tpsa>  (80) 
 57
 
->  <s_family>  (80) 
+>  <family>  (80) 
 I
 
->  <s_formula>  (80) 
+>  <formula>  (80) 
 C20H17N3O3
 
->  <s_name>  (80) 
+>  <name>  (80) 
 4-GBLD_167
 
->  <s_set>  (80) 
+>  <set>  (80) 
 2
 
 $$$$
@@ -7259,40 +7259,40 @@ Ro13-0593
  17 18  2  0
  18 19  1  0
 M  END
->  <k_molid>  (81) 
+>  <molid>  (81) 
 48
 
->  <n_hba>  (81) 
+>  <hba>  (81) 
 3
 
->  <n_hbd>  (81) 
+>  <hbd>  (81) 
 0
 
->  <n_logp>  (81) 
+>  <logp>  (81) 
 3.29
 
->  <n_molwt>  (81) 
+>  <molwt>  (81) 
 302.74
 
->  <n_pIC50>  (81) 
+>  <pIC50>  (81) 
 7.14
 
->  <n_rotb>  (81) 
+>  <rotb>  (81) 
 1
 
->  <n_tpsa>  (81) 
+>  <tpsa>  (81) 
 32
 
->  <s_family>  (81) 
+>  <family>  (81) 
 A.1
 
->  <s_formula>  (81) 
+>  <formula>  (81) 
 C16H12ClFN2O
 
->  <s_name>  (81) 
+>  <name>  (81) 
 Ro13-0593
 
->  <s_set>  (81) 
+>  <set>  (81) 
 1
 
 $$$$
@@ -7356,40 +7356,40 @@ $$$$
  23 26  1  0
  24 25  2  0
 M  END
->  <k_molid>  (82) 
+>  <molid>  (82) 
 255
 
->  <n_hba>  (82) 
+>  <hba>  (82) 
 4
 
->  <n_hbd>  (82) 
+>  <hbd>  (82) 
 0
 
->  <n_logp>  (82) 
+>  <logp>  (82) 
 5.01
 
->  <n_molwt>  (82) 
+>  <molwt>  (82) 
 361.47
 
->  <n_pIC50>  (82) 
+>  <pIC50>  (82) 
 7.13
 
->  <n_rotb>  (82) 
+>  <rotb>  (82) 
 5
 
->  <n_tpsa>  (82) 
+>  <tpsa>  (82) 
 39
 
->  <s_family>  (82) 
+>  <family>  (82) 
 I
 
->  <s_formula>  (82) 
+>  <formula>  (82) 
 C21H19N3OS
 
->  <s_name>  (82) 
+>  <name>  (82) 
 4-GBLD_177
 
->  <s_set>  (82) 
+>  <set>  (82) 
 0
 
 $$$$
@@ -7440,40 +7440,40 @@ Ro05-4619
  17 18  2  0
  18 20  1  0
 M  END
->  <k_molid>  (83) 
+>  <molid>  (83) 
 28
 
->  <n_hba>  (83) 
+>  <hba>  (83) 
 4
 
->  <n_hbd>  (83) 
+>  <hbd>  (83) 
 3
 
->  <n_logp>  (83) 
+>  <logp>  (83) 
 2.71
 
->  <n_molwt>  (83) 
+>  <molwt>  (83) 
 285.73
 
->  <n_pIC50>  (83) 
+>  <pIC50>  (83) 
 7.12
 
->  <n_rotb>  (83) 
+>  <rotb>  (83) 
 1
 
->  <n_tpsa>  (83) 
+>  <tpsa>  (83) 
 67
 
->  <s_family>  (83) 
+>  <family>  (83) 
 A.1
 
->  <s_formula>  (83) 
+>  <formula>  (83) 
 C15H12ClN3O
 
->  <s_name>  (83) 
+>  <name>  (83) 
 Ro05-4619
 
->  <s_set>  (83) 
+>  <set>  (83) 
 1
 
 $$$$
@@ -7522,40 +7522,40 @@ Ro05-3328
  17 18  1  0
  18 19  1  0
 M  END
->  <k_molid>  (84) 
+>  <molid>  (84) 
 76
 
->  <n_hba>  (84) 
+>  <hba>  (84) 
 3
 
->  <n_hbd>  (84) 
+>  <hbd>  (84) 
 1
 
->  <n_logp>  (84) 
+>  <logp>  (84) 
 3.66
 
->  <n_molwt>  (84) 
+>  <molwt>  (84) 
 276.77
 
->  <n_pIC50>  (84) 
+>  <pIC50>  (84) 
 7.06
 
->  <n_rotb>  (84) 
+>  <rotb>  (84) 
 1
 
->  <n_tpsa>  (84) 
+>  <tpsa>  (84) 
 41
 
->  <s_family>  (84) 
+>  <family>  (84) 
 A.1
 
->  <s_formula>  (84) 
+>  <formula>  (84) 
 C15H17ClN2O
 
->  <s_name>  (84) 
+>  <name>  (84) 
 Ro05-3328
 
->  <s_set>  (84) 
+>  <set>  (84) 
 1
 
 $$$$
@@ -7614,40 +7614,40 @@ Halazepam
  21 23  1  0
  21 24  1  0
 M  END
->  <k_molid>  (85) 
+>  <molid>  (85) 
 58
 
->  <n_hba>  (85) 
+>  <hba>  (85) 
 3
 
->  <n_hbd>  (85) 
+>  <hbd>  (85) 
 0
 
->  <n_logp>  (85) 
+>  <logp>  (85) 
 4.09
 
->  <n_molwt>  (85) 
+>  <molwt>  (85) 
 352.74
 
->  <n_pIC50>  (85) 
+>  <pIC50>  (85) 
 7.04
 
->  <n_rotb>  (85) 
+>  <rotb>  (85) 
 2
 
->  <n_tpsa>  (85) 
+>  <tpsa>  (85) 
 32
 
->  <s_family>  (85) 
+>  <family>  (85) 
 A.1
 
->  <s_formula>  (85) 
+>  <formula>  (85) 
 C17H12ClF3N2O
 
->  <s_name>  (85) 
+>  <name>  (85) 
 Halazepam
 
->  <s_set>  (85) 
+>  <set>  (85) 
 1
 
 $$$$
@@ -7702,40 +7702,40 @@ Pinazepam
  20 21  1  0
  21 22  3  0
 M  END
->  <k_molid>  (86) 
+>  <molid>  (86) 
 59
 
->  <n_hba>  (86) 
+>  <hba>  (86) 
 3
 
->  <n_hbd>  (86) 
+>  <hbd>  (86) 
 0
 
->  <n_logp>  (86) 
+>  <logp>  (86) 
 3.16
 
->  <n_molwt>  (86) 
+>  <molwt>  (86) 
 308.77
 
->  <n_pIC50>  (86) 
+>  <pIC50>  (86) 
 7.03
 
->  <n_rotb>  (86) 
+>  <rotb>  (86) 
 2
 
->  <n_tpsa>  (86) 
+>  <tpsa>  (86) 
 32
 
->  <s_family>  (86) 
+>  <family>  (86) 
 A.1
 
->  <s_formula>  (86) 
+>  <formula>  (86) 
 C18H13ClN2O
 
->  <s_name>  (86) 
+>  <name>  (86) 
 Pinazepam
 
->  <s_set>  (86) 
+>  <set>  (86) 
 1
 
 $$$$
@@ -7790,40 +7790,40 @@ Ro20-7736
  18 22  1  0
  20 21  1  0
 M  END
->  <k_molid>  (87) 
+>  <molid>  (87) 
 24
 
->  <n_hba>  (87) 
+>  <hba>  (87) 
 5
 
->  <n_hbd>  (87) 
+>  <hbd>  (87) 
 2
 
->  <n_logp>  (87) 
+>  <logp>  (87) 
 2.44
 
->  <n_molwt>  (87) 
+>  <molwt>  (87) 
 299.30
 
->  <n_pIC50>  (87) 
+>  <pIC50>  (87) 
 7.02
 
->  <n_rotb>  (87) 
+>  <rotb>  (87) 
 2
 
->  <n_tpsa>  (87) 
+>  <tpsa>  (87) 
 64
 
->  <s_family>  (87) 
+>  <family>  (87) 
 A.1
 
->  <s_formula>  (87) 
+>  <formula>  (87) 
 C16H14FN3O2
 
->  <s_name>  (87) 
+>  <name>  (87) 
 Ro20-7736
 
->  <s_set>  (87) 
+>  <set>  (87) 
 1
 
 $$$$
@@ -7881,40 +7881,40 @@ Prazepam
  21 23  1  0
  22 23  1  0
 M  END
->  <k_molid>  (88) 
+>  <molid>  (88) 
 60
 
->  <n_hba>  (88) 
+>  <hba>  (88) 
 3
 
->  <n_hbd>  (88) 
+>  <hbd>  (88) 
 0
 
->  <n_logp>  (88) 
+>  <logp>  (88) 
 3.93
 
->  <n_molwt>  (88) 
+>  <molwt>  (88) 
 324.81
 
->  <n_pIC50>  (88) 
+>  <pIC50>  (88) 
 6.96
 
->  <n_rotb>  (88) 
+>  <rotb>  (88) 
 3
 
->  <n_tpsa>  (88) 
+>  <tpsa>  (88) 
 32
 
->  <s_family>  (88) 
+>  <family>  (88) 
 A.1
 
->  <s_formula>  (88) 
+>  <formula>  (88) 
 C19H17ClN2O
 
->  <s_name>  (88) 
+>  <name>  (88) 
 Prazepam
 
->  <s_set>  (88) 
+>  <set>  (88) 
 1
 
 $$$$
@@ -7980,40 +7980,40 @@ Ro07-9238
  24 27  1  0
 M  CHG  2  24   1  25  -1
 M  END
->  <k_molid>  (89) 
+>  <molid>  (89) 
 70
 
->  <n_hba>  (89) 
+>  <hba>  (89) 
 7
 
->  <n_hbd>  (89) 
+>  <hbd>  (89) 
 2
 
->  <n_logp>  (89) 
+>  <logp>  (89) 
 1.70
 
->  <n_molwt>  (89) 
+>  <molwt>  (89) 
 412.74
 
->  <n_pIC50>  (89) 
+>  <pIC50>  (89) 
 6.89
 
->  <n_rotb>  (89) 
+>  <rotb>  (89) 
 5
 
->  <n_tpsa>  (89) 
+>  <tpsa>  (89) 
 105
 
->  <s_family>  (89) 
+>  <family>  (89) 
 A.1
 
->  <s_formula>  (89) 
+>  <formula>  (89) 
 C17H15ClFN2O5P
 
->  <s_name>  (89) 
+>  <name>  (89) 
 Ro07-9238
 
->  <s_set>  (89) 
+>  <set>  (89) 
 1
 
 $$$$
@@ -8074,40 +8074,40 @@ Ro10-3580
  22 24  1  0
  24 25  1  0
 M  END
->  <k_molid>  (90) 
+>  <molid>  (90) 
 69
 
->  <n_hba>  (90) 
+>  <hba>  (90) 
 5
 
->  <n_hbd>  (90) 
+>  <hbd>  (90) 
 2
 
->  <n_logp>  (90) 
+>  <logp>  (90) 
 2.02
 
->  <n_molwt>  (90) 
+>  <molwt>  (90) 
 362.79
 
->  <n_pIC50>  (90) 
+>  <pIC50>  (90) 
 6.85
 
->  <n_rotb>  (90) 
+>  <rotb>  (90) 
 4
 
->  <n_tpsa>  (90) 
+>  <tpsa>  (90) 
 73
 
->  <s_family>  (90) 
+>  <family>  (90) 
 A.1
 
->  <s_formula>  (90) 
+>  <formula>  (90) 
 C18H16ClFN2O3
 
->  <s_name>  (90) 
+>  <name>  (90) 
 Ro10-3580
 
->  <s_set>  (90) 
+>  <set>  (90) 
 1
 
 $$$$
@@ -8160,40 +8160,40 @@ Ro13-0699
  17 18  2  0
  18 21  1  0
 M  END
->  <k_molid>  (91) 
+>  <molid>  (91) 
 45
 
->  <n_hba>  (91) 
+>  <hba>  (91) 
 3
 
->  <n_hbd>  (91) 
+>  <hbd>  (91) 
 0
 
->  <n_logp>  (91) 
+>  <logp>  (91) 
 3.29
 
->  <n_molwt>  (91) 
+>  <molwt>  (91) 
 302.74
 
->  <n_pIC50>  (91) 
+>  <pIC50>  (91) 
 6.82
 
->  <n_rotb>  (91) 
+>  <rotb>  (91) 
 1
 
->  <n_tpsa>  (91) 
+>  <tpsa>  (91) 
 32
 
->  <s_family>  (91) 
+>  <family>  (91) 
 A.1
 
->  <s_formula>  (91) 
+>  <formula>  (91) 
 C16H12ClFN2O
 
->  <s_name>  (91) 
+>  <name>  (91) 
 Ro13-0699
 
->  <s_set>  (91) 
+>  <set>  (91) 
 0
 
 $$$$
@@ -8267,40 +8267,40 @@ $$$$
  26 29  1  0
  30 31  1  0
 M  END
->  <k_molid>  (92) 
+>  <molid>  (92) 
 269
 
->  <n_hba>  (92) 
+>  <hba>  (92) 
 5
 
->  <n_hbd>  (92) 
+>  <hbd>  (92) 
 0
 
->  <n_logp>  (92) 
+>  <logp>  (92) 
 5.72
 
->  <n_molwt>  (92) 
+>  <molwt>  (92) 
 445.47
 
->  <n_pIC50>  (92) 
+>  <pIC50>  (92) 
 6.79
 
->  <n_rotb>  (92) 
+>  <rotb>  (92) 
 6
 
->  <n_tpsa>  (92) 
+>  <tpsa>  (92) 
 48
 
->  <s_family>  (92) 
+>  <family>  (92) 
 I
 
->  <s_formula>  (92) 
+>  <formula>  (92) 
 C22H18F3N3O2S
 
->  <s_name>  (92) 
+>  <name>  (92) 
 4-GBLD_293
 
->  <s_set>  (92) 
+>  <set>  (92) 
 1
 
 $$$$
@@ -8362,40 +8362,40 @@ $$$$
  23 24  1  0
  24 25  2  0
 M  END
->  <k_molid>  (93) 
+>  <molid>  (93) 
 278
 
->  <n_hba>  (93) 
+>  <hba>  (93) 
 5
 
->  <n_hbd>  (93) 
+>  <hbd>  (93) 
 1
 
->  <n_logp>  (93) 
+>  <logp>  (93) 
 3.33
 
->  <n_molwt>  (93) 
+>  <molwt>  (93) 
 328.38
 
->  <n_pIC50>  (93) 
+>  <pIC50>  (93) 
 6.67
 
->  <n_rotb>  (93) 
+>  <rotb>  (93) 
 4
 
->  <n_tpsa>  (93) 
+>  <tpsa>  (93) 
 59
 
->  <s_family>  (93) 
+>  <family>  (93) 
 I
 
->  <s_formula>  (93) 
+>  <formula>  (93) 
 C20H16N4O
 
->  <s_name>  (93) 
+>  <name>  (93) 
 4-GBLD_331
 
->  <s_set>  (93) 
+>  <set>  (93) 
 2
 
 $$$$
@@ -8448,40 +8448,40 @@ Ro17-2221
  19 20  1  0
  20 21  1  0
 M  END
->  <k_molid>  (94) 
+>  <molid>  (94) 
 56
 
->  <n_hba>  (94) 
+>  <hba>  (94) 
 4
 
->  <n_hbd>  (94) 
+>  <hbd>  (94) 
 2
 
->  <n_logp>  (94) 
+>  <logp>  (94) 
 1.83
 
->  <n_molwt>  (94) 
+>  <molwt>  (94) 
 279.34
 
->  <n_pIC50>  (94) 
+>  <pIC50>  (94) 
 6.59
 
->  <n_rotb>  (94) 
+>  <rotb>  (94) 
 3
 
->  <n_tpsa>  (94) 
+>  <tpsa>  (94) 
 58
 
->  <s_family>  (94) 
+>  <family>  (94) 
 A.1
 
->  <s_formula>  (94) 
+>  <formula>  (94) 
 C17H17N3O
 
->  <s_name>  (94) 
+>  <name>  (94) 
 Ro17-2221
 
->  <s_set>  (94) 
+>  <set>  (94) 
 2
 
 $$$$
@@ -8539,40 +8539,40 @@ Ro05-5605
  21 22  1  0
  22 23  2  0
 M  END
->  <k_molid>  (95) 
+>  <molid>  (95) 
 78
 
->  <n_hba>  (95) 
+>  <hba>  (95) 
 3
 
->  <n_hbd>  (95) 
+>  <hbd>  (95) 
 1
 
->  <n_logp>  (95) 
+>  <logp>  (95) 
 4.28
 
->  <n_molwt>  (95) 
+>  <molwt>  (95) 
 320.78
 
->  <n_pIC50>  (95) 
+>  <pIC50>  (95) 
 6.54
 
->  <n_rotb>  (95) 
+>  <rotb>  (95) 
 1
 
->  <n_tpsa>  (95) 
+>  <tpsa>  (95) 
 41
 
->  <s_family>  (95) 
+>  <family>  (95) 
 A.1
 
->  <s_formula>  (95) 
+>  <formula>  (95) 
 C19H13ClN2O
 
->  <s_name>  (95) 
+>  <name>  (95) 
 Ro05-5605
 
->  <s_set>  (95) 
+>  <set>  (95) 
 0
 
 $$$$
@@ -8627,40 +8627,40 @@ Ro13-0882
  17 18  2  0
  18 19  1  0
 M  END
->  <k_molid>  (96) 
+>  <molid>  (96) 
 49
 
->  <n_hba>  (96) 
+>  <hba>  (96) 
 3
 
->  <n_hbd>  (96) 
+>  <hbd>  (96) 
 0
 
->  <n_logp>  (96) 
+>  <logp>  (96) 
 3.95
 
->  <n_molwt>  (96) 
+>  <molwt>  (96) 
 337.18
 
->  <n_pIC50>  (96) 
+>  <pIC50>  (96) 
 6.52
 
->  <n_rotb>  (96) 
+>  <rotb>  (96) 
 1
 
->  <n_tpsa>  (96) 
+>  <tpsa>  (96) 
 32
 
->  <s_family>  (96) 
+>  <family>  (96) 
 A.1
 
->  <s_formula>  (96) 
+>  <formula>  (96) 
 C16H11Cl2FN2O
 
->  <s_name>  (96) 
+>  <name>  (96) 
 Ro13-0882
 
->  <s_set>  (96) 
+>  <set>  (96) 
 1
 
 $$$$
@@ -8724,40 +8724,40 @@ Ro22-4683
  24 26  1  0
 M  CHG  2  24   1  26  -1
 M  END
->  <k_molid>  (97) 
+>  <molid>  (97) 
 71
 
->  <n_hba>  (97) 
+>  <hba>  (97) 
 6
 
->  <n_hbd>  (97) 
+>  <hbd>  (97) 
 0
 
->  <n_logp>  (97) 
+>  <logp>  (97) 
 4.23
 
->  <n_molwt>  (97) 
+>  <molwt>  (97) 
 371.82
 
->  <n_pIC50>  (97) 
+>  <pIC50>  (97) 
 6.52
 
->  <n_rotb>  (97) 
+>  <rotb>  (97) 
 2
 
->  <n_tpsa>  (97) 
+>  <tpsa>  (97) 
 75
 
->  <s_family>  (97) 
+>  <family>  (97) 
 A.1
 
->  <s_formula>  (97) 
+>  <formula>  (97) 
 C19H18ClN3O3
 
->  <s_name>  (97) 
+>  <name>  (97) 
 Ro22-4683
 
->  <s_set>  (97) 
+>  <set>  (97) 
 2
 
 $$$$
@@ -8806,40 +8806,40 @@ Ro05-3546
  16 17  1  0
  17 18  2  0
 M  END
->  <k_molid>  (98) 
+>  <molid>  (98) 
 44
 
->  <n_hba>  (98) 
+>  <hba>  (98) 
 3
 
->  <n_hbd>  (98) 
+>  <hbd>  (98) 
 1
 
->  <n_logp>  (98) 
+>  <logp>  (98) 
 3.13
 
->  <n_molwt>  (98) 
+>  <molwt>  (98) 
 270.72
 
->  <n_pIC50>  (98) 
+>  <pIC50>  (98) 
 6.49
 
->  <n_rotb>  (98) 
+>  <rotb>  (98) 
 1
 
->  <n_tpsa>  (98) 
+>  <tpsa>  (98) 
 41
 
->  <s_family>  (98) 
+>  <family>  (98) 
 A.1
 
->  <s_formula>  (98) 
+>  <formula>  (98) 
 C15H11ClN2O
 
->  <s_name>  (98) 
+>  <name>  (98) 
 Ro05-3546
 
->  <s_set>  (98) 
+>  <set>  (98) 
 0
 
 $$$$
@@ -8904,40 +8904,40 @@ Oxazepam-hemisuccinate
  25 26  2  0
  25 27  1  0
 M  END
->  <k_molid>  (99) 
+>  <molid>  (99) 
 88
 
->  <n_hba>  (99) 
+>  <hba>  (99) 
 7
 
->  <n_hbd>  (99) 
+>  <hbd>  (99) 
 2
 
->  <n_logp>  (99) 
+>  <logp>  (99) 
 2.86
 
->  <n_molwt>  (99) 
+>  <molwt>  (99) 
 386.79
 
->  <n_pIC50>  (99) 
+>  <pIC50>  (99) 
 6.48
 
->  <n_rotb>  (99) 
+>  <rotb>  (99) 
 5
 
->  <n_tpsa>  (99) 
+>  <tpsa>  (99) 
 105
 
->  <s_family>  (99) 
+>  <family>  (99) 
 A.1
 
->  <s_formula>  (99) 
+>  <formula>  (99) 
 C19H15ClN2O5
 
->  <s_name>  (99) 
+>  <name>  (99) 
 Oxazepam-hemisuccinate
 
->  <s_set>  (99) 
+>  <set>  (99) 
 2
 
 $$$$
@@ -8984,40 +8984,40 @@ Ro05-2921
  16 17  1  0
  17 18  2  0
 M  END
->  <k_molid>  (100) 
+>  <molid>  (100) 
 39
 
->  <n_hba>  (100) 
+>  <hba>  (100) 
 3
 
->  <n_hbd>  (100) 
+>  <hbd>  (100) 
 1
 
->  <n_logp>  (100) 
+>  <logp>  (100) 
 2.48
 
->  <n_molwt>  (100) 
+>  <molwt>  (100) 
 236.27
 
->  <n_pIC50>  (100) 
+>  <pIC50>  (100) 
 6.46
 
->  <n_rotb>  (100) 
+>  <rotb>  (100) 
 1
 
->  <n_tpsa>  (100) 
+>  <tpsa>  (100) 
 41
 
->  <s_family>  (100) 
+>  <family>  (100) 
 A.1
 
->  <s_formula>  (100) 
+>  <formula>  (100) 
 C15H12N2O
 
->  <s_name>  (100) 
+>  <name>  (100) 
 Ro05-2921
 
->  <s_set>  (100) 
+>  <set>  (100) 
 1
 
 $$$$
@@ -9070,40 +9070,40 @@ Ro05-4528
  17 18  2  0
  20 21  3  0
 M  END
->  <k_molid>  (101) 
+>  <molid>  (101) 
 32
 
->  <n_hba>  (101) 
+>  <hba>  (101) 
 4
 
->  <n_hbd>  (101) 
+>  <hbd>  (101) 
 0
 
->  <n_logp>  (101) 
+>  <logp>  (101) 
 2.37
 
->  <n_molwt>  (101) 
+>  <molwt>  (101) 
 275.31
 
->  <n_pIC50>  (101) 
+>  <pIC50>  (101) 
 6.42
 
->  <n_rotb>  (101) 
+>  <rotb>  (101) 
 1
 
->  <n_tpsa>  (101) 
+>  <tpsa>  (101) 
 56
 
->  <s_family>  (101) 
+>  <family>  (101) 
 A.1
 
->  <s_formula>  (101) 
+>  <formula>  (101) 
 C17H13N3O
 
->  <s_name>  (101) 
+>  <name>  (101) 
 Ro05-4528
 
->  <s_set>  (101) 
+>  <set>  (101) 
 1
 
 $$$$
@@ -9152,40 +9152,40 @@ Ro05-3072
  16 17  1  0
  17 18  2  0
 M  END
->  <k_molid>  (102) 
+>  <molid>  (102) 
 25
 
->  <n_hba>  (102) 
+>  <hba>  (102) 
 4
 
->  <n_hbd>  (102) 
+>  <hbd>  (102) 
 3
 
->  <n_logp>  (102) 
+>  <logp>  (102) 
 2.06
 
->  <n_molwt>  (102) 
+>  <molwt>  (102) 
 251.29
 
->  <n_pIC50>  (102) 
+>  <pIC50>  (102) 
 6.41
 
->  <n_rotb>  (102) 
+>  <rotb>  (102) 
 1
 
->  <n_tpsa>  (102) 
+>  <tpsa>  (102) 
 67
 
->  <s_family>  (102) 
+>  <family>  (102) 
 A.1
 
->  <s_formula>  (102) 
+>  <formula>  (102) 
 C15H13N3O
 
->  <s_name>  (102) 
+>  <name>  (102) 
 Ro05-3072
 
->  <s_set>  (102) 
+>  <set>  (102) 
 1
 
 $$$$
@@ -9245,40 +9245,40 @@ Ro06-9098
  23 24  1  0
 M  CHG  2  19   1  21  -1
 M  END
->  <k_molid>  (103) 
+>  <molid>  (103) 
 61
 
->  <n_hba>  (103) 
+>  <hba>  (103) 
 7
 
->  <n_hbd>  (103) 
+>  <hbd>  (103) 
 0
 
->  <n_logp>  (103) 
+>  <logp>  (103) 
 2.38
 
->  <n_molwt>  (103) 
+>  <molwt>  (103) 
 325.32
 
->  <n_pIC50>  (103) 
+>  <pIC50>  (103) 
 6.37
 
->  <n_rotb>  (103) 
+>  <rotb>  (103) 
 4
 
->  <n_tpsa>  (103) 
+>  <tpsa>  (103) 
 85
 
->  <s_family>  (103) 
+>  <family>  (103) 
 A.1
 
->  <s_formula>  (103) 
+>  <formula>  (103) 
 C17H15N3O4
 
->  <s_name>  (103) 
+>  <name>  (103) 
 Ro06-9098
 
->  <s_set>  (103) 
+>  <set>  (103) 
 1
 
 $$$$
@@ -9329,40 +9329,40 @@ Ro05-4318
  16 17  1  0
  17 18  2  0
 M  END
->  <k_molid>  (104) 
+>  <molid>  (104) 
 26
 
->  <n_hba>  (104) 
+>  <hba>  (104) 
 4
 
->  <n_hbd>  (104) 
+>  <hbd>  (104) 
 2
 
->  <n_logp>  (104) 
+>  <logp>  (104) 
 2.08
 
->  <n_molwt>  (104) 
+>  <molwt>  (104) 
 265.32
 
->  <n_pIC50>  (104) 
+>  <pIC50>  (104) 
 6.34
 
->  <n_rotb>  (104) 
+>  <rotb>  (104) 
 1
 
->  <n_tpsa>  (104) 
+>  <tpsa>  (104) 
 58
 
->  <s_family>  (104) 
+>  <family>  (104) 
 A.1
 
->  <s_formula>  (104) 
+>  <formula>  (104) 
 C16H15N3O
 
->  <s_name>  (104) 
+>  <name>  (104) 
 Ro05-4318
 
->  <s_set>  (104) 
+>  <set>  (104) 
 2
 
 $$$$
@@ -9423,40 +9423,40 @@ Ro12-6377
  22 24  1  0
  24 25  1  0
 M  END
->  <k_molid>  (105) 
+>  <molid>  (105) 
 30
 
->  <n_hba>  (105) 
+>  <hba>  (105) 
 6
 
->  <n_hbd>  (105) 
+>  <hbd>  (105) 
 2
 
->  <n_logp>  (105) 
+>  <logp>  (105) 
 2.39
 
->  <n_molwt>  (105) 
+>  <molwt>  (105) 
 340.36
 
->  <n_pIC50>  (105) 
+>  <pIC50>  (105) 
 6.34
 
->  <n_rotb>  (105) 
+>  <rotb>  (105) 
 2
 
->  <n_tpsa>  (105) 
+>  <tpsa>  (105) 
 73
 
->  <s_family>  (105) 
+>  <family>  (105) 
 A.1
 
->  <s_formula>  (105) 
+>  <formula>  (105) 
 C18H17FN4O2
 
->  <s_name>  (105) 
+>  <name>  (105) 
 Ro12-6377
 
->  <s_set>  (105) 
+>  <set>  (105) 
 2
 
 $$$$
@@ -9520,40 +9520,40 @@ $$$$
  23 25  1  0
  25 26  1  0
 M  END
->  <k_molid>  (106) 
+>  <molid>  (106) 
 254
 
->  <n_hba>  (106) 
+>  <hba>  (106) 
 6
 
->  <n_hbd>  (106) 
+>  <hbd>  (106) 
 0
 
->  <n_logp>  (106) 
+>  <logp>  (106) 
 4.21
 
->  <n_molwt>  (106) 
+>  <molwt>  (106) 
 347.37
 
->  <n_pIC50>  (106) 
+>  <pIC50>  (106) 
 6.33
 
->  <n_rotb>  (106) 
+>  <rotb>  (106) 
 5
 
->  <n_tpsa>  (106) 
+>  <tpsa>  (106) 
 57
 
->  <s_family>  (106) 
+>  <family>  (106) 
 I
 
->  <s_formula>  (106) 
+>  <formula>  (106) 
 C20H17N3O3
 
->  <s_name>  (106) 
+>  <name>  (106) 
 4-GBLD_168
 
->  <s_set>  (106) 
+>  <set>  (106) 
 1
 
 $$$$
@@ -9606,40 +9606,40 @@ $$$$
  19 20  1  0
  20 21  2  0
 M  END
->  <k_molid>  (107) 
+>  <molid>  (107) 
 276
 
->  <n_hba>  (107) 
+>  <hba>  (107) 
 5
 
->  <n_hbd>  (107) 
+>  <hbd>  (107) 
 1
 
->  <n_logp>  (107) 
+>  <logp>  (107) 
 2.69
 
->  <n_molwt>  (107) 
+>  <molwt>  (107) 
 300.75
 
->  <n_pIC50>  (107) 
+>  <pIC50>  (107) 
 6.32
 
->  <n_rotb>  (107) 
+>  <rotb>  (107) 
 3
 
->  <n_tpsa>  (107) 
+>  <tpsa>  (107) 
 59
 
->  <s_family>  (107) 
+>  <family>  (107) 
 I
 
->  <s_formula>  (107) 
+>  <formula>  (107) 
 C15H13ClN4O
 
->  <s_name>  (107) 
+>  <name>  (107) 
 4-GBLD_318
 
->  <s_set>  (107) 
+>  <set>  (107) 
 1
 
 $$$$
@@ -9686,40 +9686,40 @@ $$$$
  14 16  1  0
  16 17  1  0
 M  END
->  <k_molid>  (108) 
+>  <molid>  (108) 
 352
 
->  <n_hba>  (108) 
+>  <hba>  (108) 
 5
 
->  <n_hbd>  (108) 
+>  <hbd>  (108) 
 3
 
->  <n_logp>  (108) 
+>  <logp>  (108) 
 1.06
 
->  <n_molwt>  (108) 
+>  <molwt>  (108) 
 246.27
 
->  <n_pIC50>  (108) 
+>  <pIC50>  (108) 
 6.24
 
->  <n_rotb>  (108) 
+>  <rotb>  (108) 
 1
 
->  <n_tpsa>  (108) 
+>  <tpsa>  (108) 
 74
 
->  <s_family>  (108) 
+>  <family>  (108) 
 M.5
 
->  <s_formula>  (108) 
+>  <formula>  (108) 
 C13H14N2O3
 
->  <s_name>  (108) 
+>  <name>  (108) 
 2-8
 
->  <s_set>  (108) 
+>  <set>  (108) 
 2
 
 $$$$
@@ -9776,40 +9776,40 @@ Ro20-1310
  20 22  1  0
  20 23  1  0
 M  END
->  <k_molid>  (109) 
+>  <molid>  (109) 
 62
 
->  <n_hba>  (109) 
+>  <hba>  (109) 
 3
 
->  <n_hbd>  (109) 
+>  <hbd>  (109) 
 0
 
->  <n_logp>  (109) 
+>  <logp>  (109) 
 4.32
 
->  <n_molwt>  (109) 
+>  <molwt>  (109) 
 326.83
 
->  <n_pIC50>  (109) 
+>  <pIC50>  (109) 
 6.21
 
->  <n_rotb>  (109) 
+>  <rotb>  (109) 
 1
 
->  <n_tpsa>  (109) 
+>  <tpsa>  (109) 
 32
 
->  <s_family>  (109) 
+>  <family>  (109) 
 A.1
 
->  <s_formula>  (109) 
+>  <formula>  (109) 
 C19H19ClN2O
 
->  <s_name>  (109) 
+>  <name>  (109) 
 Ro20-1310
 
->  <s_set>  (109) 
+>  <set>  (109) 
 1
 
 $$$$
@@ -9872,40 +9872,40 @@ Camazepam
  24 25  1  0
  24 26  1  0
 M  END
->  <k_molid>  (110) 
+>  <molid>  (110) 
 89
 
->  <n_hba>  (110) 
+>  <hba>  (110) 
 6
 
->  <n_hbd>  (110) 
+>  <hbd>  (110) 
 0
 
->  <n_logp>  (110) 
+>  <logp>  (110) 
 3.18
 
->  <n_molwt>  (110) 
+>  <molwt>  (110) 
 371.82
 
->  <n_pIC50>  (110) 
+>  <pIC50>  (110) 
 6.05
 
->  <n_rotb>  (110) 
+>  <rotb>  (110) 
 2
 
->  <n_tpsa>  (110) 
+>  <tpsa>  (110) 
 62
 
->  <s_family>  (110) 
+>  <family>  (110) 
 A.1
 
->  <s_formula>  (110) 
+>  <formula>  (110) 
 C19H18ClN3O3
 
->  <s_name>  (110) 
+>  <name>  (110) 
 Camazepam
 
->  <s_set>  (110) 
+>  <set>  (110) 
 2
 
 $$$$
@@ -9952,40 +9952,40 @@ $$$$
  14 16  1  0
  16 17  1  0
 M  END
->  <k_molid>  (111) 
+>  <molid>  (111) 
 345
 
->  <n_hba>  (111) 
+>  <hba>  (111) 
 4
 
->  <n_hbd>  (111) 
+>  <hbd>  (111) 
 1
 
->  <n_logp>  (111) 
+>  <logp>  (111) 
 1.37
 
->  <n_molwt>  (111) 
+>  <molwt>  (111) 
 244.29
 
->  <n_pIC50>  (111) 
+>  <pIC50>  (111) 
 5.35
 
->  <n_rotb>  (111) 
+>  <rotb>  (111) 
 1
 
->  <n_tpsa>  (111) 
+>  <tpsa>  (111) 
 43
 
->  <s_family>  (111) 
+>  <family>  (111) 
 M.5
 
->  <s_formula>  (111) 
+>  <formula>  (111) 
 C14H16N2O2
 
->  <s_name>  (111) 
+>  <name>  (111) 
 2-21
 
->  <s_set>  (111) 
+>  <set>  (111) 
 1
 
 $$$$
@@ -10034,40 +10034,40 @@ $$$$
  16 17  1  0
  18 19  1  0
 M  END
->  <k_molid>  (112) 
+>  <molid>  (112) 
 349
 
->  <n_hba>  (112) 
+>  <hba>  (112) 
 5
 
->  <n_hbd>  (112) 
+>  <hbd>  (112) 
 3
 
->  <n_logp>  (112) 
+>  <logp>  (112) 
 0.89
 
->  <n_molwt>  (112) 
+>  <molwt>  (112) 
 260.29
 
->  <n_pIC50>  (112) 
+>  <pIC50>  (112) 
 5.30
 
->  <n_rotb>  (112) 
+>  <rotb>  (112) 
 2
 
->  <n_tpsa>  (112) 
+>  <tpsa>  (112) 
 74
 
->  <s_family>  (112) 
+>  <family>  (112) 
 M.5
 
->  <s_formula>  (112) 
+>  <formula>  (112) 
 C14H16N2O3
 
->  <s_name>  (112) 
+>  <name>  (112) 
 2-17
 
->  <s_set>  (112) 
+>  <set>  (112) 
 2
 
 $$$$
@@ -10121,40 +10121,40 @@ $$$$
  18 19  2  0
  20 21  1  0
 M  END
->  <k_molid>  (113) 
+>  <molid>  (113) 
 347
 
->  <n_hba>  (113) 
+>  <hba>  (113) 
 3
 
->  <n_hbd>  (113) 
+>  <hbd>  (113) 
 3
 
->  <n_logp>  (113) 
+>  <logp>  (113) 
 2.76
 
->  <n_molwt>  (113) 
+>  <molwt>  (113) 
 278.36
 
->  <n_pIC50>  (113) 
+>  <pIC50>  (113) 
 5.21
 
->  <n_rotb>  (113) 
+>  <rotb>  (113) 
 2
 
->  <n_tpsa>  (113) 
+>  <tpsa>  (113) 
 48
 
->  <s_family>  (113) 
+>  <family>  (113) 
 M.5
 
->  <s_formula>  (113) 
+>  <formula>  (113) 
 C18H18N2O
 
->  <s_name>  (113) 
+>  <name>  (113) 
 2-59
 
->  <s_set>  (113) 
+>  <set>  (113) 
 2
 
 $$$$
@@ -10212,40 +10212,40 @@ $$$$
  20 22  1  0
  22 23  1  0
 M  END
->  <k_molid>  (114) 
+>  <molid>  (114) 
 357
 
->  <n_hba>  (114) 
+>  <hba>  (114) 
 5
 
->  <n_hbd>  (114) 
+>  <hbd>  (114) 
 2
 
->  <n_logp>  (114) 
+>  <logp>  (114) 
 2.34
 
->  <n_molwt>  (114) 
+>  <molwt>  (114) 
 307.35
 
->  <n_pIC50>  (114) 
+>  <pIC50>  (114) 
 5.20
 
->  <n_rotb>  (114) 
+>  <rotb>  (114) 
 2
 
->  <n_tpsa>  (114) 
+>  <tpsa>  (114) 
 67
 
->  <s_family>  (114) 
+>  <family>  (114) 
 M.5
 
->  <s_formula>  (114) 
+>  <formula>  (114) 
 C18H17N3O2
 
->  <s_name>  (114) 
+>  <name>  (114) 
 2-55
 
->  <s_set>  (114) 
+>  <set>  (114) 
 1
 
 $$$$
@@ -10315,40 +10315,40 @@ $$$$
  26 27  2  0
  28 29  1  0
 M  END
->  <k_molid>  (115) 
+>  <molid>  (115) 
 270
 
->  <n_hba>  (115) 
+>  <hba>  (115) 
 7
 
->  <n_hbd>  (115) 
+>  <hbd>  (115) 
 1
 
->  <n_logp>  (115) 
+>  <logp>  (115) 
 3.83
 
->  <n_molwt>  (115) 
+>  <molwt>  (115) 
 388.43
 
->  <n_pIC50>  (115) 
+>  <pIC50>  (115) 
 5.00
 
->  <n_rotb>  (115) 
+>  <rotb>  (115) 
 6
 
->  <n_tpsa>  (115) 
+>  <tpsa>  (115) 
 77
 
->  <s_family>  (115) 
+>  <family>  (115) 
 I
 
->  <s_formula>  (115) 
+>  <formula>  (115) 
 C22H20N4O3
 
->  <s_name>  (115) 
+>  <name>  (115) 
 4-GBLD_305
 
->  <s_set>  (115) 
+>  <set>  (115) 
 1
 
 $$$$
@@ -10399,40 +10399,40 @@ $$$$
  16 17  1  0
  19 20  1  0
 M  END
->  <k_molid>  (116) 
+>  <molid>  (116) 
 351
 
->  <n_hba>  (116) 
+>  <hba>  (116) 
 5
 
->  <n_hbd>  (116) 
+>  <hbd>  (116) 
 3
 
->  <n_logp>  (116) 
+>  <logp>  (116) 
 2.01
 
->  <n_molwt>  (116) 
+>  <molwt>  (116) 
 274.32
 
->  <n_pIC50>  (116) 
+>  <pIC50>  (116) 
 4.41
 
->  <n_rotb>  (116) 
+>  <rotb>  (116) 
 2
 
->  <n_tpsa>  (116) 
+>  <tpsa>  (116) 
 74
 
->  <s_family>  (116) 
+>  <family>  (116) 
 M.5
 
->  <s_formula>  (116) 
+>  <formula>  (116) 
 C15H18N2O3
 
->  <s_name>  (116) 
+>  <name>  (116) 
 2-14a
 
->  <s_set>  (116) 
+>  <set>  (116) 
 1
 
 $$$$
@@ -10490,40 +10490,40 @@ $$$$
  20 22  1  0
  22 23  1  0
 M  END
->  <k_molid>  (117) 
+>  <molid>  (117) 
 344
 
->  <n_hba>  (117) 
+>  <hba>  (117) 
 4
 
->  <n_hbd>  (117) 
+>  <hbd>  (117) 
 2
 
->  <n_logp>  (117) 
+>  <logp>  (117) 
 2.94
 
->  <n_molwt>  (117) 
+>  <molwt>  (117) 
 306.37
 
->  <n_pIC50>  (117) 
+>  <pIC50>  (117) 
 4.27
 
->  <n_rotb>  (117) 
+>  <rotb>  (117) 
 2
 
->  <n_tpsa>  (117) 
+>  <tpsa>  (117) 
 54
 
->  <s_family>  (117) 
+>  <family>  (117) 
 M.5
 
->  <s_formula>  (117) 
+>  <formula>  (117) 
 C19H18N2O2
 
->  <s_name>  (117) 
+>  <name>  (117) 
 2-49
 
->  <s_set>  (117) 
+>  <set>  (117) 
 1
 
 $$$$
@@ -10578,40 +10578,40 @@ Ro05-3308
  20 21  2  0
  20 22  1  0
 M  END
->  <k_molid>  (118) 
+>  <molid>  (118) 
 29
 
->  <n_hba>  (118) 
+>  <hba>  (118) 
 5
 
->  <n_hbd>  (118) 
+>  <hbd>  (118) 
 2
 
->  <n_logp>  (118) 
+>  <logp>  (118) 
 2.43
 
->  <n_molwt>  (118) 
+>  <molwt>  (118) 
 293.33
 
->  <n_pIC50>  (118) 
+>  <pIC50>  (118) 
 2.00
 
->  <n_rotb>  (118) 
+>  <rotb>  (118) 
 2
 
->  <n_tpsa>  (118) 
+>  <tpsa>  (118) 
 70
 
->  <s_family>  (118) 
+>  <family>  (118) 
 A.1
 
->  <s_formula>  (118) 
+>  <formula>  (118) 
 C17H15N3O2
 
->  <s_name>  (118) 
+>  <name>  (118) 
 Ro05-3308
 
->  <s_set>  (118) 
+>  <set>  (118) 
 2
 
 $$$$
@@ -10664,40 +10664,40 @@ Ro05-9090
  17 18  2  0
  20 21  1  0
 M  END
->  <k_molid>  (119) 
+>  <molid>  (119) 
 31
 
->  <n_hba>  (119) 
+>  <hba>  (119) 
 4
 
->  <n_hbd>  (119) 
+>  <hbd>  (119) 
 2
 
->  <n_logp>  (119) 
+>  <logp>  (119) 
 1.96
 
->  <n_molwt>  (119) 
+>  <molwt>  (119) 
 279.34
 
->  <n_pIC50>  (119) 
+>  <pIC50>  (119) 
 2.00
 
->  <n_rotb>  (119) 
+>  <rotb>  (119) 
 2
 
->  <n_tpsa>  (119) 
+>  <tpsa>  (119) 
 58
 
->  <s_family>  (119) 
+>  <family>  (119) 
 A.1
 
->  <s_formula>  (119) 
+>  <formula>  (119) 
 C17H17N3O
 
->  <s_name>  (119) 
+>  <name>  (119) 
 Ro05-9090
 
->  <s_set>  (119) 
+>  <set>  (119) 
 1
 
 $$$$
@@ -10756,40 +10756,40 @@ Ro05-3343
  22 23  1  0
  22 24  1  0
 M  END
->  <k_molid>  (120) 
+>  <molid>  (120) 
 38
 
->  <n_hba>  (120) 
+>  <hba>  (120) 
 6
 
->  <n_hbd>  (120) 
+>  <hbd>  (120) 
 1
 
->  <n_logp>  (120) 
+>  <logp>  (120) 
 1.73
 
->  <n_molwt>  (120) 
+>  <molwt>  (120) 
 343.41
 
->  <n_pIC50>  (120) 
+>  <pIC50>  (120) 
 2.00
 
->  <n_rotb>  (120) 
+>  <rotb>  (120) 
 3
 
->  <n_tpsa>  (120) 
+>  <tpsa>  (120) 
 78
 
->  <s_family>  (120) 
+>  <family>  (120) 
 A.1
 
->  <s_formula>  (120) 
+>  <formula>  (120) 
 C17H17N3O3S
 
->  <s_name>  (120) 
+>  <name>  (120) 
 Ro05-3343
 
->  <s_set>  (120) 
+>  <set>  (120) 
 2
 
 $$$$
@@ -10844,40 +10844,40 @@ Ro14-2312
  17 18  2  0
  18 22  1  0
 M  END
->  <k_molid>  (121) 
+>  <molid>  (121) 
 55
 
->  <n_hba>  (121) 
+>  <hba>  (121) 
 4
 
->  <n_hbd>  (121) 
+>  <hbd>  (121) 
 2
 
->  <n_logp>  (121) 
+>  <logp>  (121) 
 2.88
 
->  <n_molwt>  (121) 
+>  <molwt>  (121) 
 317.75
 
->  <n_pIC50>  (121) 
+>  <pIC50>  (121) 
 2.00
 
->  <n_rotb>  (121) 
+>  <rotb>  (121) 
 1
 
->  <n_tpsa>  (121) 
+>  <tpsa>  (121) 
 58
 
->  <s_family>  (121) 
+>  <family>  (121) 
 A.1
 
->  <s_formula>  (121) 
+>  <formula>  (121) 
 C16H13ClFN3O
 
->  <s_name>  (121) 
+>  <name>  (121) 
 Ro14-2312
 
->  <s_set>  (121) 
+>  <set>  (121) 
 2
 
 $$$$
@@ -10938,40 +10938,40 @@ Ro05-7094
  22 24  1  0
  24 25  1  0
 M  END
->  <k_molid>  (122) 
+>  <molid>  (122) 
 63
 
->  <n_hba>  (122) 
+>  <hba>  (122) 
 5
 
->  <n_hbd>  (122) 
+>  <hbd>  (122) 
 1
 
->  <n_logp>  (122) 
+>  <logp>  (122) 
 2.66
 
->  <n_molwt>  (122) 
+>  <molwt>  (122) 
 355.83
 
->  <n_pIC50>  (122) 
+>  <pIC50>  (122) 
 2.00
 
->  <n_rotb>  (122) 
+>  <rotb>  (122) 
 3
 
->  <n_tpsa>  (122) 
+>  <tpsa>  (122) 
 61
 
->  <s_family>  (122) 
+>  <family>  (122) 
 A.1
 
->  <s_formula>  (122) 
+>  <formula>  (122) 
 C19H18ClN3O2
 
->  <s_name>  (122) 
+>  <name>  (122) 
 Ro05-7094
 
->  <s_set>  (122) 
+>  <set>  (122) 
 1
 
 $$$$
@@ -11030,40 +11030,40 @@ Ro07-5096
  22 23  2  0
  22 24  1  0
 M  END
->  <k_molid>  (123) 
+>  <molid>  (123) 
 72
 
->  <n_hba>  (123) 
+>  <hba>  (123) 
 5
 
->  <n_hbd>  (123) 
+>  <hbd>  (123) 
 1
 
->  <n_logp>  (123) 
+>  <logp>  (123) 
 2.75
 
->  <n_molwt>  (123) 
+>  <molwt>  (123) 
 346.75
 
->  <n_pIC50>  (123) 
+>  <pIC50>  (123) 
 2.00
 
->  <n_rotb>  (123) 
+>  <rotb>  (123) 
 3
 
->  <n_tpsa>  (123) 
+>  <tpsa>  (123) 
 69
 
->  <s_family>  (123) 
+>  <family>  (123) 
 A.1
 
->  <s_formula>  (123) 
+>  <formula>  (123) 
 C17H12ClFN2O3
 
->  <s_name>  (123) 
+>  <name>  (123) 
 Ro07-5096
 
->  <s_set>  (123) 
+>  <set>  (123) 
 1
 
 $$$$
@@ -11099,40 +11099,40 @@ Ro05-3663
  10 11  1  0
  10 12  2  0
 M  END
->  <k_molid>  (124) 
+>  <molid>  (124) 
 73
 
->  <n_hba>  (124) 
+>  <hba>  (124) 
 3
 
->  <n_hbd>  (124) 
+>  <hbd>  (124) 
 1
 
->  <n_logp>  (124) 
+>  <logp>  (124) 
 1.45
 
->  <n_molwt>  (124) 
+>  <molwt>  (124) 
 174.20
 
->  <n_pIC50>  (124) 
+>  <pIC50>  (124) 
 2.00
 
->  <n_rotb>  (124) 
+>  <rotb>  (124) 
 0
 
->  <n_tpsa>  (124) 
+>  <tpsa>  (124) 
 41
 
->  <s_family>  (124) 
+>  <family>  (124) 
 A.1
 
->  <s_formula>  (124) 
+>  <formula>  (124) 
 C10H10N2O
 
->  <s_name>  (124) 
+>  <name>  (124) 
 Ro05-3663
 
->  <s_set>  (124) 
+>  <set>  (124) 
 1
 
 $$$$
@@ -11183,40 +11183,40 @@ Ro05-3580
  18 19  1  0
  19 20  2  0
 M  END
->  <k_molid>  (125) 
+>  <molid>  (125) 
 79
 
->  <n_hba>  (125) 
+>  <hba>  (125) 
 3
 
->  <n_hbd>  (125) 
+>  <hbd>  (125) 
 1
 
->  <n_logp>  (125) 
+>  <logp>  (125) 
 3.32
 
->  <n_molwt>  (125) 
+>  <molwt>  (125) 
 284.75
 
->  <n_pIC50>  (125) 
+>  <pIC50>  (125) 
 2.00
 
->  <n_rotb>  (125) 
+>  <rotb>  (125) 
 2
 
->  <n_tpsa>  (125) 
+>  <tpsa>  (125) 
 41
 
->  <s_family>  (125) 
+>  <family>  (125) 
 A.1
 
->  <s_formula>  (125) 
+>  <formula>  (125) 
 C16H13ClN2O
 
->  <s_name>  (125) 
+>  <name>  (125) 
 Ro05-3580
 
->  <s_set>  (125) 
+>  <set>  (125) 
 2
 
 $$$$
@@ -11271,40 +11271,40 @@ Ro07-4532
  16 17  1  0
  17 18  2  0
 M  END
->  <k_molid>  (126) 
+>  <molid>  (126) 
 83
 
->  <n_hba>  (126) 
+>  <hba>  (126) 
 3
 
->  <n_hbd>  (126) 
+>  <hbd>  (126) 
 0
 
->  <n_logp>  (126) 
+>  <logp>  (126) 
 3.93
 
->  <n_molwt>  (126) 
+>  <molwt>  (126) 
 312.80
 
->  <n_pIC50>  (126) 
+>  <pIC50>  (126) 
 2.00
 
->  <n_rotb>  (126) 
+>  <rotb>  (126) 
 1
 
->  <n_tpsa>  (126) 
+>  <tpsa>  (126) 
 32
 
->  <s_family>  (126) 
+>  <family>  (126) 
 A.1
 
->  <s_formula>  (126) 
+>  <formula>  (126) 
 C18H17ClN2O
 
->  <s_name>  (126) 
+>  <name>  (126) 
 Ro07-4532
 
->  <s_set>  (126) 
+>  <set>  (126) 
 2
 
 $$$$
@@ -11364,40 +11364,40 @@ $$$$
  22 23  1  0
  23 24  2  0
 M  END
->  <k_molid>  (127) 
+>  <molid>  (127) 
 346
 
->  <n_hba>  (127) 
+>  <hba>  (127) 
 4
 
->  <n_hbd>  (127) 
+>  <hbd>  (127) 
 1
 
->  <n_logp>  (127) 
+>  <logp>  (127) 
 2.96
 
->  <n_molwt>  (127) 
+>  <molwt>  (127) 
 320.39
 
->  <n_pIC50>  (127) 
+>  <pIC50>  (127) 
 2.00
 
->  <n_rotb>  (127) 
+>  <rotb>  (127) 
 2
 
->  <n_tpsa>  (127) 
+>  <tpsa>  (127) 
 43
 
->  <s_family>  (127) 
+>  <family>  (127) 
 M.5
 
->  <s_formula>  (127) 
+>  <formula>  (127) 
 C20H20N2O2
 
->  <s_name>  (127) 
+>  <name>  (127) 
 2-50
 
->  <s_set>  (127) 
+>  <set>  (127) 
 2
 
 $$$$
@@ -11444,40 +11444,40 @@ $$$$
  15 17  1  0
  17 18  1  0
 M  END
->  <k_molid>  (128) 
+>  <molid>  (128) 
 348
 
->  <n_hba>  (128) 
+>  <hba>  (128) 
 4
 
->  <n_hbd>  (128) 
+>  <hbd>  (128) 
 2
 
->  <n_logp>  (128) 
+>  <logp>  (128) 
 1.92
 
->  <n_molwt>  (128) 
+>  <molwt>  (128) 
 244.29
 
->  <n_pIC50>  (128) 
+>  <pIC50>  (128) 
 2.00
 
->  <n_rotb>  (128) 
+>  <rotb>  (128) 
 1
 
->  <n_tpsa>  (128) 
+>  <tpsa>  (128) 
 54
 
->  <s_family>  (128) 
+>  <family>  (128) 
 M.5
 
->  <s_formula>  (128) 
+>  <formula>  (128) 
 C14H16N2O2
 
->  <s_name>  (128) 
+>  <name>  (128) 
 2-57
 
->  <s_set>  (128) 
+>  <set>  (128) 
 1
 
 $$$$
@@ -11526,40 +11526,40 @@ $$$$
  16 17  1  0
  18 19  1  0
 M  END
->  <k_molid>  (129) 
+>  <molid>  (129) 
 350
 
->  <n_hba>  (129) 
+>  <hba>  (129) 
 4
 
->  <n_hbd>  (129) 
+>  <hbd>  (129) 
 2
 
->  <n_logp>  (129) 
+>  <logp>  (129) 
 2.31
 
->  <n_molwt>  (129) 
+>  <molwt>  (129) 
 258.32
 
->  <n_pIC50>  (129) 
+>  <pIC50>  (129) 
 2.00
 
->  <n_rotb>  (129) 
+>  <rotb>  (129) 
 2
 
->  <n_tpsa>  (129) 
+>  <tpsa>  (129) 
 54
 
->  <s_family>  (129) 
+>  <family>  (129) 
 M.5
 
->  <s_formula>  (129) 
+>  <formula>  (129) 
 C15H18N2O2
 
->  <s_name>  (129) 
+>  <name>  (129) 
 2-11a
 
->  <s_set>  (129) 
+>  <set>  (129) 
 1
 
 $$$$
@@ -11600,40 +11600,40 @@ $$$$
  12 13  1  0
  14 15  1  0
 M  END
->  <k_molid>  (130) 
+>  <molid>  (130) 
 353
 
->  <n_hba>  (130) 
+>  <hba>  (130) 
 3
 
->  <n_hbd>  (130) 
+>  <hbd>  (130) 
 2
 
->  <n_logp>  (130) 
+>  <logp>  (130) 
 1.82
 
->  <n_molwt>  (130) 
+>  <molwt>  (130) 
 202.26
 
->  <n_pIC50>  (130) 
+>  <pIC50>  (130) 
 2.00
 
->  <n_rotb>  (130) 
+>  <rotb>  (130) 
 1
 
->  <n_tpsa>  (130) 
+>  <tpsa>  (130) 
 37
 
->  <s_family>  (130) 
+>  <family>  (130) 
 M.5
 
->  <s_formula>  (130) 
+>  <formula>  (130) 
 C12H14N2O
 
->  <s_name>  (130) 
+>  <name>  (130) 
 2-61
 
->  <s_set>  (130) 
+>  <set>  (130) 
 1
 
 $$$$
@@ -11670,40 +11670,40 @@ $$$$
  11 12  1  0
  12 13  1  0
 M  END
->  <k_molid>  (131) 
+>  <molid>  (131) 
 354
 
->  <n_hba>  (131) 
+>  <hba>  (131) 
 2
 
->  <n_hbd>  (131) 
+>  <hbd>  (131) 
 2
 
->  <n_logp>  (131) 
+>  <logp>  (131) 
 1.81
 
->  <n_molwt>  (131) 
+>  <molwt>  (131) 
 172.23
 
->  <n_pIC50>  (131) 
+>  <pIC50>  (131) 
 2.00
 
->  <n_rotb>  (131) 
+>  <rotb>  (131) 
 0
 
->  <n_tpsa>  (131) 
+>  <tpsa>  (131) 
 27
 
->  <s_family>  (131) 
+>  <family>  (131) 
 M.5
 
->  <s_formula>  (131) 
+>  <formula>  (131) 
 C11H12N2
 
->  <s_name>  (131) 
+>  <name>  (131) 
 2-62
 
->  <s_set>  (131) 
+>  <set>  (131) 
 1
 
 $$$$
@@ -11742,40 +11742,40 @@ $$$$
  11 14  1  0
  12 13  1  0
 M  END
->  <k_molid>  (132) 
+>  <molid>  (132) 
 355
 
->  <n_hba>  (132) 
+>  <hba>  (132) 
 2
 
->  <n_hbd>  (132) 
+>  <hbd>  (132) 
 1
 
->  <n_logp>  (132) 
+>  <logp>  (132) 
 2.16
 
->  <n_molwt>  (132) 
+>  <molwt>  (132) 
 186.26
 
->  <n_pIC50>  (132) 
+>  <pIC50>  (132) 
 2.00
 
->  <n_rotb>  (132) 
+>  <rotb>  (132) 
 0
 
->  <n_tpsa>  (132) 
+>  <tpsa>  (132) 
 19
 
->  <s_family>  (132) 
+>  <family>  (132) 
 M.5
 
->  <s_formula>  (132) 
+>  <formula>  (132) 
 C12H14N2
 
->  <s_name>  (132) 
+>  <name>  (132) 
 2-63
 
->  <s_set>  (132) 
+>  <set>  (132) 
 2
 
 $$$$
@@ -11814,40 +11814,40 @@ $$$$
  11 12  1  0
  12 13  1  0
 M  END
->  <k_molid>  (133) 
+>  <molid>  (133) 
 356
 
->  <n_hba>  (133) 
+>  <hba>  (133) 
 3
 
->  <n_hbd>  (133) 
+>  <hbd>  (133) 
 3
 
->  <n_logp>  (133) 
+>  <logp>  (133) 
 1.52
 
->  <n_molwt>  (133) 
+>  <molwt>  (133) 
 188.23
 
->  <n_pIC50>  (133) 
+>  <pIC50>  (133) 
 2.00
 
->  <n_rotb>  (133) 
+>  <rotb>  (133) 
 0
 
->  <n_tpsa>  (133) 
+>  <tpsa>  (133) 
 48
 
->  <s_family>  (133) 
+>  <family>  (133) 
 M.5
 
->  <s_formula>  (133) 
+>  <formula>  (133) 
 C11H12N2O
 
->  <s_name>  (133) 
+>  <name>  (133) 
 2-64
 
->  <s_set>  (133) 
+>  <set>  (133) 
 2
 
 $$$$
@@ -11898,40 +11898,40 @@ $$$$
  16 17  1  0
  19 20  1  0
 M  END
->  <k_molid>  (134) 
+>  <molid>  (134) 
 358
 
->  <n_hba>  (134) 
+>  <hba>  (134) 
 4
 
->  <n_hbd>  (134) 
+>  <hbd>  (134) 
 1
 
->  <n_logp>  (134) 
+>  <logp>  (134) 
 2.32
 
->  <n_molwt>  (134) 
+>  <molwt>  (134) 
 272.35
 
->  <n_pIC50>  (134) 
+>  <pIC50>  (134) 
 2.00
 
->  <n_rotb>  (134) 
+>  <rotb>  (134) 
 2
 
->  <n_tpsa>  (134) 
+>  <tpsa>  (134) 
 43
 
->  <s_family>  (134) 
+>  <family>  (134) 
 M.5
 
->  <s_formula>  (134) 
+>  <formula>  (134) 
 C16H20N2O2
 
->  <s_name>  (134) 
+>  <name>  (134) 
 2-22
 
->  <s_set>  (134) 
+>  <set>  (134) 
 2
 
 $$$$
