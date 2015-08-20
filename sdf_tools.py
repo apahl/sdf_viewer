@@ -224,8 +224,6 @@ def smiles_supplier(fn, smiles_prop=""):
                 if smiles_idx < 0:
                     raise ValueError("no Smiles column found in {}".format(fn))
                 
-                continue   # ...with second line
-            
             if "smarts" in smiles_prop.lower():
                 mol = Chem.MolFromSmarts(line[smiles_idx])
             else:
