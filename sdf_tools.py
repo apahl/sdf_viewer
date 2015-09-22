@@ -70,14 +70,11 @@ except:
     print("    plotting will not work.")
 
 try:
-    from rdkit_ipynb_tools import tools
+    from rdkit_ipynb_tools.tools import Mol_List
     
 except ImportError:
     print("  * failed to load RDKit IPython tools")
     Mol_List = list
-
-else:
-    Mol_List = tools.Mol_List    
 
 
 class NoFieldTypes(Exception):
@@ -162,7 +159,7 @@ def load_sdf(file_name_or_obj="testset.sdf", large_sdf=False):
 
         return reader
 
-    sdf_list = []
+    sdf_list = Mol_List()
 
     for mol in reader:
         if mol:
