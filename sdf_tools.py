@@ -69,6 +69,16 @@ except:
     print("  * failed to import pylab,")
     print("    plotting will not work.")
 
+try:
+    from rdkit_ipynb_tools import tools
+    
+except ImportError:
+    print("  * failed to load RDKit IPython tools")
+    Mol_List = list
+
+else:
+    Mol_List = tools.Mol_List    
+
 
 class NoFieldTypes(Exception):
     def __str__(self):
@@ -490,7 +500,7 @@ def iterate_over_sdf_file(fn="testset.sdf", max_num_recs=1000000, actives_only=F
     print_dict(removals)
 
 
-def enum_racemates(sdf_list_or_file, find_only=True):
+def enum_racemates(sdf_list_or_file, find_only=True, mol_id="molid"):
     """returns: result_sdf::list<mol>, racemic_molids::list<int>
     find_only==True:  return new sdf as list which contains all the racemates of the input sdf.
     find_only==False: return new sdf as list with ALL input structures, where the racemates are
@@ -516,7 +526,7 @@ def enum_racemates(sdf_list_or_file, find_only=True):
             first_undefined = chiral_centers[0][1] == "?"
 
         if first_undefined:
-            racemic_molids.append(int(mol.GetProp("molid")))
+            racemic_molids.append(int(mol.GetProp(mol_id)))
             if find_only:
                 result_sdf.append(mol)
                 continue
@@ -968,7 +978,7 @@ def substruct_search(sdf_list_or_file, smarts, invert=False, max_hits=5000, coun
     if 0 < mol_counter_out < 6:
         print("  > found {} matching records at {}.".format(mol_counter_out, str(result_indexes_list)))
 
-    return result_list
+    return Mol_List(result_list)
 
 
 def similarity_search(sdf_list_or_file, smarts, similarity=0.8, max_hits=2000, count_only=False):

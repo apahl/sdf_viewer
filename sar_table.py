@@ -1,6 +1,8 @@
 #!/usr/bin/env python2
 # -*- coding: utf-8 -*-
 
+# ColorScale API CHANGED !!!!
+
 from rdkit.Chem import AllChem as Chem
 from rdkit.Chem import Draw
 #from rdkit.Chem.Descriptors import MolWt
@@ -68,25 +70,30 @@ LOGP_INSERT = """</tbody>
 
 
 class ColorScale():
-    
-    def __init__(self, num_values):
+
+    def __init__(self, num_values, val_min, val_max):
         self.num_values = num_values
+        self.num_val_1 = num_values - 1
+        self.value_min = val_min
+        self.value_max = val_max
+        self.value_range = self.value_max - self.value_min
         self.color_scale = []
-        hsv_tuples = [(0.35 + ((x*0.65)/(self.num_values-1)), 0.9, 0.9) for x in range(self.num_values)]
+        hsv_tuples = [(0.35 + ((x*0.65)/(self.num_val_1)), 0.9, 0.9) for x in range(self.num_values)]
         rgb_tuples = map(lambda x: colorsys.hsv_to_rgb(*x), hsv_tuples)
         for rgb in rgb_tuples:
             rgb_int = [int(255*x) for x in rgb]
             self.color_scale.append('#{:02x}{:02x}{:02x}'.format(*rgb_int))
 
-    def get_color(self, value_min, value_max, value, reverse=False):
+    def __call__(self, value, reverse=False):
         """return the color from the scale corresponding to the place in the value_min ..  value_max range"""
-        value_range = value_max - value_min
-        pos = round(((value - value_min) / value_range) * self.num_values)
+        pos = int(((value - self.value_min) / self.value_range) * self.num_val_1)
+        print(pos)
+
         if reverse:
-            pos = self.num_values - pos
-        
+            pos = self.num_val_1 - pos
+
         return self.color_scale[pos]
-        
+
 
 def get_res_pos(smiles):
     pat = re.compile('\[(.*?)\*\]')
@@ -205,7 +212,7 @@ def generate_sar_table(db_list, core, id_prop, act_prop, dir_name="html/sar_tabl
     return act_xy, molid_xy, color_xy, max_x, max_y
 
 
-def sar_table_report_html(act_xy, molid_xy, color_xy, max_x, max_y, color_by="logp", reverse_color=False, 
+def sar_table_report_html(act_xy, molid_xy, color_xy, max_x, max_y, color_by="logp", reverse_color=False,
                           show_link=False, show_tooltip=True):
     if "logp" in color_by.lower():
         # logp_colors = {2.7: "#5F84FF", 3.0: "#A4D8FF", 4.2: "#66FF66", 5.0: "#FFFF66", 1000.0: "#FF4E4E"}
@@ -247,12 +254,12 @@ def sar_table_report_html(act_xy, molid_xy, color_xy, max_x, max_y, color_by="lo
                             break
                 else:
                     value = float(color_xy[curr_x][curr_y])
-                    html_color = color_scale.get_color(color_min, color_max, 
+                    html_color = color_scale.get_color(color_min, color_max,
                                                       value, reverse=reverse_color)
                     bg_color = ' bgcolor="{}"'.format(html_color)
                     if show_tooltip:
                         prop_tip = '{}: {:.2f}'.format(color_by, color_xy[curr_x][curr_y])
-                
+
                 if show_tooltip:
                     tool_tip = '<img src=&quot;img/cpd_{}_{}.png&quot; alt=&quot;icon&quot; /><br><br>{}'.format(curr_x, curr_y, prop_tip)
                     mouseover = """ onmouseover="Tip('{}')" onmouseout="UnTip()" """.format(tool_tip)
