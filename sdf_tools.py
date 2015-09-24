@@ -507,7 +507,7 @@ def enum_racemates(sdf_list_or_file, find_only=True, mol_id="molid"):
     In the new sdf the molids are no longer unique and should be reassigned
     (remove molid and run calc_props(sdf))."""
 
-    result_sdf = []
+    result_sdf = Mol_List()
     racemic_molids = []
 
     if not isinstance(sdf_list_or_file, list) and sdf_list_or_file.atEnd(): # sdf is file
@@ -830,7 +830,7 @@ def activity_hist(sdf_list_or_file, activityprop):
 
 
 def factsearch(sdf_list_or_file, query, invert=False, max_hits=2000, count_only=False, sorted=True, reverse=True, field_types=None):
-    result_list = []
+    result_list = Mol_List()
     result_indexes_list = []
     mol_counter_out = 0
     
@@ -916,7 +916,7 @@ def factsearch(sdf_list_or_file, query, invert=False, max_hits=2000, count_only=
 
 
 def substruct_search(sdf_list_or_file, smarts, invert=False, max_hits=5000, count_only=False, add_h=False):
-    result_list = []
+    result_list = Mol_List()
     result_indexes_list = []
 
     mol_counter_out = 0
@@ -979,7 +979,7 @@ def substruct_search(sdf_list_or_file, smarts, invert=False, max_hits=5000, coun
 
 
 def similarity_search(sdf_list_or_file, smarts, similarity=0.8, max_hits=2000, count_only=False):
-    result_list = []
+    result_list = Mol_List()
     result_indexes_list = []
 
     mol_counter_out = 0
@@ -1516,7 +1516,7 @@ def get_sdf_from_index_list(orig_sdf, index_list):
 
 
 def get_sdf_from_id_list(sdf_list_or_file, id_dict_or_list, calc_ex_mw=True):
-    result_sdf = []
+    result_sdf = Mol_List()
     result_id_list = []
 
     if not isinstance(sdf_list_or_file, list) and sdf_list_or_file.atEnd(): # sdf is file
@@ -1732,7 +1732,7 @@ def neutralize_sdf(sdf_list_or_file, id_prop="molid", show=False):
     """returns:            neutral_sdf::list<mol>, neutralized_molids::list<int>
     neutral_sdf:         new sdf with all input mols, where the salts have been neutralized
     neutralized_molids: list with the neutralized molids"""
-    neutral_sdf = []
+    neutral_sdf = Mol_List()
     neutralized_molids = []
     counter_in = 0
     counter_out = 0
@@ -1768,25 +1768,3 @@ def scatter_props(sdf_list, props_list):
     x = [float(mol.GetProp(props_list[0])) for mol in sdf_list_sel]
     y = [float(mol.GetProp(props_list[1])) for mol in sdf_list_sel]
     pylab.scatter(x, y, s=40, color="r")
-
-
-def mol_grid(sdf_list, props, fn="img/grid.png", mols_per_row=5, sub_img_size=(200, 200)):
-    """Draw a molecule grid from the input <sdf_list>. On IPython, an inline graphics will be returned
-    in addition to writing the image to <fn>.
-    The given sdf <props> (as a list) will be concatenated to the molecules' legends."""
-
-    if not isinstance(props, list):
-        props = [props]
-
-    legends = []
-    for mol in sdf_list:
-        leg = [mol.GetProp(prop) for prop in props]
-        leg_str = "_".join(leg)
-        legends.append(leg_str)
-
-    img = Draw.MolsToGridImage(sdf_list, molsPerRow=mols_per_row, subImgSize=sub_img_size, legends=legends)
-    img.save(fn)
-
-    if IPYTHON:
-        return img
-
