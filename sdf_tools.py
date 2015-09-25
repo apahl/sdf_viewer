@@ -978,14 +978,14 @@ def substruct_search(sdf_list_or_file, smarts, invert=False, max_hits=5000, coun
     return Mol_List(result_list)
 
 
-def similarity_search(sdf_list_or_file, smarts, similarity=0.8, max_hits=2000, count_only=False):
+def similarity_search(sdf_list_or_file, smiles, similarity=0.8, max_hits=2000, count_only=False):
     result_list = Mol_List()
     result_indexes_list = []
 
     mol_counter_out = 0
-    query_mol = Chem.MolFromSmarts(smarts)
+    query_mol = Chem.MolFromSmiles(smiles)
     if not query_mol:
-        print("  * ERROR: could not generate query from SMARTS.")
+        print("  * ERROR: could not generate query from SMILES.")
         return None
 
     query_fp = FingerprintMols.FingerprintMol(query_mol)
@@ -1029,14 +1029,14 @@ def similarity_search(sdf_list_or_file, smarts, similarity=0.8, max_hits=2000, c
 
 
 
-def similarity_hist(sdf_list_or_file, smarts, min_similarity=0.5):
+def similarity_hist(sdf_list_or_file, smiles, min_similarity=0.5):
     """use this to get a quick overview of the similarity distribution for a given compound (smarts)"""
     result_list = []
 
     mol_counter_out = 0
-    query_mol = Chem.MolFromSmarts(smarts)
+    query_mol = Chem.MolFromSmiles(smiles)
     if not query_mol:
-        print("  * ERROR: could not generate query from SMARTS.")
+        print("  * ERROR: could not generate query from SMILES.")
         return None
 
     query_fp = FingerprintMols.FingerprintMol(query_mol)
@@ -1065,14 +1065,14 @@ def similarity_hist(sdf_list_or_file, smarts, min_similarity=0.5):
     return result_list
 
 
-def similarity_list(sdf_list_or_file, smarts):
+def similarity_list(sdf_list_or_file, smiles):
     """return the molids and their similarity to the given compound (smarts)
     returns list([molid, similarity])"""
     result_list = []
 
-    query_mol = Chem.MolFromSmarts(smarts)
+    query_mol = Chem.MolFromSmiles(smiles)
     if not query_mol:
-        print("  * ERROR: could not generate query from SMARTS.")
+        print("  * ERROR: could not generate query from SMILES.")
         return None
 
     query_fp = FingerprintMols.FingerprintMol(query_mol)
