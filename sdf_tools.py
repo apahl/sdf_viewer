@@ -169,7 +169,7 @@ def load_sdf(file_name_or_obj="testset.sdf", large_sdf=False):
                 first_mol = False
                 order = None
                 try:
-                    order = mol.GetProp(order)
+                    order = mol.GetProp("order")
                     remove_props_from_mol(mol, "order")
                 except KeyError:  # first mol does not contain an order field
                     pass
@@ -201,7 +201,6 @@ def write_sdf(sdf_list, fn, conf_id=-1):
     first_mol = True
     for mol in sdf_list:
         if first_mol:
-            first_mol = False
             order = None
             try:
                 order = sdf_list.order
@@ -210,7 +209,17 @@ def write_sdf(sdf_list, fn, conf_id=-1):
             if order:
                 mol.SetProp("order", ";".join(order))
             
+        try:
+            mol.GetConformer()
+        except ValueError: # no 2D coords... calculate them
+            mol.Compute2DCoords()
+        
         writer.write(mol, confId=conf_id)
+        
+        # remove the order property again from mol_list
+        if first_mol:
+            first_mol = False
+            mol.ClearProp("order")
 
     writer.close()
 
