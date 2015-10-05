@@ -161,8 +161,26 @@ def load_sdf(file_name_or_obj="testset.sdf", large_sdf=False):
 
     sdf_list = Mol_List()
 
+    # try to load the column order
+    first_mol = True
     for mol in reader:
         if mol:
+            if first_mol:
+                first_mol = False
+                order = None
+                try:
+                    order = mol.GetProp(order)
+                    remove_props_from_mol(mol, "order")
+                except KeyError:  # first mol does not contain an order field
+                    pass
+                
+                if order:
+                    try:
+                        sdf_list.order = order.split(";")
+                    
+                    except AttributeError:  # sdf_list is not a Mol_List
+                        pass
+            
             sdf_list.append(mol)
 
     if isinstance(file_name_or_obj, str):
@@ -179,7 +197,19 @@ def write_sdf(sdf_list, fn, conf_id=-1):
 
     writer = Chem.SDWriter(fn)
 
+    # try to save the column order
+    first_mol = True
     for mol in sdf_list:
+        if first_mol:
+            first_mol = False
+            order = None
+            try:
+                order = sdf_list.order
+            except AttributeError:
+                pass
+            if order:
+                mol.SetProp("order", ";".join(order))
+            
         writer.write(mol, confId=conf_id)
 
     writer.close()
