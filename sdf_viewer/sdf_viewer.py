@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-#-*- coding: utf-8 -*-
+# -*- coding: utf-8 -*-
 # sdf_viewer.py
 # version: 2015-05-28
 # author:  Axel Pahl (APL)
