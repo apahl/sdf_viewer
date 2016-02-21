@@ -5,8 +5,8 @@
 
 from rdkit.Chem import AllChem as Chem
 from rdkit.Chem import Draw
-#from rdkit.Chem.Descriptors import MolWt
-#from rdkit.Chem import Lipinski as Lip
+# from rdkit.Chem.Descriptors import MolWt
+# from rdkit.Chem import Lipinski as Lip
 
 from sdf_viewer import sdf_tools as sdft
 
@@ -45,21 +45,21 @@ HTML_INTRO = """<!DOCTYPE html>
 HTML_EXTRO = """<div style="width:4000px;height:2000px"></div>
 <script>
       function addEvent(obj, ev, fu) {
-	  if (obj.addEventListener) {
-	      obj.addEventListener(ev, fu, false);
-	  } else {
-	      var eev = 'on' + ev;
-	      obj.attachEvent(eev, fu);
-	  }
+      if (obj.addEventListener) {
+          obj.addEventListener(ev, fu, false);
+      } else {
+          var eev = 'on' + ev;
+          obj.attachEvent(eev, fu);
+      }
       }
       addEvent(window, 'load', function () {
-	  tt1 = floatHeader('sar_table', {ncpth: [1], nccol: 1, topDif: 0, leftDif: 0});
+      tt1 = floatHeader('sar_table', {ncpth: [1], nccol: 1, topDif: 0, leftDif: 0});
       });
 </script>
 </body>
 </html>"""
 
-LOGP_INSERT = """</tbody>
+LOGP_INTRO = """</tbody>
 </table>
 <p></p>
 <p>LogP color coding:</p>
@@ -67,32 +67,76 @@ LOGP_INSERT = """</tbody>
 <tbody>
 <tr>
 """
+LOGP_EXTRO = "</tbody>\n</table>\n"
 
 
 class ColorScale():
 
-    def __init__(self, num_values, val_min, val_max):
+    def __init__(self, num_values, val_min, val_max, middle_color="yellow", reverse=False):
         self.num_values = num_values
         self.num_val_1 = num_values - 1
         self.value_min = val_min
         self.value_max = val_max
+        self.reverse = reverse
         self.value_range = self.value_max - self.value_min
         self.color_scale = []
-        hsv_tuples = [(0.35 + ((x*0.65)/(self.num_val_1)), 0.9, 0.9) for x in range(self.num_values)]
+        if middle_color.startswith("y"):  # middle color yellow
+            hsv_tuples = [(0.0 + ((x * 0.35) / (self.num_val_1)), 0.99, 0.9) for x in range(self.num_values)]
+            self.reverse = not self.reverse
+        else:  # middle color blue
+            hsv_tuples = [(0.35 + ((x * 0.65) / (self.num_val_1)), 0.9, 0.9) for x in range(self.num_values)]
         rgb_tuples = map(lambda x: colorsys.hsv_to_rgb(*x), hsv_tuples)
         for rgb in rgb_tuples:
-            rgb_int = [int(255*x) for x in rgb]
+            rgb_int = [int(255 * x) for x in rgb]
             self.color_scale.append('#{:02x}{:02x}{:02x}'.format(*rgb_int))
 
-    def __call__(self, value, reverse=False):
-        """return the color from the scale corresponding to the place in the value_min ..  value_max range"""
-        pos = int(((value - self.value_min) / self.value_range) * self.num_val_1)
-        print(pos)
+        if self.reverse:
+            self.color_scale.reverse()
 
-        if reverse:
-            pos = self.num_val_1 - pos
+    def __call__(self, value):
+        """return the color from the scale corresponding to the place in the value_min .. value_max range"""
+        pos = int(((value - self.value_min) / self.value_range) * self.num_val_1)
 
         return self.color_scale[pos]
+
+
+    def legend(self):
+        """Return the value_range and a list of tuples (value, color) to be used in a legend."""
+        legend = []
+        for idx, color in enumerate(self.color_scale):
+            val = self.value_min + idx / self.num_val_1 * self.value_range
+            legend.append((val, color))
+
+        return legend
+
+
+def format_num(val):
+    """Return a suitable format string depending on the size of the value."""
+    if val > 50:
+        return ".0f"
+    if val > 1:
+        return ".1f"
+    else:
+        return ".2f"
+
+
+def legend_table(legend):
+    """Return a HTML table with the ColorScale label as text.
+
+    Psrsmeters:
+    legend (list): list of tuples as returned from ColorScale.legend()."""
+    intro = "<table>\n<tbody>\n<tr>"
+    extro = "</tr>\n</tbody>\n</table>\n"
+    tbl_list = [intro]
+    rnge = abs(legend[0][0] - legend[-1][0])
+    digits = format_num(rnge)
+    for tup in legend:
+        cell = "<td bgcolor={color}>{val:{digits}}</td>".format(color=tup[1], val=tup[0], digits=digits)
+        tbl_list.append(cell)
+
+    tbl_list.append(extro)
+
+    return "".join(tbl_list)
 
 
 def get_res_pos(smiles):
@@ -182,7 +226,7 @@ def generate_sar_table(db_list, core, id_prop, act_prop, dir_name="html/sar_tabl
             # print "res_pos_x: {}     res_pos_y: {}".format(res_pos_x, res_pos_y)
         else:
             test_pos_x = get_res_pos(frag_smiles[0])
-            if test_pos_x != res_pos_x: # switch residues
+            if test_pos_x != res_pos_x:  # switch residues
                 frag_smiles = frag_smiles[::-1]
                 frag_mols = frag_mols[::-1]
         if frag_smiles[0] in rx_dict:
@@ -219,21 +263,21 @@ def sar_table_report_html(act_xy, molid_xy, color_xy, max_x, max_y, color_by="lo
         logp_colors = {2.7: "#98C0FF", 3.0: "#BDF1FF", 4.2: "#AAFF9B", 5.0: "#F3FFBF", 1000.0: "#FF9E9E"}
 
     else:
-        color_scale = ColorScale(20)
         color_min = float(np.nanmin(color_xy))
         color_max = float(np.nanmax(color_xy))
+        color_scale = ColorScale(20, color_min, color_max, reverse=reverse_color)
 
     # write horizontal residues
     line = [TABLE_INTRO]
     line.append("\n<thead><tr><th align=\"left\">Core:<br><img src=\"img/core.png\" alt=\"icon\" /></th>")
-    for curr_x in range(max_x+1):
+    for curr_x in range(max_x + 1):
         line.append("<th><img src=\"img/frag_x_%02d.png\" alt=\"icon\" /></th>" % curr_x)
 
     line.append("</tr></thead>\n<tbody>\n")
 
-    for curr_y in range(max_y+1):
+    for curr_y in range(max_y + 1):
         line.append("<tr><td><img src=\"img/frag_y_%02d.png\" alt=\"icon\" /></td>" % curr_y)
-        for curr_x in range(max_x+1):
+        for curr_x in range(max_x + 1):
             molid = molid_xy[curr_x][curr_y]
             if molid > 0:
                 link_in = ""
@@ -254,8 +298,7 @@ def sar_table_report_html(act_xy, molid_xy, color_xy, max_x, max_y, color_by="lo
                             break
                 else:
                     value = float(color_xy[curr_x][curr_y])
-                    html_color = color_scale.get_color(color_min, color_max,
-                                                      value, reverse=reverse_color)
+                    html_color = color_scale(value)
                     bg_color = ' bgcolor="{}"'.format(html_color)
                     if show_tooltip:
                         prop_tip = '{}: {:.2f}'.format(color_by, color_xy[curr_x][curr_y])
@@ -266,19 +309,26 @@ def sar_table_report_html(act_xy, molid_xy, color_xy, max_x, max_y, color_by="lo
 
                 line.append("<td%s align=\"center\"%s><b>%.2f</b><br><br>(%s%d%s)</td>" % (mouseover, bg_color, act_xy[curr_x][curr_y], link_in, molid_xy[curr_x][curr_y], link_out))
 
-            else: #empty value in numpy array
+            else:  # empty value in numpy array
                 line.append("<td></td>")
 
 
         line.append("</tr>\n")
 
+    line.append("</tbody>\n</table>\n")
+
     if "logp" in color_by.lower():
-        line.append(LOGP_INSERT)
+        line.append(LOGP_INTRO)
         for limit in sorted(logp_colors):
             line.append('<td align="center" bgcolor="%s">&le; %.2f</td>' % (logp_colors[limit], limit))
         line.append("\n</tr>\n")
+        line.append(LOGP_EXTRO)
+    else:
+        line.append("<br><br>Coloring legend for {}:<br>\n".format(color_by))
+        legend = color_scale.legend()
+        line.append(legend_table(legend))
 
-    line.append("</tbody>\n</table>\n")
+
     html_table = "".join(line)
 
     return html_table
@@ -289,7 +339,7 @@ def write_html_page(html_content, dir_name="html/sar_table", page_name="sar_tabl
     sdft.create_dir_if_not_exist(op.join(sdft.REPORT_FOLDER, dir_name))
     sdft.create_dir_if_not_exist(op.join(sdft.REPORT_FOLDER, dir_name, "img"))
 
-    filename = op.join(sdft.REPORT_FOLDER, dir_name, "%s.htm" % page_name)
+    filename = op.join(dir_name, "%s.htm" % page_name)
     f = open(filename, "w")
     f.write(HTML_INTRO % (page_title, page_title, time.strftime("%d-%b-%Y")))
 
@@ -311,10 +361,10 @@ if __name__ == "__main__":
         ha_sss = sdft.factsearch(sdft.substruct_search(db, "[H]OC(C)C(C)C(=O)N([H])[H]"), 's_class == "hydroxyamide"')
         print("    %3d structures from substructure search" % len(ha_sss))
 
-        #keep only most active stereoisomer:
+        # keep only most active stereoisomer:
         ha_dict = {}
         prop = "n_pEC50_hem"
-        replaced_by_list = [] # [original, replaced_by]
+        replaced_by_list = []  # [original, replaced_by]
         for mol in ha_sss:
             if not mol.HasProp(prop):
                 continue
@@ -357,7 +407,7 @@ if __name__ == "__main__":
 
     elif GEN_TABLE_FOR == "clpp" or GEN_TABLE_FOR == "all":
         print("  * generating SAR table for clpp_145...")
-        dir_name="sar_table_clpp"
+        dir_name = "sar_table_clpp"
 #    db = sdft.load_db("sdf/aviru_db.sdf")
 #    clpp_sss = sdft.substruct_search(db, "Cc1cocn1")
 #    clpp = sdft.factsearch(clpp_sss, "n_pIC50_clpp > 0")
