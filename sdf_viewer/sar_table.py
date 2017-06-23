@@ -176,8 +176,8 @@ def combine_frags():
 def generate_sar_table(db_list, core, id_prop, act_prop, dir_name="html/sar_table", color_prop="logp"):
     """core: smiles string; id_prop, act_prop: string"""
 
-    sdft.create_dir_if_not_exist(op.join(sdft.REPORT_FOLDER, dir_name))
-    sdft.create_dir_if_not_exist(op.join(sdft.REPORT_FOLDER, dir_name, "img"))
+    sdft.create_dir_if_not_exist(dir_name)
+    sdft.create_dir_if_not_exist(op.join(dir_name, "img"))
 
     act_xy = np.zeros([55, 55], dtype=np.float)    # coordinates for the activity
     # color_xy = np.zeros([55, 55], dtype=np.float)
@@ -213,10 +213,10 @@ def generate_sar_table(db_list, core, id_prop, act_prop, dir_name="html/sar_tabl
                 frag_smiles.insert(0, h_smiles)
                 frag_mols.insert(0, Chem.MolFromSmiles(h_smiles))
 
-            print(" adding H residue in pos {} to  mol #{} (molid: {})".format(pos, idx, mol.GetProp("k_molid")))
+            print(" adding H residue in pos {} to  mol #{} (molid: {})".format(pos, idx, mol.GetProp(id_prop)))
 
         elif len(frag_mols) > 2:
-            print("*  incorrect number of fragments ({}) in mol #{} (molid: {})".format(len(frag_mols), idx, mol.GetProp("k_molid")))
+            print("*  incorrect number of fragments ({}) in mol #{} (molid: {})".format(len(frag_mols), idx, mol.GetProp(id_prop)))
             continue
 
         if res_pos_x == -1:
@@ -336,8 +336,8 @@ def sar_table_report_html(act_xy, molid_xy, color_xy, max_x, max_y, color_by="lo
 
 def write_html_page(html_content, dir_name="html/sar_table", page_name="sar_table", page_title="SAR Table"):
 
-    sdft.create_dir_if_not_exist(op.join(sdft.REPORT_FOLDER, dir_name))
-    sdft.create_dir_if_not_exist(op.join(sdft.REPORT_FOLDER, dir_name, "img"))
+    sdft.create_dir_if_not_exist(dir_name)
+    sdft.create_dir_if_not_exist(op.join(dir_name, "img"))
 
     filename = op.join(dir_name, "%s.htm" % page_name)
     f = open(filename, "w")

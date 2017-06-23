@@ -1,21 +1,21 @@
 #!/usr/bin/env python3
-#-*- coding: utf-8 -*-
+# -*- coding: utf-8 -*-
 # sdf_tools.py
 # version: 2015-05-28
 # author:  Axel Pahl (APL)
 # contact: firstnamelastname at gmx dot de
 # license: BSD, see license.txt in this folder
 
-#==============================================================================
-# current development branch (05-Jun-2015): 
-# * make the tools less dependent from the type in the property name 
+# ==============================================================================
+# current development branch (05-Jun-2015):
+# * make the tools less dependent from the type in the property name
 #   (k_molid, n_LogP, ...)
 # * add SAR table to the tools
 # -----------------------------------------------------------------------------
 # - sort_sdf: done (05-Jun-2015)
-#==============================================================================
+# ==============================================================================
 
-from __future__ import absolute_import, division, print_function # , unicode_literals
+from __future__ import absolute_import, division, print_function  # , unicode_literals
 
 from rdkit.Chem import AllChem as Chem
 from rdkit.Chem import Draw
@@ -37,7 +37,7 @@ import math
 import csv
 import os.path as op
 
-from time import sleep, strftime
+from time import strftime
 from collections import Counter
 
 if sys.version_info[0] > 2:
@@ -71,7 +71,7 @@ except:
 
 try:
     from rdkit_ipynb_tools.tools import Mol_List
-    
+
 except ImportError:
     print("  * failed to load RDKit IPython tools")
     Mol_List = list
@@ -137,6 +137,13 @@ def print_dict(d):
         print("  {d_key:{width}s}: {num:7d}".format(d_key=k, width=max_len, num=d[k]))
 
 
+def guess_id_prop(prop_list):  # try to guess an id_prop
+    for prop in prop_list:
+        if prop.lower().endswith("id"):
+            return prop
+    return None
+
+
 def load_sdf(file_name_or_obj="testset.sdf", large_sdf=False):
     """load small sdf completely in memory as list; return large sdf as file object
     function accepts a string filename or a file object"""
@@ -173,14 +180,14 @@ def load_sdf(file_name_or_obj="testset.sdf", large_sdf=False):
                     remove_props_from_mol(mol, "order")
                 except KeyError:  # first mol does not contain an order field
                     pass
-                
+
                 if order:
                     try:
                         sdf_list.order = order.split(";")
-                    
+
                     except AttributeError:  # sdf_list is not a Mol_List
                         pass
-            
+
             sdf_list.append(mol)
 
     if isinstance(file_name_or_obj, str):
@@ -208,14 +215,14 @@ def write_sdf(sdf_list, fn, conf_id=-1):
                 pass
             if order:
                 mol.SetProp("order", ";".join(order))
-            
+
         try:
             mol.GetConformer()
         except ValueError: # no 2D coords... calculate them
             mol.Compute2DCoords()
-        
+
         writer.write(mol, confId=conf_id)
-        
+
         # remove the order property again from mol_list
         if first_mol:
             first_mol = False
@@ -241,11 +248,11 @@ def write_pdb(sdf_list, fn):
 def smiles_supplier(fn, smiles_prop=""):
     """Process a text file containing Smiles or Smarts and other properties (separated by tab)
     and yield mol objects as generator.
-    If <smiles_prop> is empty, the first column header containing "smiles" (case-insensitive) 
+    If <smiles_prop> is empty, the first column header containing "smiles" (case-insensitive)
     is assumed to be the Smiles column.
     If <smiles_prop> contains "smarts" (case-insensitive),
     then the molecule is generated from the Smarts in this column."""
-    
+
     with open(fn) as f:
         first_line = True
         smiles_idx = -1
@@ -259,28 +266,28 @@ def smiles_supplier(fn, smiles_prop=""):
                         if "smiles" in prop.lower():
                             props_dict[idx] = "Smiles"
                             smiles_idx = idx
-                            
+
                     else:
                         if prop == smiles_prop:
                             props_dict[idx] = smiles_prop
                             smiles_idx = idx
-                    
+
                     props_dict[idx] = prop
-                
+
                 if smiles_idx < 0:
                     raise ValueError("no Smiles column found in {}".format(fn))
-                
+
             if "smarts" in smiles_prop.lower():
                 mol = Chem.MolFromSmarts(line[smiles_idx])
             else:
                 mol = Chem.MolFromSmiles(line[smiles_idx])
-            
+
             if not mol: continue
-            
+
             for idx, prop in enumerate(line):
                 if idx != smiles_idx:
                     mol.SetProp(props_dict[idx], prop)
-            
+
             yield mol
 
 
@@ -308,11 +315,11 @@ def smiles_writer(sdf_list, fn="smiles.csv", smiles_prop="Smiles"):
 
 def prepare_for_viewer(sdf_list):
     """deprecated. All functions detect the field types"""
-    
+
     if not isinstance(sdf_list, list):
         print("  * function prepare_for_viewer currently only handles lists.")
         return
-    
+
     return
 
 
@@ -611,7 +618,7 @@ def list_fields(sdf_list_or_file):
 
 def get_field_types(sdf_list_or_file):
     """detect all the property field types and return as dict"""
-    
+
     print("  > detecting field types...")
     field_types = {}
 
@@ -636,30 +643,30 @@ def get_field_types(sdf_list_or_file):
 
     for mol in sdf_sample:
         prop_names = mol.GetPropNames()
-        
+
         for prop in prop_names:
             prop_type = "number"
             prop_str = mol.GetProp(prop)
-            
+
             try:
                 val = float(prop_str)
                 if prop.lower().endswith("id"):
                     prop_type = "key"
-                    
+
             except ValueError:
                 prop_type = "str"
-                
+
             if prop in field_types:
                 if field_types[prop] in ["number", "key"] and prop_type == "str":
-                    # "str" overrides everything: if one string is among the values 
+                    # "str" overrides everything: if one string is among the values
                     # of a property, all values become type "str"
-                    field_types[prop] = prop_type 
+                    field_types[prop] = prop_type
             else:
                 field_types[prop] = prop_type
-                
+
     if not field_types:
         raise NoFieldTypes()
-        
+
     return field_types
 
 
@@ -872,10 +879,10 @@ def factsearch(sdf_list_or_file, query, invert=False, max_hits=2000, count_only=
     result_list = Mol_List()
     result_indexes_list = []
     mol_counter_out = 0
-    
+
     if not field_types:
         field_types = get_field_types(sdf_list_or_file)
-    
+
     if not field_types:
         print("  # no field type information available! -aborted.")
         return None
@@ -889,7 +896,7 @@ def factsearch(sdf_list_or_file, query, invert=False, max_hits=2000, count_only=
     if not field:
         print("  # field could be extracted from query! -aborted.")
         return None
-    
+
     print("  > field {} extracted from query: {}.".format(field, query))
 
     query_mod = query.replace(field, "val")
@@ -1142,10 +1149,10 @@ def get_num_props_dict(sdf_list, fields=None, id_prop="molid", field_types=None)
     DEBUG = False
     props_dict = {}
     molid_list = [] # list of molid for picking and structure display
-    
+
     if not field_types:
         field_types = get_field_types(sdf_list)
-        
+
     # only return the numerical database fields:
     num_props_list = [prop for prop in field_types if field_types[prop] == "number"]
 
@@ -1532,8 +1539,8 @@ def cluster_from_sdf_list(sdf_list, cutoff=0.2):
     dists = []
     num_of_fps = len(fp_list)
     for i in range(1, num_of_fps):
-        sims = DataStructs.BulkTanimotoSimilarity(fp_list[i],fp_list[:i])
-        dists.extend([1-x for x in sims])
+        sims = DataStructs.BulkTanimotoSimilarity(fp_list[i], fp_list[:i])
+        dists.extend([1 - x for x in sims])
 
     # now cluster the data:
     cluster_idx_list = Butina.ClusterData(dists, num_of_fps, cutoff, isDistData=True)
@@ -1615,7 +1622,7 @@ def get_med_act_in_cluster(orig_sdf, cluster, act_prop):
         try:
             value = float(mol.GetProp(act_prop))
         except:
-            print("  * molecule at index {:6d} has not activity prop {}".format(x, act_prop))
+            print("  * molecule at index {:6d} has no activity prop {}".format(x, act_prop))
             continue
         med_act += value
         num_of_members += 1
@@ -1626,7 +1633,7 @@ def get_med_act_in_cluster(orig_sdf, cluster, act_prop):
     return med_act / num_of_members
 
 
-def analyze_cluster_idx_list(orig_sdf, cluster_idx_list, mode="remove_singletons", act_prop=None):
+def analyze_cluster_idx_list(orig_sdf, cluster_idx_list, id_prop=None, mode="remove_singletons", act_prop=None):
     """available modes:
        remove_singletons: remove clusters with only one member
        ind_activity:      sort the clusters by the member with the highest activity
@@ -1644,9 +1651,12 @@ def analyze_cluster_idx_list(orig_sdf, cluster_idx_list, mode="remove_singletons
             sdf_list = get_sdf_from_index_list(orig_sdf, cluster)
             for pos, idx in enumerate(cluster):
                 mol = sdf_list[pos]
-                cluster_dict[int(mol.GetProp("molid"))] = idx
+                if id_prop is None and pos == 0:
+                    id_prop = guess_id_prop(mol.GetPropNames())
+
+                cluster_dict[int(mol.GetProp(id_prop))] = idx
             sort_sdf(sdf_list, act_prop, reverse=True)
-            cluster_sorted = [cluster_dict[int(mol.GetProp("molid"))] for mol in sdf_list]
+            cluster_sorted = [cluster_dict[int(mol.GetProp(id_prop))] for mol in sdf_list]
             cluster_idx_list_sorted.append(cluster_sorted)
         cluster_idx_list = cluster_idx_list_sorted
         print(" done.")
@@ -1694,7 +1704,7 @@ def write_clusters_as_sdf(orig_sdf, cluster_idx_list, basename="cluster"):
 def write_cluster_report(orig_sdf, cluster_idx_list, captionprop, reportname="cluster"):
     intro = "<html>\n<head>\n  <meta http-equiv=\"Content-Type\" content=\"text/html; charset=utf-8\" />\n  <link rel=\"stylesheet\" type=\"text/css\" href=\"css/style.css\" />\n  <title>ClusterViewer</title>\n</head>\n<body>\n<table width=\"\" cellspacing=\"1\" cellpadding=\"1\" border=\"1\" align=\"\" height=\"60\" summary=\"\">\n<tbody>"
     extro = "</tbody>\n</table>\n</body>\n</html>"
-    filename = op.join(REPORT_FOLDER, "html", reportname + ".htm")
+    filename = op.join("html", reportname + ".htm")
     f = open(filename, "w")
     f.write(intro)
     for counter, cluster in enumerate(cluster_idx_list):
@@ -1716,24 +1726,24 @@ def neutralize_mol(mol, pattern=None, id_prop="molid", show=False):
     if not pattern:
         pattern = (
             # Imidazoles
-            ('[n+;H]','n'),
+            ('[n+;H]', 'n'),
             # Amines
-            ('[N+;!H0]','N'),
+            ('[N+;!H0]', 'N'),
             # Carboxylic acids and alcohols
-            ('[$([O-]);!$([O-][#7])]','O'),
+            ('[$([O-]);!$([O-][#7])]', 'O'),
             # Thiols
-            ('[S-;X1]','S'),
+            ('[S-;X1]', 'S'),
             # Sulfonamides
-            ('[$([N-;X2]S(=O)=O)]','N'),
+            ('[$([N-;X2]S(=O)=O)]', 'N'),
             # Enamines
-            ('[$([N-;X2][C,N]=C)]','N'),
+            ('[$([N-;X2][C,N]=C)]', 'N'),
             # Tetrazoles
-            ('[n-]','[nH]'),
+            ('[n-]', '[nH]'),
             # Sulfoxides
-            ('[$([S-]=O)]','S'),
+            ('[$([S-]=O)]', 'S'),
             # Amides
-            ('[$([N-]C=O)]','N'),
-            )
+            ('[$([N-]C=O)]', 'N'),
+        )
 
         reactions = [(Chem.MolFromSmarts(x), Chem.MolFromSmiles(y, False)) for x, y in pattern]
 
